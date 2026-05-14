@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.8.0](https://github.com/Profiidev/pleiades/compare/pleiades-v1.7.1...pleiades-v1.8.0) (2026-04-23)
+
+### Features
+
+- added new components ([ea6995f](https://github.com/Profiidev/pleiades/commit/ea6995f565778163e4590bb2aae0b715ca03bd12))
+
 ## 1.7.1 (2026-04-17)
 
 ### Features

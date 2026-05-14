@@ -1,6 +1,6 @@
 {
   "name": "@profidev/pleiades",
-  "version": "1.7.1",
+  "version": "1.8.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/Profiidev/pleiades"
@@ -802,12 +802,12 @@
     "@tailwindcss/typography": "0.5.19",
     "@types/node": "25.6.0",
     "jsrepo": "3.7.0",
-    "oxfmt": "^0.49.0",
-    "oxlint": "1.61.0",
-    "oxlint-tsgolint": "0.21.1",
+    "oxfmt": "0.49.0",
+    "oxlint": "1.62.0",
+    "oxlint-tsgolint": "0.22.1",
     "prettier": "3.8.3",
     "prettier-plugin-svelte": "3.5.1",
-    "prettier-plugin-tailwindcss": "0.7.2",
+    "prettier-plugin-tailwindcss": "0.8.0",
     "publint": "0.3.18",
     "svelte-check": "4.4.6",
     "tailwindcss": "4.2.4",
