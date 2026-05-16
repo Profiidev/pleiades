@@ -1,5 +1,5 @@
 import { defineConfig } from 'jsrepo';
-import prettier from '@jsrepo/transform-prettier';
+import oxfmt from '@jsrepo/transform-oxfmt';
 
 export default defineConfig({
   paths: {
@@ -15,5 +15,5 @@ export default defineConfig({
     utils: '$lib/util'
   },
   registries: ['@ieedan/shadcn-svelte-extras'],
-  transforms: [prettier()]
+  transforms: [oxfmt()]
 });
