@@ -120,7 +120,7 @@
       </Button>
     {/snippet}
   </Popover.Trigger>
-  <Popover.Content>
+  <Popover.Content class="p-0">
     <Command.Root>
       <Command.Input placeholder={`Search ${label.toLowerCase()}...`} />
       <Command.List class="h-full overflow-hidden">
@@ -137,7 +137,7 @@
                     class={cn(
                       'mr-2 size-4',
                       !selected.some((i) => compare(i, item.value)) &&
-                        'text-transparent'
+                        'text-transparent!'
                     )}
                   />
                   {item.label}
