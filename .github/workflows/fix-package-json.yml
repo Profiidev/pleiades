@@ -24,7 +24,7 @@ jobs:
         run: |
           node scripts/generate-exports.js
           npx oxlint --fix
-          npx oxfmt
+          npx oxfmt package.json
 
       - uses: planetscale/ghcommit-action@25309d8005ac7c3bcd61d3fe19b69e0fe47dbdde # v0.2.20
         with:

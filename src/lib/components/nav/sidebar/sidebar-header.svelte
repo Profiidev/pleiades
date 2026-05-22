@@ -4,14 +4,16 @@
   import PanelLeftOpen from '@lucide/svelte/icons/panel-left-open';
   import PanelLeftClose from '@lucide/svelte/icons/panel-left-close';
   import type { Component } from 'svelte';
+  import { cn } from '$lib/utils';
 
   interface Props {
     version: string;
     app_name: string;
+    iconClass?: string;
     app_icon?: Component;
   }
 
-  let { version, app_name, app_icon }: Props = $props();
+  let { version, app_name, app_icon, iconClass }: Props = $props();
 
   let sidebar = Sidebar.useSidebar();
   let isOpen = $derived(sidebar.props.open());
@@ -30,7 +32,7 @@
           <div
             class="bg-sidebar-primary text-sidebar-primary-foreground flex aspect-square size-8 items-center justify-center rounded-lg"
           >
-            <AppIcon class="size-4 text-[#9db6ed]" />
+            <AppIcon class={cn('size-4 text-[#9db6ed]', iconClass)} />
           </div>
           <div class="flex flex-col gap-0.5 leading-none">
             <span class="font-medium text-nowrap">{app_name}</span>

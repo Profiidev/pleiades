@@ -12,18 +12,27 @@
     version: string;
     app_name: string;
     app_icon?: Component;
+    iconClass?: string;
     items: NavGroup[];
     logout: () => Promise<{ error?: any }>;
   }
 
-  const { children, user, version, app_name, app_icon, items, logout }: Props =
-    $props();
+  const {
+    children,
+    user,
+    version,
+    app_name,
+    app_icon,
+    items,
+    logout,
+    iconClass
+  }: Props = $props();
 </script>
 
 <Sidebar.Provider>
   <Sidebar.Root collapsible="icon" variant="floating">
     <Sidebar.Header>
-      <SidebarHeader {app_name} {app_icon} {version} />
+      <SidebarHeader {app_name} {app_icon} {version} {iconClass} />
     </Sidebar.Header>
     <Sidebar.Content>
       <SidebarContent {items} {user} />
