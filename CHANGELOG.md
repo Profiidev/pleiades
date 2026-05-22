@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.8.2](https://github.com/Profiidev/pleiades/compare/pleiades-v1.8.1...pleiades-v1.8.2) (2026-05-22)
+
+
+### Bug Fixes
+
+* sidebar permission refresh ([c86b861](https://github.com/Profiidev/pleiades/commit/c86b8619ad14546dedc799aaae90037b2cffde16))
+* sidebar permission refresh ([93af75c](https://github.com/Profiidev/pleiades/commit/93af75cc636d67190f709a4ed352df47b550e692))
+
 ## [1.8.1](https://github.com/Profiidev/pleiades/compare/pleiades-v1.8.0...pleiades-v1.8.1) (2026-05-22)
 
 ### Bug Fixes
