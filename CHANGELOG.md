@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.8.1](https://github.com/Profiidev/pleiades/compare/pleiades-v1.8.0...pleiades-v1.8.1) (2026-05-22)
+
+### Bug Fixes
+
+- dialog bottom padding ([ea9db10](https://github.com/Profiidev/pleiades/commit/ea9db104caa84c85151fa9209abacb511f9a7e6a))
+- multiselect style ([8c48d5c](https://github.com/Profiidev/pleiades/commit/8c48d5cd11d56e51be296aa2e0e2df4882113c7e))
+- styles ([93657ee](https://github.com/Profiidev/pleiades/commit/93657ee68a7a8bc8ee8e5ce05957f01966496442))
+
 ## [1.8.0](https://github.com/Profiidev/pleiades/compare/pleiades-v1.7.1...pleiades-v1.8.0) (2026-04-23)
 
 ### Features
