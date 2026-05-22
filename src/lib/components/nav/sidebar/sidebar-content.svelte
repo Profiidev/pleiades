@@ -16,15 +16,15 @@
 
   let filteredItems = $derived(
     items
-      .map((group) => {
-        group.items = group.items.filter((item) => {
+      .map((group) => ({
+        ...group,
+        items: group.items.filter((item) => {
           if (item.requiredPermission) {
             return user.permissions.includes(item.requiredPermission);
           }
           return true;
-        });
-        return group;
-      })
+        })
+      }))
       .filter((item) => item.items.length > 0)
   );
 
