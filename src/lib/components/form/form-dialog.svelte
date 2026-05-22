@@ -128,7 +128,7 @@
       {children}
     >
       {#snippet footer({ defaultBtn })}
-        <Dialog.Footer class="mt-4">
+        <Dialog.Footer>
           {@render defaultBtn({ variant: confirmVariant, content: confirm })}
         </Dialog.Footer>
       {/snippet}
