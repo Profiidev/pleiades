@@ -19,7 +19,7 @@
     stages: Stage<T>[];
     onsubmit: (
       data: object
-    ) => Error | undefined | void | Promise<Error | undefined | void>;
+    ) => Error<any> | undefined | void | Promise<Error<any> | undefined | void>;
     data?: T;
     submitLabel?: string;
     submitIcon?: Component;

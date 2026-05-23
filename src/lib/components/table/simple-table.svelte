@@ -59,7 +59,7 @@
     createClass?: string;
     editClass?: string;
     errorMappings?: {
-      [key in RequestError]?: Error;
+      [key in RequestError]?: Error<any>;
     };
     columnData: CD;
   }
