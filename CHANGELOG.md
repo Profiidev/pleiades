@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.9.0](https://github.com/Profiidev/pleiades/compare/pleiades-v1.8.2...pleiades-v1.9.0) (2026-05-23)
+
+
+### Features
+
+* added option to pass promise to sidebar for user data ([cd23bc8](https://github.com/Profiidev/pleiades/commit/cd23bc8979c166533badfe246b7ff1e24e99855b))
+* better data loading for sidebar ([f703ef7](https://github.com/Profiidev/pleiades/commit/f703ef7bf973cd161900668ef471fced6e74a118))
+
 ## [1.8.2](https://github.com/Profiidev/pleiades/compare/pleiades-v1.8.1...pleiades-v1.8.2) (2026-05-22)
 
 ### Bug Fixes
