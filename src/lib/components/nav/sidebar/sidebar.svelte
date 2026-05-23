@@ -7,7 +7,7 @@
   import type { NavGroup, SidebarUserInfo } from './types';
 
   interface Props {
-    user: SidebarUserInfo | Promise<SidebarUserInfo>;
+    user?: SidebarUserInfo;
     avatar?: string;
     children: Snippet;
     version: string;

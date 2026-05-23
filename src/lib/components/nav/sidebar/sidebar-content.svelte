@@ -8,10 +8,10 @@
 
   interface Props {
     items: NavGroup[];
-    user: SidebarUserInfo | Promise<SidebarUserInfo>;
+    user?: SidebarUserInfo;
   }
 
-  const { items, user: userPromise }: Props = $props();
+  const { items, user }: Props = $props();
 
   const filteredItems = (items: NavGroup[], user: SidebarUserInfo) =>
     items
@@ -33,7 +33,7 @@
       .sort((a, b) => b.href.length - a.href.length)[0] ?? undefined;
 </script>
 
-{#await userPromise}
+{#if !user}
   <Sidebar.Group>
     <Sidebar.GroupLabel>Loading...</Sidebar.GroupLabel>
     <Sidebar.Menu>
@@ -44,7 +44,7 @@
       {/each}
     </Sidebar.Menu>
   </Sidebar.Group>
-{:then user}
+{:else}
   {@const filtered = filteredItems(items, user)}
   {#each filtered as group}
     <Sidebar.Group>
@@ -70,4 +70,4 @@
       </Sidebar.Menu>
     </Sidebar.Group>
   {/each}
-{/await}
+{/if}

@@ -11,12 +11,12 @@
   import { Skeleton } from '$lib/components/ui/skeleton';
 
   interface Props {
-    user: SidebarUserInfo | Promise<SidebarUserInfo>;
+    user?: SidebarUserInfo;
     avatar?: string;
     logout: () => Promise<{ error?: any }>;
   }
 
-  let { logout, user: userPromise, avatar }: Props = $props();
+  let { logout, user, avatar }: Props = $props();
 
   const sidebar = Sidebar.useSidebar();
 </script>
@@ -32,19 +32,17 @@
             {...props}
           >
             <Avatar.Root class="size-8 rounded-lg">
-              {#await userPromise then user}
-                <Avatar.Image src={avatar} alt={user.name} />
-              {/await}
+              <Avatar.Image src={avatar} alt={user?.name} />
               <Avatar.Fallback class="rounded-full">?</Avatar.Fallback>
             </Avatar.Root>
             <div class="grid flex-1 text-start text-sm leading-tight">
-              {#await userPromise}
+              {#if !user}
                 <Skeleton class="mb-1 h-4" />
                 <Skeleton class="h-3" />
-              {:then user}
+              {:else}
                 <span class="truncate font-medium">{user.name}</span>
                 <span class="truncate text-xs">{user.email}</span>
-              {/await}
+              {/if}
             </div>
             <ChevronsUpDownIcon class="ms-auto size-4" />
           </Sidebar.MenuButton>
@@ -59,19 +57,17 @@
         <DropdownMenu.Label class="p-0 font-normal">
           <div class="flex items-center gap-2 px-1 py-1.5 text-start text-sm">
             <Avatar.Root class="size-8 rounded-lg">
-              {#await userPromise then user}
-                <Avatar.Image src={avatar} alt={user.name} />
-              {/await}
+              <Avatar.Image src={avatar} alt={user?.name} />
               <Avatar.Fallback class="rounded-full">?</Avatar.Fallback>
             </Avatar.Root>
             <div class="grid flex-1 text-start text-sm leading-tight">
-              {#await userPromise}
+              {#if !user}
                 <Skeleton class="mb-1 h-4" />
                 <Skeleton class="h-3" />
-              {:then user}
+              {:else}
                 <span class="truncate font-medium">{user.name}</span>
                 <span class="truncate text-xs">{user.email}</span>
-              {/await}
+              {/if}
             </div>
           </div>
         </DropdownMenu.Label>
