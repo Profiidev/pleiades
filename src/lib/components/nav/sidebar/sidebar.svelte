@@ -7,7 +7,8 @@
   import type { NavGroup, SidebarUserInfo } from './types';
 
   interface Props {
-    user: SidebarUserInfo;
+    user: SidebarUserInfo | Promise<SidebarUserInfo>;
+    avatar?: string;
     children: Snippet;
     version: string;
     app_name: string;
@@ -20,6 +21,7 @@
   const {
     children,
     user,
+    avatar,
     version,
     app_name,
     app_icon,
@@ -38,12 +40,7 @@
       <SidebarContent {items} {user} />
     </Sidebar.Content>
     <Sidebar.Footer>
-      <SidebarUser
-        name={user.name}
-        email={user.email}
-        avatar={`data:image/webp;base64,${user.avatar || ''}`}
-        {logout}
-      />
+      <SidebarUser {avatar} {user} {logout} />
     </Sidebar.Footer>
   </Sidebar.Root>
   <Sidebar.Inset>
