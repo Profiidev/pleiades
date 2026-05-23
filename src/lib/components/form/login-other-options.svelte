@@ -2,6 +2,7 @@
   import KeyRound from '@lucide/svelte/icons/key-round';
   import LoaderCircle from '@lucide/svelte/icons/loader-circle';
   import { Button } from '../ui/button/index.js';
+  import { FieldSeparator } from '../ui/field/index.js';
 
   interface Props {
     isLoading: boolean;
@@ -12,14 +13,9 @@
   let { isLoading, passkeyClick, passkeyError }: Props = $props();
 </script>
 
-<div class="relative">
-  <div class="absolute inset-0 flex items-center">
-    <span class="w-full border-t"></span>
-  </div>
-  <div class="relative flex justify-center text-xs uppercase">
-    <span class="text-muted-foreground px-2">Or continue with </span>
-  </div>
-</div>
+<FieldSeparator class="*:data-[slot=field-separator-content]:bg-card my-4"
+  >Or continue with</FieldSeparator
+>
 {#if passkeyError !== ''}
   <span class="text-destructive truncate text-sm">{passkeyError}</span>
 {/if}
