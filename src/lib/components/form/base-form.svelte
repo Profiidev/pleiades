@@ -25,7 +25,7 @@
     initialValue?: Partial<FormValue<V>>;
     onsubmit: (
       form: FormValue<V>
-    ) => Error | undefined | void | Promise<Error | undefined | void>;
+    ) => Error<V> | undefined | void | Promise<Error<V> | undefined | void>;
     children?: Snippet<
       [{ props: { formData: SuperForm<FormValue<V>>; disabled: boolean } }]
     >;

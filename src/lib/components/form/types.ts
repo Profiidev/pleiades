@@ -10,8 +10,8 @@ export type FormRecord = Record<string, unknown>;
 
 export type FormValue<V extends ZodValidationSchema> = z.infer<V>;
 
-export interface Error {
-  field?: string;
+export interface Error<V extends ZodValidationSchema> {
+  field?: keyof FormValue<V>;
   error: string;
 }
 
