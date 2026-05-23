@@ -7,15 +7,16 @@
   import SettingsIcon from '@lucide/svelte/icons/settings';
   import { goto } from '$app/navigation';
   import { disconnectWebsocket } from '$lib/backend/updater.svelte';
+  import type { SidebarUserInfo } from './types';
+  import { Skeleton } from '$lib/components/ui/skeleton';
 
   interface Props {
-    name: string;
-    email: string;
-    avatar: string;
+    user: SidebarUserInfo | Promise<SidebarUserInfo>;
+    avatar?: string;
     logout: () => Promise<{ error?: any }>;
   }
 
-  let { name, email, avatar, logout }: Props = $props();
+  let { logout, user: userPromise, avatar }: Props = $props();
 
   const sidebar = Sidebar.useSidebar();
 </script>
@@ -31,12 +32,19 @@
             {...props}
           >
             <Avatar.Root class="size-8 rounded-lg">
-              <Avatar.Image src={avatar} alt={name} />
-              <Avatar.Fallback class="rounded-lg">?</Avatar.Fallback>
+              {#await userPromise then user}
+                <Avatar.Image src={avatar} alt={user.name} />
+              {/await}
+              <Avatar.Fallback class="rounded-full">?</Avatar.Fallback>
             </Avatar.Root>
             <div class="grid flex-1 text-start text-sm leading-tight">
-              <span class="truncate font-medium">{name}</span>
-              <span class="truncate text-xs">{email}</span>
+              {#await userPromise}
+                <Skeleton class="mb-1 h-4" />
+                <Skeleton class="h-3" />
+              {:then user}
+                <span class="truncate font-medium">{user.name}</span>
+                <span class="truncate text-xs">{user.email}</span>
+              {/await}
             </div>
             <ChevronsUpDownIcon class="ms-auto size-4" />
           </Sidebar.MenuButton>
@@ -51,12 +59,19 @@
         <DropdownMenu.Label class="p-0 font-normal">
           <div class="flex items-center gap-2 px-1 py-1.5 text-start text-sm">
             <Avatar.Root class="size-8 rounded-lg">
-              <Avatar.Image src={avatar} alt={name} />
-              <Avatar.Fallback class="rounded-lg">?</Avatar.Fallback>
+              {#await userPromise then user}
+                <Avatar.Image src={avatar} alt={user.name} />
+              {/await}
+              <Avatar.Fallback class="rounded-full">?</Avatar.Fallback>
             </Avatar.Root>
             <div class="grid flex-1 text-start text-sm leading-tight">
-              <span class="truncate font-medium">{name}</span>
-              <span class="truncate text-xs">{email}</span>
+              {#await userPromise}
+                <Skeleton class="mb-1 h-4" />
+                <Skeleton class="h-3" />
+              {:then user}
+                <span class="truncate font-medium">{user.name}</span>
+                <span class="truncate text-xs">{user.email}</span>
+              {/await}
             </div>
           </div>
         </DropdownMenu.Label>
