@@ -4,6 +4,7 @@
   import Ban from '@lucide/svelte/icons/ban';
   import CheckIcon from '@lucide/svelte/icons/check';
   import Plus from '@lucide/svelte/icons/plus';
+  import RotateCCW from '@lucide/svelte/icons/rotate-ccw';
   import { Badge } from '$lib/components/ui/badge';
   import { Button } from '$lib/components/ui/button';
   import * as Card from '$lib/components/ui/card';
@@ -22,6 +23,7 @@
     ) => Error<any> | undefined | void | Promise<Error<any> | undefined | void>;
     data?: T;
     submitLabel?: string;
+    retryLabel?: string;
     submitIcon?: Component;
     cancelHref: string;
   }
@@ -32,7 +34,8 @@
     data = undefined as T,
     submitLabel = 'Create',
     submitIcon: SubmitIcon = Plus,
-    cancelHref
+    cancelHref,
+    retryLabel = 'Retry'
   }: Props<T> = $props();
 
   let stage = $state(0);
@@ -96,7 +99,7 @@
         bind:isLoading
         {data}
       >
-        {#snippet footer({ isLoading })}
+        {#snippet footer({ isLoading, isError })}
           <Card.Footer
             class="w-full gap-2 border-none bg-transparent px-0 pt-0"
           >
@@ -124,11 +127,18 @@
               <Ban />
               Cancel
             </Button>
-            <Button class="cursor-pointer" type="submit" disabled={isLoading}>
+            <Button
+              class="cursor-pointer"
+              type="submit"
+              disabled={isLoading}
+              variant={isError ? 'destructive' : undefined}
+            >
               {#if stage === stages.length - 1}
-                {submitLabel}
+                {isError ? retryLabel : submitLabel}
                 {#if isLoading}
                   <Spinner />
+                {:else if isError}
+                  <RotateCCW />
                 {:else}
                   <SubmitIcon />
                 {/if}

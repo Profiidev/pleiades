@@ -29,7 +29,11 @@
   const current = (filteredItems: NavGroup[]) =>
     filteredItems
       .flatMap((group) => group.items)
-      .filter((item) => page.url.pathname.startsWith(item.href))
+      .filter(
+        (item) =>
+          (page.url.pathname.startsWith(item.href) && item.href !== '/') ||
+          item.href === page.url.pathname
+      )
       .sort((a, b) => b.href.length - a.href.length)[0] ?? undefined;
 </script>
 

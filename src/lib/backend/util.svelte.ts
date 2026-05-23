@@ -18,7 +18,7 @@ export const put = async <T = undefined>(
   options: RequestOptions = {}
 ): Promise<T | RequestError> => await request(path, 'PUT', options);
 
-export const delete_ = async <T = undefined>(
+export const delete_req = async <T = undefined>(
   path: string,
   options: RequestOptions = {}
 ): Promise<T | RequestError> => await request(path, 'DELETE', options);
@@ -39,32 +39,32 @@ export const request = async <T = undefined>(
   method: string,
   { res_type, body, content_type, signal, fetch }: RequestOptions = {}
 ): Promise<T | RequestError> => {
-  const res_type_ = res_type ?? ResponseType.None;
-  let content_type_ = content_type;
-  let body_ = body;
+  const res_type_inner = res_type ?? ResponseType.None;
+  let content_type_inner = content_type;
+  let body_inner = body;
 
-  if (body_ instanceof ArrayBuffer) {
-    content_type_ = 'application/octet-stream';
-  } else if (body_ instanceof Blob) {
-    content_type_ = body_.type;
-    body_ = body_.stream();
-  } else if (typeof body_ === 'string') {
-    content_type_ = 'text/plain';
-  } else if (typeof body_ === 'object' && body_ !== null) {
-    content_type_ = 'application/json';
-    body_ = JSON.stringify(body_);
+  if (body_inner instanceof ArrayBuffer) {
+    content_type_inner = 'application/octet-stream';
+  } else if (body_inner instanceof Blob) {
+    content_type_inner = body_inner.type;
+    body_inner = body_inner.stream();
+  } else if (typeof body_inner === 'string') {
+    content_type_inner = 'text/plain';
+  } else if (typeof body_inner === 'object' && body_inner !== null) {
+    content_type_inner = 'application/json';
+    body_inner = JSON.stringify(body_inner);
   }
 
   const headers: HeadersInit = {};
-  if (content_type_) {
-    headers['Content-Type'] = content_type_;
+  if (content_type_inner) {
+    headers['Content-Type'] = content_type_inner;
   }
 
-  const fetch_ = fetch ?? globalThis.fetch;
+  const fetch_inner = fetch ?? globalThis.fetch;
 
   try {
-    const res = await fetch_(path, {
-      body: body_,
+    const res = await fetch_inner(path, {
+      body: body_inner,
       headers,
       method,
       signal
@@ -133,7 +133,7 @@ export const request = async <T = undefined>(
       }
     }
 
-    switch (res_type_) {
+    switch (res_type_inner) {
       case ResponseType.Json: {
         const json = await res.json();
         // oxlint-disable-next-line no-unsafe-type-assertion
