@@ -2,16 +2,15 @@
 
 ## [1.9.2](https://github.com/Profiidev/pleiades/compare/pleiades-v1.9.1...pleiades-v1.9.2) (2026-05-23)
 
-
 ### Bug Fixes
 
-* login options passkey error ([530a49f](https://github.com/Profiidev/pleiades/commit/530a49f18d7203ecda9d98f9b263808148e3f8ea))
-* login options separator ([20f9561](https://github.com/Profiidev/pleiades/commit/20f95616893c19d78dd37ba3dad6647abfe83fea))
-* multistep form error button ([254908e](https://github.com/Profiidev/pleiades/commit/254908e95343c735adef53f676ac8ae1b0843a49))
-* multistep form stage type ([f9409c9](https://github.com/Profiidev/pleiades/commit/f9409c9a0333c037de2c6b869bda5c51a6fe9e8e))
-* oxlint lints ([13a6624](https://github.com/Profiidev/pleiades/commit/13a6624eae4b0a707e8633e9bd14bbdd1d8d7b26))
-* sidebar active item for root url ([b68d623](https://github.com/Profiidev/pleiades/commit/b68d623e3cd0ccc5cb06b8e1dfd024b39a9400f4))
-* stage props types ([c2a8cd3](https://github.com/Profiidev/pleiades/commit/c2a8cd3e1e455759bbf879d0d9f0ea1f914b4526))
+- login options passkey error ([530a49f](https://github.com/Profiidev/pleiades/commit/530a49f18d7203ecda9d98f9b263808148e3f8ea))
+- login options separator ([20f9561](https://github.com/Profiidev/pleiades/commit/20f95616893c19d78dd37ba3dad6647abfe83fea))
+- multistep form error button ([254908e](https://github.com/Profiidev/pleiades/commit/254908e95343c735adef53f676ac8ae1b0843a49))
+- multistep form stage type ([f9409c9](https://github.com/Profiidev/pleiades/commit/f9409c9a0333c037de2c6b869bda5c51a6fe9e8e))
+- oxlint lints ([13a6624](https://github.com/Profiidev/pleiades/commit/13a6624eae4b0a707e8633e9bd14bbdd1d8d7b26))
+- sidebar active item for root url ([b68d623](https://github.com/Profiidev/pleiades/commit/b68d623e3cd0ccc5cb06b8e1dfd024b39a9400f4))
+- stage props types ([c2a8cd3](https://github.com/Profiidev/pleiades/commit/c2a8cd3e1e455759bbf879d0d9f0ea1f914b4526))
 
 ## [1.9.1](https://github.com/Profiidev/pleiades/compare/pleiades-v1.9.0...pleiades-v1.9.1) (2026-05-23)
 
