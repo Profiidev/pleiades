@@ -2,13 +2,12 @@
 
 ## [1.9.1](https://github.com/Profiidev/pleiades/compare/pleiades-v1.9.0...pleiades-v1.9.1) (2026-05-23)
 
-
 ### Bug Fixes
 
-* data loading issues ([861b0c9](https://github.com/Profiidev/pleiades/commit/861b0c94db043dc4f74f962e1c3d8f2b128a9c07))
-* error typing ([f6eea55](https://github.com/Profiidev/pleiades/commit/f6eea55f8edf288710a1518c9664a702f1282e4d))
-* login options color ([820b7c0](https://github.com/Profiidev/pleiades/commit/820b7c0cb54fa9eece37e206aca98e54b712a3d1))
-* sidebar data loading ([0003e67](https://github.com/Profiidev/pleiades/commit/0003e67d3c507b1b433f83ec2421c66487922e26))
+- data loading issues ([861b0c9](https://github.com/Profiidev/pleiades/commit/861b0c94db043dc4f74f962e1c3d8f2b128a9c07))
+- error typing ([f6eea55](https://github.com/Profiidev/pleiades/commit/f6eea55f8edf288710a1518c9664a702f1282e4d))
+- login options color ([820b7c0](https://github.com/Profiidev/pleiades/commit/820b7c0cb54fa9eece37e206aca98e54b712a3d1))
+- sidebar data loading ([0003e67](https://github.com/Profiidev/pleiades/commit/0003e67d3c507b1b433f83ec2421c66487922e26))
 
 ## [1.9.0](https://github.com/Profiidev/pleiades/compare/pleiades-v1.8.2...pleiades-v1.9.0) (2026-05-23)
 
