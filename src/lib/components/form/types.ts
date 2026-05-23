@@ -24,6 +24,7 @@ export type FormEnctype =
 
 export interface StageProps<T = undefined> {
   initialValue?: any;
+  // @ts-ignore
   onsubmit: ComponentProps<BaseForm<any>>['onsubmit'];
   footer: Snippet<[{ isLoading: boolean; isError: boolean }]>;
   isLoading: boolean;
