@@ -1,5 +1,5 @@
 <script lang="ts" generics="V extends ZodValidationSchema">
-  import type { Snippet } from 'svelte';
+  import type { Component, Snippet } from 'svelte';
   import { get } from 'svelte/store';
   import {
     defaults,
@@ -14,16 +14,18 @@
   } from 'sveltekit-superforms/adapters';
   import { FormButton } from '../ui/form/index.js';
   import LoaderCircle from '@lucide/svelte/icons/loader-circle';
+  import RotateCCW from '@lucide/svelte/icons/rotate-ccw';
   import type { ButtonVariant } from '../ui/button/index.js';
   import { cn } from '../../utils.js';
   import type { Error, FormEnctype, FormValue } from './types.js';
+  import { toast } from 'svelte-sonner';
 
   interface Props {
     schema: V;
     initialValue?: Partial<FormValue<V>>;
     onsubmit: (
       form: FormValue<V>
-    ) => Error | undefined | void | Promise<Error | undefined | void>;
+    ) => Error<V> | undefined | void | Promise<Error<V> | undefined | void>;
     children?: Snippet<
       [{ props: { formData: SuperForm<FormValue<V>>; disabled: boolean } }]
     >;
@@ -31,16 +33,27 @@
       [
         {
           defaultBtn: Snippet<
-            [{ className?: string; variant?: ButtonVariant; content: string }?]
+            [
+              {
+                className?: string;
+                variant?: ButtonVariant;
+                content: string;
+                icon?: Component;
+              }
+            ]
           >;
           isLoading: boolean;
+          isError: boolean;
         }
       ]
     >;
     isLoading?: boolean;
-    error?: string;
     class?: string;
     enctype?: FormEnctype;
+    noErrorToast?: boolean;
+    submitText?: string;
+    retryText?: string;
+    submitIcon?: Component;
   }
 
   let {
@@ -50,10 +63,15 @@
     children,
     footer = defaultFooter,
     isLoading = $bindable(false),
-    error = $bindable(''),
     class: className,
-    enctype
+    enctype,
+    noErrorToast,
+    submitText = 'Submit',
+    retryText = 'Retry',
+    submitIcon
   }: Props = $props();
+
+  let isError = $state(false);
 
   let form = superForm(
     defaults(
@@ -66,7 +84,7 @@
       onUpdate: async ({ form, cancel }) => {
         if (!form.valid) return;
 
-        error = '';
+        isError = false;
         isLoading = true;
 
         let ret = await onsubmit(form.data);
@@ -76,7 +94,12 @@
           if (ret.field) {
             setError(form, ret.field as '', ret.error, undefined);
           } else {
-            if (ret.error !== '') error = ret.error;
+            if (ret.error !== '') {
+              isError = true;
+              if (!noErrorToast) {
+                toast.error(ret.error);
+              }
+            }
             cancel();
           }
         }
@@ -105,21 +128,36 @@
 
 <form method="POST" class={cn('grid gap-3', className)} use:enhance {enctype}>
   {@render children?.({ props: { formData: form, disabled: isLoading } })}
-  {#if error}
-    <span class="text-destructive truncate text-sm">{error}</span>
-  {/if}
-  {@render footer({ defaultBtn: formButton, isLoading })}
+  {@render footer({ defaultBtn: formButton, isLoading, isError })}
 </form>
 
-{#snippet defaultFooter({ defaultBtn }: { defaultBtn: Snippet })}
-  {@render defaultBtn()}
+{#snippet defaultFooter({
+  defaultBtn
+}: {
+  defaultBtn: Snippet<
+    [
+      {
+        className?: string;
+        variant?: ButtonVariant;
+        content: string;
+        icon?: Component;
+      }
+    ]
+  >;
+})}
+  {@render defaultBtn({
+    variant: isError ? 'destructive' : undefined,
+    content: isError ? retryText : submitText,
+    icon: submitIcon
+  })}
 {/snippet}
 
-{#snippet formButton(
-  props:
-    | { className?: string; variant?: ButtonVariant; content: string }
-    | undefined
-)}
+{#snippet formButton(props: {
+  className?: string;
+  variant?: ButtonVariant;
+  content: string;
+  icon?: Component;
+})}
   {@const prop = { ...props }}
   <FormButton
     class={cn('cursor-pointer', prop.className)}
@@ -129,6 +167,10 @@
   >
     {#if isLoading}
       <LoaderCircle class="mr-2 h-4 w-4 animate-spin" />
+    {:else if isError}
+      <RotateCCW class="mr-2 h-4 w-4" />
+    {:else if prop.icon}
+      <prop.icon class="mr-2 h-4 w-4" />
     {/if}
     {prop.content}
   </FormButton>

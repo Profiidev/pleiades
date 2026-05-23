@@ -1,6 +1,6 @@
 <script lang="ts" generics="V extends ZodValidationSchema">
   import * as Dialog from '../ui/dialog/index.js';
-  import type { Snippet } from 'svelte';
+  import type { Component, Snippet } from 'svelte';
   import {
     Button,
     type ButtonSize,
@@ -18,7 +18,9 @@
     title: string;
     description?: string;
     confirm: string;
+    retryText?: string;
     confirmVariant?: ButtonVariant;
+    confirmIcon?: Component;
     open?: boolean;
     class?: string;
     isLoading?: boolean;
@@ -33,7 +35,7 @@
     onopen?: () => boolean | Promise<boolean>;
     onsubmit: (
       form: FormValue<V>
-    ) => Error | undefined | void | Promise<Error | undefined | void>;
+    ) => Error<V> | undefined | void | Promise<Error<V> | undefined | void>;
     children?: Snippet<
       [{ props: { formData: SuperForm<FormValue<V>>; disabled: boolean } }]
     >;
@@ -41,6 +43,7 @@
     schema: V;
     initialValue?: FormValue<V>;
     enctype?: FormEnctype;
+    noErrorToast?: boolean;
   }
 
   let {
@@ -58,11 +61,13 @@
     triggerInner,
     schema,
     initialValue,
-    enctype
+    enctype,
+    retryText = 'Retry',
+    confirmIcon,
+    noErrorToast
   }: Props = $props();
 
   let formComp: BaseForm<V> | undefined = $state();
-  let error = $state('');
   let formSetValue = $derived(formComp?.setValue);
   let formGetValue = $derived(formComp?.getValue);
 
@@ -78,7 +83,6 @@
     isLoading = true;
     if (await onopen()) {
       open = true;
-      error = '';
     }
     isLoading = false;
   };
@@ -120,16 +124,20 @@
     <Form
       bind:this={formComp}
       bind:isLoading
-      bind:error
       {schema}
       {initialValue}
       {enctype}
       onsubmit={submit}
       {children}
+      {noErrorToast}
     >
-      {#snippet footer({ defaultBtn })}
+      {#snippet footer({ defaultBtn, isError })}
         <Dialog.Footer>
-          {@render defaultBtn({ variant: confirmVariant, content: confirm })}
+          {@render defaultBtn({
+            variant: isError ? 'destructive' : confirmVariant,
+            content: isError ? retryText : confirm,
+            icon: confirmIcon
+          })}
         </Dialog.Footer>
       {/snippet}
     </Form>
