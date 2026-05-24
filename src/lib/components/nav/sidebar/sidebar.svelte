@@ -32,7 +32,12 @@
 </script>
 
 <Sidebar.Provider>
-  <Sidebar.Root collapsible="icon" variant="floating">
+  {@const sidebar = Sidebar.useSidebar()}
+  <Sidebar.Root
+    collapsible="icon"
+    variant="floating"
+    class={(sidebar?.isMobile && 'w-(--sidebar-width)!') || ''}
+  >
     <Sidebar.Header>
       <SidebarHeader {app_name} {app_icon} {version} {iconClass} />
     </Sidebar.Header>
