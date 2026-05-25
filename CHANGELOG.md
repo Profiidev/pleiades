@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.9.3](https://github.com/Profiidev/pleiades/compare/pleiades-v1.9.2...pleiades-v1.9.3) (2026-05-25)
+
+### Bug Fixes
+
+- form cancel on field error ([e81d926](https://github.com/Profiidev/pleiades/commit/e81d92610194179edd65a3772334fd63365ce0bb))
+- login options spacing ([d0fe378](https://github.com/Profiidev/pleiades/commit/d0fe3789e93e9e570300c20ff933ce10dbbc1d57))
+- sidebar width ([01e4517](https://github.com/Profiidev/pleiades/commit/01e45173b99d92d46cbe185a3f15b825aab3df28))
+
 ## [1.9.2](https://github.com/Profiidev/pleiades/compare/pleiades-v1.9.1...pleiades-v1.9.2) (2026-05-23)
 
 ### Bug Fixes
