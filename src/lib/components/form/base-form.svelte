@@ -81,6 +81,7 @@
     {
       validators: zod4(schema),
       SPA: true,
+      invalidateAll: false,
       onUpdate: async ({ form, cancel }) => {
         if (!form.valid) return;
 
@@ -100,8 +101,8 @@
                 toast.error(ret.error);
               }
             }
+            cancel();
           }
-          cancel();
         }
       }
     }
