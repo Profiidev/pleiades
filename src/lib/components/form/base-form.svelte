@@ -100,8 +100,8 @@
                 toast.error(ret.error);
               }
             }
-            cancel();
           }
+          cancel();
         }
       }
     }
