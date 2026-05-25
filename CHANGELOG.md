@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.9.4](https://github.com/Profiidev/pleiades/compare/pleiades-v1.9.3...pleiades-v1.9.4) (2026-05-25)
+
+
+### Bug Fixes
+
+* form data invalidation ([73e5a72](https://github.com/Profiidev/pleiades/commit/73e5a72376c3de7f3768c37d2054e5ffa199ada8))
+* form data invalidation ([5235b86](https://github.com/Profiidev/pleiades/commit/5235b86acf7a4d21f9ef4009d607b37b9b113f49))
+
 ## [1.9.3](https://github.com/Profiidev/pleiades/compare/pleiades-v1.9.2...pleiades-v1.9.3) (2026-05-25)
 
 ### Bug Fixes
