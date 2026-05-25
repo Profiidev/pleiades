@@ -41,6 +41,7 @@
       <Password.Root>
         {/* @ts-ignore */ null}
         <Password.Input
+          class="h-8"
           {disabled}
           {placeholder}
           {readonly}

@@ -14,7 +14,7 @@
   let { isLoading, passkeyClick, passkeyError }: Props = $props();
 </script>
 
-<FieldSeparator class="*:data-[slot=field-separator-content]:bg-card my-4"
+<FieldSeparator class="*:data-[slot=field-separator-content]:bg-card"
   >Or continue with</FieldSeparator
 >
 <Button
