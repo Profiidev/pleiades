@@ -123,8 +123,8 @@
   <Popover.Content class="p-0">
     <Command.Root>
       <Command.Input placeholder={`Search ${label.toLowerCase()}...`} />
-      <Command.List class="h-full overflow-hidden">
-        <ScrollArea class="max-h-75 overflow-y-auto">
+      <Command.List class="flex overflow-hidden">
+        <ScrollArea class="grow">
           <Command.Empty>No {label} found</Command.Empty>
           {#each filtered as group}
             <Command.Group heading={group.label}>
