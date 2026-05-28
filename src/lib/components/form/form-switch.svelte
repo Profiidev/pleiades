@@ -32,6 +32,7 @@
         {...props}
         {...restProps}
         bind:checked={$formData[key]}
+        {disabled}
         class="ml-auto"
       />
     {/snippet}

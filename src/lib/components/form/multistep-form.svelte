@@ -26,6 +26,7 @@
     retryLabel?: string;
     submitIcon?: Component;
     cancelHref: string;
+    initStep?: number;
   }
 
   let {
@@ -35,10 +36,12 @@
     submitLabel = 'Create',
     submitIcon: SubmitIcon = Plus,
     cancelHref,
-    retryLabel = 'Retry'
+    retryLabel = 'Retry',
+    initStep
   }: Props<T> = $props();
 
-  let stage = $state(0);
+  // svelte-ignore state_referenced_locally
+  let stage = $state(initStep ?? 0);
   let form: undefined | SvelteComponent = $state();
   let isLoading = $state(false);
 
