@@ -37,6 +37,7 @@
           <Checkbox
             {...props}
             {...restProps}
+            {disabled}
             bind:checked={$formData[key]}
             class="mr-2"
           />
@@ -48,6 +49,7 @@
           <Checkbox
             {...props}
             {...restProps}
+            {disabled}
             bind:checked={$formData[key]}
             class="ml-auto"
           />
