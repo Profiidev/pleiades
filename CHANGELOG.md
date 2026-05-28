@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.9.5](https://github.com/Profiidev/pleiades/compare/pleiades-v1.9.4...pleiades-v1.9.5) (2026-05-28)
+
+### Bug Fixes
+
+- form switch disable ([1e966f6](https://github.com/Profiidev/pleiades/commit/1e966f64a41cd9c812b5122f1cabe26c06e3790a))
+- form switch disable ([54a1817](https://github.com/Profiidev/pleiades/commit/54a18178c07ed16c63ec6966b1ef4da5bd99878f))
+- multiselect scroll ([b08e6a3](https://github.com/Profiidev/pleiades/commit/b08e6a3139a49ae7f1232e8e5a235e0f17bc20fc))
+- multiselect scroll ([5f2efbf](https://github.com/Profiidev/pleiades/commit/5f2efbfd0e7b43f1e3221687f719848d5a50f110))
+
 ## [1.9.4](https://github.com/Profiidev/pleiades/compare/pleiades-v1.9.3...pleiades-v1.9.4) (2026-05-25)
 
 ### Bug Fixes
