@@ -85,14 +85,13 @@
       onUpdate: async ({ form, cancel }) => {
         if (!form.valid) return;
 
-        isError = false;
         isLoading = true;
-
         let ret = await onsubmit(form.data);
-
         isLoading = false;
+
         if (ret) {
           if (ret.field) {
+            isError = true;
             setError(form, ret.field as '', ret.error, undefined);
           } else {
             if (ret.error !== '') {
@@ -100,6 +99,8 @@
               if (!noErrorToast) {
                 toast.error(ret.error);
               }
+            } else {
+              isError = false;
             }
             cancel();
           }
