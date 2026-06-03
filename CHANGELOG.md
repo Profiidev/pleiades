@@ -2,10 +2,9 @@
 
 ## [1.9.6](https://github.com/Profiidev/pleiades/compare/pleiades-v1.9.5...pleiades-v1.9.6) (2026-06-03)
 
-
 ### Bug Fixes
 
-* update deps ([d8e8198](https://github.com/Profiidev/pleiades/commit/d8e81988e6006e089525b59562711ee43d41b42a))
+- update deps ([d8e8198](https://github.com/Profiidev/pleiades/commit/d8e81988e6006e089525b59562711ee43d41b42a))
 
 ## [1.9.5](https://github.com/Profiidev/pleiades/compare/pleiades-v1.9.4...pleiades-v1.9.5) (2026-05-28)
 
