@@ -30,7 +30,7 @@
       {#snippet child({ props })}
         <a href="/" {...props}>
           <div
-            class="bg-sidebar-primary text-sidebar-primary-foreground flex aspect-square size-8 items-center justify-center rounded-lg"
+            class="bg-primary text-sidebar-primary-foreground flex aspect-square size-8 items-center justify-center rounded-lg"
           >
             <AppIcon class={cn('size-4 text-[#9db6ed]', iconClass)} />
           </div>
@@ -50,7 +50,7 @@
     >
       <div
         data-open={!isOpen}
-        class="data-[open=true]:bg-sidebar-primary data-[open=true]:text-sidebar-primary-foreground flex aspect-square size-8 items-center justify-center rounded-lg"
+        class="data-[open=true]:bg-primary data-[open=true]:text-sidebar-primary-foreground flex aspect-square size-8 items-center justify-center rounded-lg"
       >
         {#if isOpen}
           <PanelLeftClose class="size-6!" />
