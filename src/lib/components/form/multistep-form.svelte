@@ -25,7 +25,7 @@
     submitLabel?: string;
     retryLabel?: string;
     submitIcon?: Component;
-    cancelHref: string;
+    cancelHref?: string;
     initStep?: number;
   }
 
@@ -121,15 +121,17 @@
                 Previous
               </Button>
             {/if}
-            <Button
-              class="ml-auto cursor-pointer"
-              variant="outline"
-              disabled={isLoading}
-              href={cancelHref}
-            >
-              <Ban />
-              Cancel
-            </Button>
+            {#if cancelHref}
+              <Button
+                class="ml-auto cursor-pointer"
+                variant="outline"
+                disabled={isLoading}
+                href={cancelHref}
+              >
+                <Ban />
+                Cancel
+              </Button>
+            {/if}
             <Button
               class="cursor-pointer"
               type="submit"
