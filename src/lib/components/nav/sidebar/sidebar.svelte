@@ -48,7 +48,7 @@
       <SidebarUser {avatar} {user} {logout} />
     </Sidebar.Footer>
   </Sidebar.Root>
-  <Sidebar.Inset>
+  <Sidebar.Inset class="min-h-0 min-w-0 grow">
     <Sidebar.Trigger
       class="absolute top-5 left-3 flex cursor-pointer md:hidden"
     />
