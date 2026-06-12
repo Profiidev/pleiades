@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.9.7](https://github.com/Profiidev/pleiades/compare/pleiades-v1.9.6...pleiades-v1.9.7) (2026-06-12)
+
+
+### Bug Fixes
+
+* allow empty cancel href for multistep form ([342899a](https://github.com/Profiidev/pleiades/commit/342899a2b834951f5bd9109e9ba49754a7906dd9))
+* allow empty cancel href for multistep form ([ab9bc73](https://github.com/Profiidev/pleiades/commit/ab9bc73b6ea66a225631f9b2df514615a8ccaaac))
+
 ## [1.9.6](https://github.com/Profiidev/pleiades/compare/pleiades-v1.9.5...pleiades-v1.9.6) (2026-06-03)
 
 ### Bug Fixes
