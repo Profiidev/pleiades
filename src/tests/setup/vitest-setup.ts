@@ -1,4 +1,14 @@
 import '@testing-library/jest-dom/vitest';
+import { afterAll } from 'vitest';
+
+// bits-ui's pin-input (TOTP) schedules detached setTimeouts (0/10/50ms) that
+// call `input.dispatchEvent(new Event('input'))`. If the last test's timers
+// fire while jsdom is tearing the file's environment down, the `Event` realm is
+// gone and they throw an unhandled "parameter 1 is not of type 'Event'". Wait
+// past the longest (50ms) timer so they flush while the environment is alive.
+afterAll(async () => {
+  await new Promise((resolve) => setTimeout(resolve, 60));
+});
 
 // Jsdom is missing a few browser APIs that the pleiades/bits-ui components
 // Touch on mount. Stub them so component tests can render.
