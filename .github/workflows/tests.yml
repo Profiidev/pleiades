@@ -22,7 +22,7 @@ jobs:
         if: always()
         with:
           name: test-results-unit
-          path: ${{ github.workspace }}/frontend/test-results-unit.xml
+          path: ${{ github.workspace }}/test-results-unit.xml
           retention-days: 5
 
   comment_results:
