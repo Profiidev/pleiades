@@ -36,7 +36,7 @@ if (!globalThis.DataTransfer) {
     get files(): FileList {
       const input = document.createElement('input');
       input.type = 'file';
-      return input.files as FileList;
+      return input.files!;
     }
   }
   globalThis.DataTransfer = DataTransferStub as never;

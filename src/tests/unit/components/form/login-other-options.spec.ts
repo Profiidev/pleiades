@@ -22,7 +22,7 @@ describe('LoginOtherOptions', () => {
     const { container } = render(LoginOtherOptions, {
       props: { isLoading: true, passkeyClick: () => {}, passkeyError: false }
     });
-    const button = container.querySelector('button') as HTMLButtonElement;
+    const button = container.querySelector('button')!;
     expect(button.disabled).toBe(true);
   });
 
@@ -31,7 +31,7 @@ describe('LoginOtherOptions', () => {
     const { container } = render(LoginOtherOptions, {
       props: { isLoading: false, passkeyClick, passkeyError: false }
     });
-    fireEvent.click(container.querySelector('button') as HTMLButtonElement);
+    fireEvent.click(container.querySelector('button')!);
     expect(passkeyClick).toHaveBeenCalledOnce();
   });
 });

@@ -32,7 +32,7 @@ describe('Totp6', () => {
 
   it('applies the disabled prop', () => {
     const { container } = renderTotp({ disabled: true });
-    const input = container.querySelector('input') as HTMLInputElement;
+    const input = container.querySelector('input')!;
     expect(input.disabled).toBe(true);
   });
 });

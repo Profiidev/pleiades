@@ -14,7 +14,7 @@ describe('TableHead', () => {
     const { container } = render(TableHead, {
       props: { onclick, title: 'Name' }
     });
-    fireEvent.click(container.querySelector('button') as HTMLButtonElement);
+    fireEvent.click(container.querySelector('button')!);
     expect(onclick).toHaveBeenCalledOnce();
   });
 });

@@ -21,7 +21,7 @@ describe('FormInputPassword', () => {
   it('renders the label and a password input bound to the field', () => {
     const { getByText, container } = renderPw();
     expect(getByText('Password')).toBeInTheDocument();
-    const input = container.querySelector('input') as HTMLInputElement;
+    const input = container.querySelector('input')!;
     expect(input).not.toBeNull();
     expect(input.value).toBe('secret');
   });
@@ -45,7 +45,7 @@ describe('FormInputPassword', () => {
       placeholder: 'enter',
       readonly: true
     });
-    const input = container.querySelector('input') as HTMLInputElement;
+    const input = container.querySelector('input')!;
     expect(input.disabled).toBe(true);
     expect(input.readOnly).toBe(true);
     expect(input.placeholder).toBe('enter');

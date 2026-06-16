@@ -19,7 +19,7 @@ describe('FormInput', () => {
       }
     });
     expect(getByText('Name')).toBeInTheDocument();
-    const input = container.querySelector('input') as HTMLInputElement;
+    const input = container.querySelector('input')!;
     expect(input).not.toBeNull();
     expect(input.value).toBe('Alice');
   });
@@ -33,7 +33,7 @@ describe('FormInput', () => {
         schema
       }
     });
-    const input = container.querySelector('input') as HTMLInputElement;
+    const input = container.querySelector('input')!;
     expect(input.disabled).toBe(true);
   });
 
@@ -50,7 +50,7 @@ describe('FormInput', () => {
     });
     form.form.set({ name: 'new' });
     await Promise.resolve();
-    const input = container.querySelector('input') as HTMLInputElement;
+    const input = container.querySelector('input')!;
     expect(get(form.form).name).toBe('new');
     expect(input.value).toBe('new');
   });

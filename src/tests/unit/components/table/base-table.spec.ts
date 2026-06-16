@@ -54,7 +54,7 @@ describe('BaseTable', () => {
       props: { columns: columns(), data, hideFilter: true }
     });
     const input = getByPlaceholderText('Filter entries') as HTMLInputElement;
-    await fireEvent.input(input, { target: { value: 'Alpha' } });
+    fireEvent.input(input, { target: { value: 'Alpha' } });
     expect(queryByText('Alpha')).not.toBeNull();
     expect(queryByText('Beta')).toBeNull();
   });

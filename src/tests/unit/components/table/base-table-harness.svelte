@@ -1,13 +1,16 @@
-<script lang="ts" generics="T">
+<script lang="ts">
   import type { ColumnDef } from '@tanstack/table-core';
   import { createTable } from '$lib/components/table/helpers.svelte';
   import BaseTable from '$lib/components/table/base-table.svelte';
 
   // Builds a real tanstack table (createTable uses $effect.pre, so it must run
-  // inside a component) and renders BaseTable with it.
+  // inside a component) and renders BaseTable with it. Types are intentionally
+  // loose so tests can pass any row shape without fighting generic inference
+  // through `@testing-library`'s `render`.
   interface Props {
-    data: T[];
-    columns: ColumnDef<T>[];
+    data: unknown[];
+    // oxlint-disable-next-line no-explicit-any
+    columns: ColumnDef<any>[];
     filterColumn?: string;
     hideFilter?: boolean;
     isLoading?: boolean;

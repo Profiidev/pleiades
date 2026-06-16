@@ -13,7 +13,7 @@ describe('Datepicker', () => {
     const { container } = render(Datepicker, {
       props: { value: new CalendarDate(2024, 1, 15) }
     });
-    const button = container.querySelector('button') as HTMLButtonElement;
+    const button = container.querySelector('button')!;
     expect(button.textContent).toContain('January');
     expect(button.textContent).toContain('2024');
   });

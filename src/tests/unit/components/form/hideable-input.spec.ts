@@ -31,7 +31,7 @@ describe('HideableInput', () => {
   it('renders the label and readonly input when the field is truthy', () => {
     const { getByTestId, container } = renderHideable(true);
     expect(getByTestId('label-content')).toBeInTheDocument();
-    const input = container.querySelector('input') as HTMLInputElement;
+    const input = container.querySelector('input')!;
     expect(input.value).toBe('abc123');
     expect(input.readOnly).toBe(true);
     expect(input.id).toBe('token-field');

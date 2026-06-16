@@ -47,8 +47,7 @@ describe('Multiselect trigger', () => {
       props: { data: items, disabled: true, label: 'Roles', selected: [] }
     });
     expect(
-      (container.querySelector('[role="combobox"]') as HTMLButtonElement)
-        .disabled
+      container.querySelector<HTMLButtonElement>('[role="combobox"]')!.disabled
     ).toBe(true);
   });
 });

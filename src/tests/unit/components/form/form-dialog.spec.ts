@@ -56,7 +56,7 @@ describe('FormDialog', () => {
     fireEvent.click(getByText('Open'));
     const dialog = await waitFor(() => getByRole('dialog'));
     const confirm = within(dialog).getByRole('button', { name: 'Go' });
-    fireEvent.submit(confirm.closest('form') as HTMLFormElement);
+    fireEvent.submit(confirm.closest('form')!);
     await waitFor(() => expect(onsubmit).toHaveBeenCalled());
   });
 

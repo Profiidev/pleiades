@@ -34,8 +34,6 @@ describe('FormInputTooltip', () => {
 
   it('applies the disabled prop to the input', () => {
     const { container } = renderTooltip({ disabled: true });
-    expect(
-      (container.querySelector('input') as HTMLInputElement).disabled
-    ).toBe(true);
+    expect(container.querySelector('input')!.disabled).toBe(true);
   });
 });

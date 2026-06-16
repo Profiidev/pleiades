@@ -17,7 +17,7 @@ describe('FormFile', () => {
       }
     });
     expect(getByText('Upload')).toBeInTheDocument();
-    const input = container.querySelector('input') as HTMLInputElement;
+    const input = container.querySelector('input')!;
     expect(input.type).toBe('file');
   });
 
@@ -30,8 +30,6 @@ describe('FormFile', () => {
         schema
       }
     });
-    expect(
-      (container.querySelector('input') as HTMLInputElement).disabled
-    ).toBe(true);
+    expect(container.querySelector('input')!.disabled).toBe(true);
   });
 });

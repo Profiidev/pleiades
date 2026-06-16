@@ -1,4 +1,5 @@
 import { vi } from 'vitest';
+import type * as AppForms from '$app/forms';
 
 // Global stubs for SvelteKit's `$app/*` modules so components built on
 // Sveltekit-superforms (which call `beforeNavigate`, subscribe to the `page`
@@ -24,7 +25,7 @@ vi.mock('$app/navigation', () => ({
 // Jsdom; stub just that one export while keeping the real `enhance` (which
 // Superforms' own enhance builds on).
 vi.mock('$app/forms', async (importActual) => {
-  const actual = await importActual<typeof import('$app/forms')>();
+  const actual = await importActual<typeof AppForms>();
   return { ...actual, applyAction: vi.fn(async () => Promise.resolve()) };
 });
 

@@ -20,7 +20,7 @@ afterEach(() => {
 });
 
 const submitForm = (container: HTMLElement) => {
-  const form = container.querySelector('form') as HTMLFormElement;
+  const form = container.querySelector('form')!;
   fireEvent.submit(form);
 };
 
@@ -96,7 +96,7 @@ describe('BaseForm submission', () => {
     const { container } = render(BaseForm, {
       props: { initialValue: { name: '' }, onsubmit, schema }
     });
-    await submitForm(container);
+    submitForm(container);
     await new Promise((r) => setTimeout(r, 50));
     expect(onsubmit).not.toHaveBeenCalled();
   });
@@ -106,7 +106,7 @@ describe('BaseForm submission', () => {
     const { container, getByText } = render(BaseForm, {
       props: { initialValue: { name: 'valid' }, onsubmit, schema }
     });
-    await submitForm(container);
+    submitForm(container);
     await waitFor(() => expect(toastError).toHaveBeenCalledWith('boom'));
     // The button flips to the retry state.
     await waitFor(() => expect(getByText('Retry')).toBeInTheDocument());
@@ -122,7 +122,7 @@ describe('BaseForm submission', () => {
         schema
       }
     });
-    await submitForm(container);
+    submitForm(container);
     await waitFor(() => expect(onsubmit).toHaveBeenCalled());
     expect(toastError).not.toHaveBeenCalled();
   });
@@ -145,7 +145,7 @@ describe('BaseForm submission', () => {
     const { container, queryByText } = render(BaseForm, {
       props: { initialValue: { name: 'valid' }, onsubmit, schema }
     });
-    await submitForm(container);
+    submitForm(container);
     await waitFor(() => expect(onsubmit).toHaveBeenCalled());
     expect(toastError).not.toHaveBeenCalled();
     expect(queryByText('Retry')).toBeNull();

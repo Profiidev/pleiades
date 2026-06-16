@@ -10,7 +10,7 @@ const makeStages = () => [
 ];
 
 const submitStage = (container: HTMLElement) =>
-  fireEvent.submit(container.querySelector('form') as HTMLFormElement);
+  fireEvent.submit(container.querySelector('form')!);
 
 describe('MultistepForm', () => {
   it('renders the first stage title and step badges', () => {

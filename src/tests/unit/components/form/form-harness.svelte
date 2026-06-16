@@ -25,12 +25,15 @@
     bindForm
   }: Props = $props();
 
+  // svelte-ignore state_referenced_locally
   const form = superForm(defaults(initial, zod4(schema) as any), {
+    // svelte-ignore state_referenced_locally
     validators: zod4(schema),
     SPA: true,
     invalidateAll: false
   });
 
+  // svelte-ignore state_referenced_locally
   bindForm?.(form as SuperForm<Record<string, unknown>>);
 </script>
 

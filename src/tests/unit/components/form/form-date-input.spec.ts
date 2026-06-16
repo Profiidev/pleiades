@@ -20,7 +20,7 @@ describe('FormDateInput', () => {
   it('renders the label and a trigger button with the formatted date', () => {
     const { getByText, container } = renderDate();
     expect(getByText('Birthday')).toBeInTheDocument();
-    const button = container.querySelector('button') as HTMLButtonElement;
+    const button = container.querySelector('button')!;
     expect(button).not.toBeNull();
     // Formatted as a localized date – should contain the year.
     expect(button.textContent).toContain('2024');
@@ -28,7 +28,7 @@ describe('FormDateInput', () => {
 
   it('applies the disabled prop to the trigger', () => {
     const { container } = renderDate({ disabled: true });
-    const button = container.querySelector('button') as HTMLButtonElement;
+    const button = container.querySelector('button')!;
     expect(button.disabled).toBe(true);
   });
 });

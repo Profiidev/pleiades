@@ -2,6 +2,7 @@ import { afterEach, describe, expect, it, vi } from 'vitest';
 import { cleanup, render } from '@testing-library/svelte';
 import { fireEvent, waitFor, within } from '@testing-library/dom';
 import { z } from 'zod/v4';
+import type { ComponentProps } from 'svelte';
 import type { ColumnDef } from '@tanstack/table-core';
 import { createColumn } from '$lib/components/table/helpers.svelte';
 import { renderComponent } from '$lib/components/ui/data-table';
@@ -43,26 +44,28 @@ const columns =
     }
   ];
 
-const baseProps = (over: Record<string, unknown> = {}) => ({
-  columnData: undefined,
-  columns: (editFn: (id: string) => void, deleteFn: (id: string) => void) =>
-    columns(editFn, deleteFn)(),
-  createButtonDisabled: false,
-  createItemFn: vi.fn(async () => undefined),
-  createSchema: emptySchema,
-  data,
-  deleteItemFn: vi.fn(async () => undefined),
-  deleteSchema: emptySchema,
-  description: 'Manage widgets',
-  display: (item: Item | undefined) => item?.name,
-  editItemFn: vi.fn(async () => undefined),
-  editSchema: emptySchema,
-  filter_keys: ['name'],
-  label: 'Widget',
-  title: 'Widgets',
-  toId: (item: Item) => item.id,
-  ...over
-});
+const baseProps = (over: Record<string, unknown> = {}) =>
+  ({
+    columnData: undefined,
+    columns: (editFn: (id: string) => void, deleteFn: (id: string) => void) =>
+      columns(editFn, deleteFn)(),
+    createButtonDisabled: false,
+    createItemFn: vi.fn(async () => undefined),
+    createSchema: emptySchema,
+    data,
+    deleteItemFn: vi.fn(async () => undefined),
+    deleteSchema: emptySchema,
+    description: 'Manage widgets',
+    display: (item: Item | undefined) => item?.name,
+    editItemFn: vi.fn(async () => undefined),
+    editSchema: emptySchema,
+    filter_keys: ['name'],
+    label: 'Widget',
+    title: 'Widgets',
+    toId: (item: Item) => item.id,
+    ...over
+    // `render` erases the component's generics; cast to the resolved prop type.
+  }) as unknown as ComponentProps<typeof SimpleTable>;
 
 afterEach(() => {
   cleanup();
@@ -99,7 +102,7 @@ describe('SimpleTable edit', () => {
       '[role="dialog"]'
     ) as HTMLElement;
     const confirm = within(dialog).getByRole('button', { name: 'Confirm' });
-    fireEvent.submit(confirm.closest('form') as HTMLFormElement);
+    fireEvent.submit(confirm.closest('form')!);
     await waitFor(() => expect(editItemFn).toHaveBeenCalled());
     await waitFor(() =>
       expect(toastSuccess).toHaveBeenCalledWith('Widget updated')
@@ -122,7 +125,7 @@ describe('SimpleTable edit', () => {
       '[role="dialog"]'
     ) as HTMLElement;
     const confirm = within(dialog).getByRole('button', { name: 'Confirm' });
-    fireEvent.submit(confirm.closest('form') as HTMLFormElement);
+    fireEvent.submit(confirm.closest('form')!);
     await waitFor(() => expect(editItemFn).toHaveBeenCalled());
     expect(toastSuccess).not.toHaveBeenCalled();
   });
@@ -143,7 +146,7 @@ describe('SimpleTable delete', () => {
       '[role="dialog"]'
     ) as HTMLElement;
     const confirm = within(dialog).getByRole('button', { name: 'Delete' });
-    fireEvent.submit(confirm.closest('form') as HTMLFormElement);
+    fireEvent.submit(confirm.closest('form')!);
     await waitFor(() => expect(deleteItemFn).toHaveBeenCalledWith('1'));
     await waitFor(() =>
       expect(toastSuccess).toHaveBeenCalledWith('Widget deleted')
@@ -163,7 +166,7 @@ describe('SimpleTable delete', () => {
       '[role="dialog"]'
     ) as HTMLElement;
     const confirm = within(dialog).getByRole('button', { name: 'Delete' });
-    fireEvent.submit(confirm.closest('form') as HTMLFormElement);
+    fireEvent.submit(confirm.closest('form')!);
     await waitFor(() => expect(deleteItemFn).toHaveBeenCalled());
     expect(toastSuccess).not.toHaveBeenCalled();
   });
