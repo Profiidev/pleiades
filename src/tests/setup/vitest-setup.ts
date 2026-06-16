@@ -26,6 +26,30 @@ if (!Element.prototype.scrollIntoView) {
   Element.prototype.scrollIntoView = () => {};
 }
 
+// Jsdom has no DataTransfer, which sveltekit-superforms' `fileProxy` constructs
+// To seed an empty FileList for file inputs.
+if (!globalThis.DataTransfer) {
+  class DataTransferStub {
+    items: unknown[] = [];
+    // A fresh file input exposes a genuine (empty) FileList, which jsdom
+    // Requires when assigning to `input.files`.
+    get files(): FileList {
+      const input = document.createElement('input');
+      input.type = 'file';
+      return input.files as FileList;
+    }
+  }
+  globalThis.DataTransfer = DataTransferStub as never;
+}
+
+// Jsdom lacks the CSS Object Model `CSS.supports`, which bits-ui's pin-input
+// (TOTP) probes on mount to detect iOS.
+if (!globalThis.CSS) {
+  globalThis.CSS = { supports: () => false } as never;
+} else if (typeof globalThis.CSS.supports !== 'function') {
+  globalThis.CSS.supports = () => false;
+}
+
 // Jsdom in this runner ships without localStorage; mode-watcher (theming) reads
 // It at import time, so provide an in-memory implementation.
 class MemoryStorage {

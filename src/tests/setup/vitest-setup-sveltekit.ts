@@ -19,6 +19,15 @@ vi.mock('$app/navigation', () => ({
   replaceState: vi.fn()
 }));
 
+// Superforms calls `applyAction` after a (non-cancelled) SPA submit. The real
+// One reaches into SvelteKit's client root component, which doesn't exist under
+// Jsdom; stub just that one export while keeping the real `enhance` (which
+// Superforms' own enhance builds on).
+vi.mock('$app/forms', async (importActual) => {
+  const actual = await importActual<typeof import('$app/forms')>();
+  return { ...actual, applyAction: vi.fn(async () => Promise.resolve()) };
+});
+
 vi.mock('$app/state', () => ({
   navigating: { complete: Promise.resolve(), from: null, to: null, type: null },
   page: {
