@@ -11,5 +11,16 @@
     "src/lib/hooks/**",
     "src/lib/util/**",
     "src/lib/utils.ts"
+  ],
+  "overrides": [
+    {
+      "files": ["**/src/tests/**"],
+      "rules": {
+        "typescript/no-unsafe-type-assertion": "off",
+        "unicorn/no-null": "off",
+        "typescript/explicit-member-accessibility": "off",
+        "eslint/class-methods-use-this": "off"
+      }
+    }
   ]
 }
