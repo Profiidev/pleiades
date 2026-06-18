@@ -40,71 +40,164 @@ afterEach(() => {
   vi.unstubAllGlobals();
 });
 
-describe('connectWebsocket', () => {
-  it('opens a websocket to the updater endpoint', async () => {
-    const { connectWebsocket } = await load();
-    connectWebsocket('alice', () => {});
+describe('createWebsocket', () => {
+  it('exposes connect, disconnect and the updater getter', async () => {
+    const { createWebsocket } = await load();
+    const ws = createWebsocket();
+    expect(typeof ws.connect).toBe('function');
+    expect(typeof ws.disconnect).toBe('function');
+    // No socket opened until connect is called.
+    expect(ws.updater).toBeUndefined();
+    expect(FakeWebSocket.instances).toHaveLength(0);
+  });
+
+  it('returns independent instances with isolated state', async () => {
+    const { createWebsocket } = await load();
+    const a = createWebsocket();
+    const b = createWebsocket();
+    a.connect(() => {});
+    expect(FakeWebSocket.instances).toHaveLength(1);
+    expect(a.updater).toBe(FakeWebSocket.instances[0]);
+    expect(b.updater).toBeUndefined();
+  });
+});
+
+describe('connect', () => {
+  it('opens a websocket to the default updater endpoint', async () => {
+    const { createWebsocket } = await load();
+    const ws = createWebsocket();
+    ws.connect(() => {});
     expect(FakeWebSocket.instances).toHaveLength(1);
     expect(FakeWebSocket.instances[0].url).toBe('/api/ws/updater');
   });
 
+  it('opens a websocket to a custom path when provided', async () => {
+    const { createWebsocket } = await load();
+    const ws = createWebsocket();
+    ws.connect(() => {}, '/api/ws/custom');
+    expect(FakeWebSocket.instances[0].url).toBe('/api/ws/custom');
+  });
+
+  it('exposes the live socket through the updater getter', async () => {
+    const { createWebsocket } = await load();
+    const ws = createWebsocket();
+    ws.connect(() => {});
+    expect(ws.updater).toBe(FakeWebSocket.instances[0]);
+  });
+
   it('parses incoming messages and forwards them to the handler', async () => {
-    const { connectWebsocket } = await load();
+    const { createWebsocket } = await load();
+    const ws = createWebsocket<{ kind: string }>();
     const handler = vi.fn();
-    connectWebsocket('bob', handler);
+    ws.connect(handler);
     FakeWebSocket.instances[0].onmessage?.({
       data: JSON.stringify({ kind: 'ping' })
     });
-    expect(handler).toHaveBeenCalledWith({ kind: 'ping' }, 'bob');
+    expect(handler).toHaveBeenCalledWith({ kind: 'ping' });
   });
 
   it('does not open a second socket while one is connected', async () => {
-    const { connectWebsocket } = await load();
-    connectWebsocket('alice', () => {});
-    connectWebsocket('alice', () => {});
+    const { createWebsocket } = await load();
+    const ws = createWebsocket();
+    ws.connect(() => {});
+    ws.connect(() => {});
     expect(FakeWebSocket.instances).toHaveLength(1);
   });
 
   it('sends a heartbeat every 10 seconds while open', async () => {
-    const { connectWebsocket } = await load();
-    connectWebsocket('alice', () => {});
+    const { createWebsocket } = await load();
+    const ws = createWebsocket();
+    ws.connect(() => {});
     await vi.advanceTimersByTimeAsync(10_000);
     expect(FakeWebSocket.instances[0].sent).toContain('heartbeat');
   });
 
   it('stops the heartbeat once the socket is closed', async () => {
-    const { connectWebsocket } = await load();
-    connectWebsocket('alice', () => {});
-    const ws = FakeWebSocket.instances[0];
-    ws.readyState = ws.CLOSED;
+    const { createWebsocket } = await load();
+    const ws = createWebsocket();
+    ws.connect(() => {});
+    const socket = FakeWebSocket.instances[0];
+    socket.readyState = socket.CLOSED;
     await vi.advanceTimersByTimeAsync(10_000);
-    expect(ws.sent).not.toContain('heartbeat');
+    expect(socket.sent).not.toContain('heartbeat');
+  });
+
+  it('stops the heartbeat once the socket is closing', async () => {
+    const { createWebsocket } = await load();
+    const ws = createWebsocket();
+    ws.connect(() => {});
+    const socket = FakeWebSocket.instances[0];
+    socket.readyState = socket.CLOSING;
+    await vi.advanceTimersByTimeAsync(10_000);
+    expect(socket.sent).not.toContain('heartbeat');
   });
 
   it('reconnects after the socket closes unexpectedly', async () => {
-    const { connectWebsocket } = await load();
-    connectWebsocket('alice', () => {});
-    // Trigger an unexpected close (not via disconnectWebsocket).
+    const { createWebsocket } = await load();
+    const ws = createWebsocket();
+    ws.connect(() => {});
+    // Trigger an unexpected close (not via disconnect).
     FakeWebSocket.instances[0].onclose?.();
     await vi.advanceTimersByTimeAsync(1000);
     expect(FakeWebSocket.instances).toHaveLength(2);
   });
+
+  it('reconnects to the default endpoint, dropping the custom path', async () => {
+    const { createWebsocket } = await load();
+    const ws = createWebsocket();
+    ws.connect(() => {}, '/api/ws/custom');
+    FakeWebSocket.instances[0].onclose?.();
+    await vi.advanceTimersByTimeAsync(1000);
+    expect(FakeWebSocket.instances).toHaveLength(2);
+    expect(FakeWebSocket.instances[1].url).toBe('/api/ws/updater');
+  });
+
+  it('keeps the reconnected socket alive with heartbeats', async () => {
+    const { createWebsocket } = await load();
+    const ws = createWebsocket();
+    ws.connect(() => {});
+    FakeWebSocket.instances[0].onclose?.();
+    await vi.advanceTimersByTimeAsync(1000);
+    await vi.advanceTimersByTimeAsync(10_000);
+    expect(FakeWebSocket.instances[1].sent).toContain('heartbeat');
+  });
 });
 
-describe('disconnectWebsocket', () => {
+describe('disconnect', () => {
   it('closes the socket and prevents reconnection', async () => {
-    const { connectWebsocket, disconnectWebsocket } = await load();
-    connectWebsocket('alice', () => {});
-    disconnectWebsocket();
-    expect(FakeWebSocket.instances[0].readyState).toBe(3);
-    // The close handler ran with disconnect=true, so no new socket appears.
+    const { createWebsocket } = await load();
+    const ws = createWebsocket();
+    ws.connect(() => {});
+    const socket = FakeWebSocket.instances[0];
+    ws.disconnect();
+    expect(socket.readyState).toBe(3);
+    // The close handler ran with disconnected=true, so no new socket appears.
     await vi.advanceTimersByTimeAsync(1000);
     expect(FakeWebSocket.instances).toHaveLength(1);
   });
 
+  it('clears the updater reference', async () => {
+    const { createWebsocket } = await load();
+    const ws = createWebsocket();
+    ws.connect(() => {});
+    ws.disconnect();
+    expect(ws.updater).toBeUndefined();
+  });
+
+  it('stops the heartbeat after disconnecting', async () => {
+    const { createWebsocket } = await load();
+    const ws = createWebsocket();
+    ws.connect(() => {});
+    const socket = FakeWebSocket.instances[0];
+    ws.disconnect();
+    await vi.advanceTimersByTimeAsync(10_000);
+    expect(socket.sent).not.toContain('heartbeat');
+  });
+
   it('is a no-op when nothing is connected', async () => {
-    const { disconnectWebsocket } = await load();
-    expect(() => disconnectWebsocket()).not.toThrow();
+    const { createWebsocket } = await load();
+    const ws = createWebsocket();
+    expect(() => ws.disconnect()).not.toThrow();
     expect(FakeWebSocket.instances).toHaveLength(0);
   });
 });
