@@ -1,5 +1,20 @@
 # Changelog
 
+## [1.10.0](https://github.com/Profiidev/pleiades/compare/pleiades-v1.9.7...pleiades-v1.10.0) (2026-06-18)
+
+
+### Features
+
+* added websocket factory ([e1a2e32](https://github.com/Profiidev/pleiades/commit/e1a2e3202fedf88ab78c01dcc6acc63db88a3ffb))
+* added websocket factory ([1a208b8](https://github.com/Profiidev/pleiades/commit/1a208b87915fa615dc391e59665296d0f1b5593f))
+
+
+### Bug Fixes
+
+* datetime loading ([942581a](https://github.com/Profiidev/pleiades/commit/942581a5b1881185b6d75ddb900e67e82295c85f))
+* datetime loading ([e7e845c](https://github.com/Profiidev/pleiades/commit/e7e845c4110d2a248a6e00272a6de6029797eadb))
+* websocket disconnect ([d04f590](https://github.com/Profiidev/pleiades/commit/d04f59046216bd0b312bb57f79facbecf1a47dd6))
+
 ## [1.9.7](https://github.com/Profiidev/pleiades/compare/pleiades-v1.9.6...pleiades-v1.9.7) (2026-06-12)
 
 ### Bug Fixes
