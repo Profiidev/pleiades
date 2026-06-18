@@ -6,7 +6,6 @@
   import LogOutIcon from '@lucide/svelte/icons/log-out';
   import SettingsIcon from '@lucide/svelte/icons/settings';
   import { goto } from '$app/navigation';
-  import { disconnectWebsocket } from '$lib/backend/updater.svelte';
   import type { SidebarUserInfo } from './types';
   import { Skeleton } from '$lib/components/ui/skeleton';
 
@@ -87,7 +86,6 @@
           class="cursor-pointer"
           onclick={async () => {
             if (!(await logout()).error) {
-              disconnectWebsocket();
               goto('/login?skip=true');
             }
           }}
