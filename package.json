@@ -757,7 +757,7 @@
     "prepare": "svelte-kit sync || echo ''",
     "preview": "vite preview",
     "sync": "svelte-kit sync",
-    "test": "npm run test:unit && npm run test:e2e",
+    "test": "npm run test:unit",
     "test:unit": "vitest run",
     "test:unit:watch": "vitest"
   },

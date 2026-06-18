@@ -16,8 +16,7 @@ describe('backend barrel', () => {
     expect(typeof backend.delete_req).toBe('function');
   });
 
-  it('re-exports the updater helpers', () => {
-    expect(typeof backend.connectWebsocket).toBe('function');
-    expect(typeof backend.disconnectWebsocket).toBe('function');
+  it('re-exports the updater factory', () => {
+    expect(typeof backend.createWebsocket).toBe('function');
   });
 });
