@@ -31,7 +31,7 @@
   }: Props = $props();
 </script>
 
-<Sidebar.Provider>
+<Sidebar.Provider class="h-svh">
   {@const sidebar = Sidebar.useSidebar()}
   <Sidebar.Root
     collapsible="icon"
