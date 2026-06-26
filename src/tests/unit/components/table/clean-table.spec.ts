@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { render } from '@testing-library/svelte';
-import { waitFor } from '@testing-library/dom';
+import { fireEvent, waitFor } from '@testing-library/dom';
 import type { ComponentProps } from 'svelte';
 import { createColumn } from '$lib/components/table/helpers.svelte';
 import CleanTable from '$lib/components/table/clean-table.svelte';
@@ -50,5 +50,36 @@ describe('CleanTable', () => {
       data: Promise.resolve(undefined)
     });
     await waitFor(() => expect(getByText('No results.')).toBeInTheDocument());
+  });
+
+  it('does not render the search input without searchColumns', () => {
+    const { queryByPlaceholderText } = renderClean({
+      columns,
+      data: [{ name: 'Row' }]
+    });
+    expect(queryByPlaceholderText('Search...')).toBeNull();
+  });
+
+  it('renders the search input when searchColumns is set', () => {
+    const { getByPlaceholderText } = renderClean({
+      columns,
+      data: [{ name: 'Row' }],
+      searchColumns: ['name']
+    });
+    expect(getByPlaceholderText('Search...')).toBeInTheDocument();
+  });
+
+  it('filters rows by the search term across searchColumns', async () => {
+    const { getByPlaceholderText, queryByText } = renderClean({
+      columns,
+      data: [{ name: 'Alpha' }, { name: 'Beta' }],
+      searchColumns: ['name']
+    });
+    const input = getByPlaceholderText('Search...') as HTMLInputElement;
+    fireEvent.input(input, { target: { value: 'alph' } });
+    await waitFor(() => {
+      expect(queryByText('Alpha')).not.toBeNull();
+      expect(queryByText('Beta')).toBeNull();
+    });
   });
 });
