@@ -15,6 +15,7 @@
   interface Props {
     table: TableType<T>;
     children?: Snippet;
+    filter?: Snippet;
     filterColumn: string;
     class?: string;
     hideFilter?: boolean;
@@ -24,6 +25,7 @@
   let {
     table,
     children,
+    filter,
     filterColumn,
     class: className,
     hideFilter,
@@ -69,6 +71,9 @@
       </Dropdown.Root>
       {@render children?.()}
     </div>
+  {/if}
+  {#if filter}
+    {@render filter()}
   {/if}
   <ScrollArea class="grid min-h-0 flex-1 rounded-md border" orientation="both">
     <Table.Root

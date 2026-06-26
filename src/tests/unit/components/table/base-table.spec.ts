@@ -49,6 +49,13 @@ describe('BaseTable', () => {
     expect(getByText('Columns')).toBeInTheDocument();
   });
 
+  it('renders the filter snippet when provided', () => {
+    const { getByTestId } = render(Harness, {
+      props: { columns: columns(), data, withFilter: true }
+    });
+    expect(getByTestId('custom-filter')).toBeInTheDocument();
+  });
+
   it('filters rows as the filter input changes', async () => {
     const { getByPlaceholderText, queryByText } = render(Harness, {
       props: { columns: columns(), data, hideFilter: true }

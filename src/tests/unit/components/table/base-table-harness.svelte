@@ -15,6 +15,7 @@
     hideFilter?: boolean;
     isLoading?: boolean;
     class?: string;
+    withFilter?: boolean;
   }
 
   let {
@@ -23,7 +24,8 @@
     filterColumn = 'name',
     hideFilter,
     isLoading,
-    class: className
+    class: className,
+    withFilter
   }: Props = $props();
 
   // A real substring filter so the filter input can be exercised.
@@ -39,4 +41,10 @@
   let table = $derived(createTable(data, columns, filterFn as never));
 </script>
 
-<BaseTable {table} {filterColumn} {hideFilter} {isLoading} class={className} />
+<BaseTable {table} {filterColumn} {hideFilter} {isLoading} class={className}>
+  {#snippet filter()}
+    {#if withFilter}
+      <div data-testid="custom-filter">custom filter</div>
+    {/if}
+  {/snippet}
+</BaseTable>

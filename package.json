@@ -154,6 +154,10 @@
       "types": "./dist/components/form/form-switch.svelte.d.ts",
       "svelte": "./dist/components/form/form-switch.svelte"
     },
+    "./components/form/form-tags.svelte": {
+      "types": "./dist/components/form/form-tags.svelte.d.ts",
+      "svelte": "./dist/components/form/form-tags.svelte"
+    },
     "./components/form/hideable-input.svelte": {
       "types": "./dist/components/form/hideable-input.svelte.d.ts",
       "svelte": "./dist/components/form/hideable-input.svelte"
@@ -664,6 +668,10 @@
     "./components/util/simple-avatar.svelte": {
       "types": "./dist/components/util/simple-avatar.svelte.d.ts",
       "svelte": "./dist/components/util/simple-avatar.svelte"
+    },
+    "./components/util/user-avatar.svelte": {
+      "types": "./dist/components/util/user-avatar.svelte.d.ts",
+      "svelte": "./dist/components/util/user-avatar.svelte"
     },
     "./hooks/is-mac.svelte": {
       "types": "./dist/hooks/is-mac.svelte.d.ts",
