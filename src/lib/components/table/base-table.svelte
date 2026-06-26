@@ -34,7 +34,7 @@
 </script>
 
 <div class={cn('flex w-full flex-col', className)}>
-  {#if hideFilter}
+  {#if !hideFilter}
     <div class="flex items-center py-4">
       <Input
         placeholder="Filter entries"
