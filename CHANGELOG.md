@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.11.0](https://github.com/Profiidev/pleiades/compare/pleiades-v1.10.0...pleiades-v1.11.0) (2026-06-26)
+
+### Features
+
+- added form tags ([483c58f](https://github.com/Profiidev/pleiades/commit/483c58fc6159e555c060d5f65be8c0274d8e66d9))
+- added search to clean table ([8f4dc49](https://github.com/Profiidev/pleiades/commit/8f4dc490e835728978643d0072edc972270c12d2))
+- added user avatar ([41c74bd](https://github.com/Profiidev/pleiades/commit/41c74bdf32fc2e789804180b6119b434490fda8a))
+- new components ([f38aa1e](https://github.com/Profiidev/pleiades/commit/f38aa1ec073153d9dcd500c97b556f2bec819b2f))
+
 ## [1.10.0](https://github.com/Profiidev/pleiades/compare/pleiades-v1.9.7...pleiades-v1.10.0) (2026-06-18)
 
 ### Features
