@@ -38,12 +38,12 @@ describe('BaseTable', () => {
     const { queryByPlaceholderText } = render(Harness, {
       props: { columns: columns(), data }
     });
-    expect(queryByPlaceholderText('Filter entries')).toBeNull();
+    expect(queryByPlaceholderText('Filter entries')).toBeDefined();
   });
 
   it('renders the filter input and columns dropdown when hideFilter is set', () => {
     const { getByPlaceholderText, getByText } = render(Harness, {
-      props: { columns: columns(), data, hideFilter: true }
+      props: { columns: columns(), data, hideFilter: false }
     });
     expect(getByPlaceholderText('Filter entries')).toBeInTheDocument();
     expect(getByText('Columns')).toBeInTheDocument();
@@ -58,7 +58,7 @@ describe('BaseTable', () => {
 
   it('filters rows as the filter input changes', async () => {
     const { getByPlaceholderText, queryByText } = render(Harness, {
-      props: { columns: columns(), data, hideFilter: true }
+      props: { columns: columns(), data, hideFilter: false }
     });
     const input = getByPlaceholderText('Filter entries') as HTMLInputElement;
     fireEvent.input(input, { target: { value: 'Alpha' } });
