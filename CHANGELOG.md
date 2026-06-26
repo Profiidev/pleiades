@@ -2,11 +2,10 @@
 
 ## [1.11.1](https://github.com/Profiidev/pleiades/compare/pleiades-v1.11.0...pleiades-v1.11.1) (2026-06-26)
 
-
 ### Bug Fixes
 
-* table hide filter ([ccb5204](https://github.com/Profiidev/pleiades/commit/ccb52048cb5f787788d6140a90cc55aa94beccb5))
-* table hide filter ([990ab74](https://github.com/Profiidev/pleiades/commit/990ab74b1b9887c6f95b35389a73cc45fba7060c))
+- table hide filter ([ccb5204](https://github.com/Profiidev/pleiades/commit/ccb52048cb5f787788d6140a90cc55aa94beccb5))
+- table hide filter ([990ab74](https://github.com/Profiidev/pleiades/commit/990ab74b1b9887c6f95b35389a73cc45fba7060c))
 
 ## [1.11.0](https://github.com/Profiidev/pleiades/compare/pleiades-v1.10.0...pleiades-v1.11.0) (2026-06-26)
 
