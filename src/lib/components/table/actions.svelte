@@ -13,7 +13,7 @@
   let { edit_disabled, delete_disabled, edit, remove }: Props = $props();
 </script>
 
-<div class="flex w-full space-x-4">
+<div class="mr-1 flex w-full space-x-4">
   <Button
     size="icon"
     variant="secondary"
