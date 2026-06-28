@@ -717,6 +717,14 @@
       "types": "./dist/util/convert.svelte.d.ts",
       "svelte": "./dist/util/convert.svelte.js"
     },
+    "./util/crypto.svelte": {
+      "types": "./dist/util/crypto.svelte.d.ts",
+      "svelte": "./dist/util/crypto.svelte.js"
+    },
+    "./util/info.svelte": {
+      "types": "./dist/util/info.svelte.d.ts",
+      "svelte": "./dist/util/info.svelte.js"
+    },
     "./util/interval.svelte": {
       "types": "./dist/util/interval.svelte.d.ts",
       "svelte": "./dist/util/interval.svelte.js"
