@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.12.0](https://github.com/Profiidev/pleiades/compare/pleiades-v1.11.1...pleiades-v1.12.0) (2026-06-28)
+
+
+### Features
+
+* added user agent utils ([d2eae4c](https://github.com/Profiidev/pleiades/commit/d2eae4c8cc791caf5597d6015a0ea8a6d258a060))
+* added user agent utils ([350b21b](https://github.com/Profiidev/pleiades/commit/350b21baeba9fa9eef3ac5d16125003553004fff))
+
 ## [1.11.1](https://github.com/Profiidev/pleiades/compare/pleiades-v1.11.0...pleiades-v1.11.1) (2026-06-26)
 
 ### Bug Fixes
