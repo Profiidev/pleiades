@@ -18,7 +18,7 @@ jobs:
         run: npm run test:unit -- --reporter junit --reporter default --outputFile test-results-unit.xml
 
       - name: Upload Test Result File
-        uses: actions/upload-artifact@v7
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
         if: always()
         with:
           name: test-results-unit
@@ -38,13 +38,13 @@ jobs:
           client-id: ${{ secrets.COMMIT_BOT_CLIENT_ID }}
           private-key: ${{ secrets.COMMIT_BOT_PRIVATE_KEY }}
       - name: Download Test Results
-        uses: actions/download-artifact@v8
+        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8
         with:
           pattern: test-results-*
           merge-multiple: true
           path: test-results
       - name: Publish Test Results
-        uses: EnricoMi/publish-unit-test-result-action@v2
+        uses: EnricoMi/publish-unit-test-result-action@d0a4676d0e0b938bc201470d88276b7c74c712b3 # v2
         if: always()
         with:
           github_token: ${{ steps.app-token.outputs.token }}
