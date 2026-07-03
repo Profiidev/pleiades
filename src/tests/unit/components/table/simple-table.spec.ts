@@ -117,9 +117,7 @@ describe('SimpleTable edit', () => {
         errorMappings: { [RequestError.Conflict]: { error: 'Already exists' } }
       })
     });
-    fireEvent.click(
-      container.querySelectorAll('tbody button')[0] as HTMLButtonElement
-    );
+    fireEvent.click(container.querySelectorAll('tbody button')[0]);
     await waitFor(() => expect(getByText('Edit Widget')).toBeInTheDocument());
     const dialog = getByText('Edit Widget').closest(
       '[role="dialog"]'
@@ -158,9 +156,7 @@ describe('SimpleTable delete', () => {
     const { container, getByText } = render(SimpleTable, {
       props: baseProps({ deleteItemFn })
     });
-    fireEvent.click(
-      container.querySelectorAll('tbody button')[1] as HTMLButtonElement
-    );
+    fireEvent.click(container.querySelectorAll('tbody button')[1]);
     await waitFor(() => expect(getByText('Delete Widget')).toBeInTheDocument());
     const dialog = getByText('Delete Widget').closest(
       '[role="dialog"]'
