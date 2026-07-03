@@ -816,7 +816,7 @@
   },
   "devDependencies": {
     "@fontsource-variable/geist": "5.2.9",
-    "@jsrepo/transform-oxfmt": "7.0.1",
+    "@jsrepo/transform-oxfmt": "8.0.0",
     "@sveltejs/adapter-auto": "7.0.1",
     "@sveltejs/package": "2.5.8",
     "@sveltejs/vite-plugin-svelte": "7.1.2",
