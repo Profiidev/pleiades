@@ -118,7 +118,7 @@ describe('SimpleTable edit', () => {
       })
     });
     fireEvent.click(
-      container.querySelectorAll('tbody button')[0] as HTMLButtonElement
+      container.querySelectorAll('tbody button')[0]
     );
     await waitFor(() => expect(getByText('Edit Widget')).toBeInTheDocument());
     const dialog = getByText('Edit Widget').closest(
@@ -159,7 +159,7 @@ describe('SimpleTable delete', () => {
       props: baseProps({ deleteItemFn })
     });
     fireEvent.click(
-      container.querySelectorAll('tbody button')[1] as HTMLButtonElement
+      container.querySelectorAll('tbody button')[1]
     );
     await waitFor(() => expect(getByText('Delete Widget')).toBeInTheDocument());
     const dialog = getByText('Delete Widget').closest(
