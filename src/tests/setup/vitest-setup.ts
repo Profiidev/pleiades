@@ -20,7 +20,7 @@ class ResizeObserverStub {
 globalThis.ResizeObserver ??= ResizeObserverStub as never;
 
 if (!globalThis.matchMedia) {
-  globalThis.matchMedia = ((query: string) => ({
+  globalThis.matchMedia = (query: string) => ({
     addEventListener: () => {},
     addListener: () => {},
     dispatchEvent: () => false,
@@ -29,7 +29,7 @@ if (!globalThis.matchMedia) {
     onchange: null,
     removeEventListener: () => {},
     removeListener: () => {}
-  }));
+  });
 }
 
 if (!Element.prototype.scrollIntoView) {

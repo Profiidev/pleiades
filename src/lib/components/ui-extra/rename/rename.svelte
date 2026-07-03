@@ -96,8 +96,7 @@
     <textarea
       bind:this={inputRef}
       bind:value={rootState.editingValue}
-      {...inputProps}
-    ></textarea>
+      {...inputProps}></textarea>
   {:else}
     <input
       bind:this={inputRef}
