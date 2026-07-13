@@ -74,6 +74,7 @@
             <CopyButton
               {...props}
               text={commandText}
+              tabindex={-1}
               class="size-6 [&_svg]:size-3"
             >
               {#snippet icon()}
