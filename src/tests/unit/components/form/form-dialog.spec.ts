@@ -64,6 +64,7 @@ describe('FormDialog', () => {
     const { component } = render(FormDialog, {
       props: baseProps({
         initialValue: { name: 'start' },
+        // oxlint-disable-next-line max-nested-calls
         schema: z.object({ name: z.string() }),
         trigger: { text: 'Open' }
       })

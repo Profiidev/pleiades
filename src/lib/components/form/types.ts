@@ -1,4 +1,5 @@
 import type { Component, ComponentProps, Snippet } from 'svelte';
+// oxlint-disable-next-line prefer-export-from
 import type { ZodValidationSchema } from 'sveltekit-superforms/adapters';
 import type { z } from 'zod/v4';
 import type BaseForm from './base-form.svelte';
