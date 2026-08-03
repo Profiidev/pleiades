@@ -1,9 +1,9 @@
 <script lang="ts">
   import * as Sheet from '$lib/components/ui/sheet/index.js';
   import { cn, type WithElementRef } from '$lib/utils.js';
-  import type { HTMLAttributes } from 'svelte/elements';
   import { SIDEBAR_WIDTH_MOBILE } from './constants.js';
   import { useSidebar } from './context.svelte.js';
+  import type { HTMLAttributes } from 'svelte/elements';
 
   let {
     ref = $bindable(null),
@@ -62,7 +62,7 @@
 {:else}
   <div
     bind:this={ref}
-    class="text-sidebar-foreground group peer hidden md:block"
+    class="group peer text-sidebar-foreground hidden md:block"
     data-state={sidebar.state}
     data-collapsible={sidebar.state === 'collapsed' ? collapsible : ''}
     data-variant={variant}
