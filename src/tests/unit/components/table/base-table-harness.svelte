@@ -1,6 +1,8 @@
 <script lang="ts">
-  import type { ColumnDef } from '@tanstack/table-core';
-  import { createTable } from '$lib/components/table/helpers.svelte';
+  import {
+    type TableColumnDef,
+    createTable
+  } from '$lib/components/table/helpers.svelte';
   import BaseTable from '$lib/components/table/base-table.svelte';
 
   // Builds a real tanstack table (createTable uses $effect.pre, so it must run
@@ -10,7 +12,7 @@
   interface Props {
     data: unknown[];
     // oxlint-disable-next-line no-explicit-any
-    columns: ColumnDef<any>[];
+    columns: TableColumnDef<any>[];
     filterColumn?: string;
     hideFilter?: boolean;
     isLoading?: boolean;

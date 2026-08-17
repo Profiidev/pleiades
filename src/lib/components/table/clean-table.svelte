@@ -1,7 +1,10 @@
-<script lang="ts" generics="T, CD">
-  import { createTable } from '$lib/components/table/helpers.svelte';
-  import type { ColumnDef } from '@tanstack/table-core';
+<script lang="ts" generics="T extends RowData, CD">
+  import {
+    type TableColumnDef,
+    createTable
+  } from '$lib/components/table/helpers.svelte';
   import BaseTable from './base-table.svelte';
+  import type { RowData } from '@tanstack/svelte-table';
   import Input from '../ui/input/input.svelte';
 
   type Props = {
@@ -10,11 +13,11 @@
     searchColumns?: (keyof T)[];
   } & (
     | {
-        columns: (columnData: CD) => ColumnDef<T>[];
+        columns: (columnData: CD) => TableColumnDef<T>[];
         columnData: CD;
       }
     | {
-        columns: () => ColumnDef<T>[];
+        columns: () => TableColumnDef<T>[];
         columnData?: undefined;
       }
   );

@@ -1,12 +1,16 @@
 <script
   lang="ts"
-  generics="CV extends ZodValidationSchema, EV extends ZodValidationSchema, DV extends ZodValidationSchema, T, CD"
+  generics="CV extends ZodValidationSchema, EV extends ZodValidationSchema, DV extends ZodValidationSchema, T extends RowData, CD"
 >
   import type { Error, FormValue } from '../form/types.js';
-  import { createTable } from '../table/helpers.svelte';
+  import {
+    type TableColumnDef,
+    type TableRow,
+    createTable
+  } from '../table/helpers.svelte';
   import Table from '../table/base-table.svelte';
+  import type { RowData } from '@tanstack/svelte-table';
   import { toast } from 'svelte-sonner';
-  import type { ColumnDef, Row } from '@tanstack/table-core';
   import { RequestError } from '$lib/backend/types.svelte';
   import type { Snippet, SvelteComponent } from 'svelte';
   import type { SuperForm } from 'sveltekit-superforms';
@@ -20,7 +24,7 @@
       editFn: (id: string) => void,
       deleteFn: (id: string) => void,
       data: CD
-    ) => ColumnDef<T>[];
+    ) => TableColumnDef<T>[];
     label: string;
     createItemFn: (form: FormValue<CV>) => Promise<RequestError | undefined>;
     editItemFn: (item: T) => Promise<RequestError | undefined>;
@@ -99,11 +103,11 @@
   let deleteOpen = $state(false);
 
   let editComp: SvelteComponent | undefined = $state();
-  let setEditValue: (value: { [key: string]: string }) => void = $derived(
+  let setEditValue: (value: T) => void = $derived(
     editComp?.setValue || (() => {})
   );
 
-  const filterFn = (row: Row<T>, id: string, filterValues: any) => {
+  const filterFn = (row: TableRow<T>, id: string, filterValues: any) => {
     const info = filter_keys
       .map((k) => (row.original as any)[k] as string)
       .filter(Boolean)

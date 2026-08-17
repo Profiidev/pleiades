@@ -73,6 +73,7 @@
 
   let isError = $state(false);
 
+  // svelte-ignore state_referenced_locally
   let form = superForm(
     defaults(
       initialValue,

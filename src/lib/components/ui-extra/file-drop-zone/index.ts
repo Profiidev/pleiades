@@ -1,7 +1,9 @@
 import Root from '$lib/components/ui-extra/file-drop-zone/file-drop-zone.svelte';
 import Trigger from '$lib/components/ui-extra/file-drop-zone/file-drop-zone-trigger.svelte';
 import Textarea from '$lib/components/ui-extra/file-drop-zone/file-drop-zone-textarea.svelte';
+import DragOverlay from '$lib/components/ui-extra/file-drop-zone/file-drop-zone-drag-overlay.svelte';
 import type {
+  FileDropZoneDragOverlayProps,
   FileDropZoneRootProps,
   FileRejectedReason
 } from '$lib/components/ui-extra/file-drop-zone/types';
@@ -31,6 +33,8 @@ export {
   Root,
   Trigger,
   Textarea,
+  DragOverlay,
   type FileDropZoneRootProps,
+  type FileDropZoneDragOverlayProps,
   type FileRejectedReason
 };
