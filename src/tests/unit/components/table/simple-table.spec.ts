@@ -3,9 +3,11 @@ import { cleanup, render } from '@testing-library/svelte';
 import { fireEvent, waitFor, within } from '@testing-library/dom';
 import { z } from 'zod/v4';
 import type { ComponentProps } from 'svelte';
-import type { ColumnDef } from '@tanstack/table-core';
-import { createColumn } from '$lib/components/table/helpers.svelte';
-import { renderComponent } from '$lib/components/ui/data-table';
+import { renderComponent } from '@tanstack/svelte-table';
+import {
+  type TableColumnDef,
+  createColumn
+} from '$lib/components/table/helpers.svelte';
 import Actions from '$lib/components/table/actions.svelte';
 import SimpleTable from '$lib/components/table/simple-table.svelte';
 import { RequestError } from '$lib/backend/types.svelte';
@@ -30,7 +32,7 @@ const emptySchema = z.object({});
 
 const columns =
   (editFn: (id: string) => void, deleteFn: (id: string) => void) =>
-  (): ColumnDef<Item>[] => [
+  (): TableColumnDef<Item>[] => [
     createColumn<string, Item>('name', 'Name'),
     {
       cell: ({ row }) =>

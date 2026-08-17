@@ -1,9 +1,16 @@
 import { afterEach, describe, expect, it, vi } from 'vitest';
-import type { ColumnDef, Row } from '@tanstack/table-core';
 import {
+  createPaginatedRowModel,
+  rowPaginationFeature,
+  tableFeatures
+} from '@tanstack/svelte-table';
+import {
+  type TableColumnDef,
+  type TableRow,
   createColumn,
   createColumnCell,
-  createColumnHeader
+  createColumnHeader,
+  defaultFeatures
 } from '$lib/components/table/helpers.svelte';
 import { type TableHarness, makeTable } from './helpers-harness.svelte';
 
@@ -12,7 +19,7 @@ interface Item {
   age: number;
 }
 
-const keyOf = (col: ColumnDef<Item>) =>
+const keyOf = (col: TableColumnDef<Item>) =>
   (col as { accessorKey?: string }).accessorKey;
 
 describe('createColumnHeader', () => {
@@ -57,7 +64,7 @@ describe('createColumnCell', () => {
 
   it('renders the raw value when no formatter is given', () => {
     const col = createColumnCell<string, Item>('name');
-    const row = { getValue: () => 'Alice' } as unknown as Row<Item>;
+    const row = { getValue: () => 'Alice' } as unknown as TableRow<Item>;
     const snippet = (col.cell as (ctx: unknown) => unknown)({ row });
     expect(snippet).toBeDefined();
   });
@@ -65,7 +72,7 @@ describe('createColumnCell', () => {
   it('applies the formatter to the value', () => {
     const formatter = vi.fn((v: number) => `#${v}`);
     const col = createColumnCell<number, Item>('age', formatter);
-    const row = { getValue: () => 7 } as unknown as Row<Item>;
+    const row = { getValue: () => 7 } as unknown as TableRow<Item>;
     (col.cell as (ctx: unknown) => unknown)({ row });
     // Formatter runs lazily inside the snippet render; the cell wiring is what
     // We can assert synchronously here.
@@ -100,7 +107,7 @@ describe('createTable', () => {
   it('applies sorting state changes through the updater', () => {
     harness = makeTable(data, columns());
     harness.table.setSorting([{ desc: false, id: 'name' }]);
-    expect(harness.table.getState().sorting).toEqual([
+    expect(harness.table.store.get().sorting).toEqual([
       { desc: false, id: 'name' }
     ]);
   });
@@ -108,23 +115,41 @@ describe('createTable', () => {
   it('applies column visibility changes through the updater', () => {
     harness = makeTable(data, columns());
     harness.table.setColumnVisibility({ name: false });
-    expect(harness.table.getState().columnVisibility).toEqual({ name: false });
+    expect(harness.table.store.get().columnVisibility).toEqual({ name: false });
   });
 
   it('applies column filter changes through the updater', () => {
     harness = makeTable(data, columns());
     harness.table.setColumnFilters([{ id: 'name', value: 'Bob' }]);
-    expect(harness.table.getState().columnFilters).toEqual([
+    expect(harness.table.store.get().columnFilters).toEqual([
       { id: 'name', value: 'Bob' }
     ]);
   });
 
-  it('accepts a direct (non-function) state updater', () => {
+  it('accepts a functional state updater', () => {
     harness = makeTable(data, columns());
-    // Passing a value (not a function) exercises the else branch.
-    harness.table.options.onSortingChange?.([{ desc: true, id: 'age' }]);
-    expect(harness.table.getState().sorting).toEqual([
+    harness.table.setSorting(() => [{ desc: true, id: 'age' }]);
+    expect(harness.table.store.get().sorting).toEqual([
       { desc: true, id: 'age' }
     ]);
+  });
+
+  it('accepts a feature set extending the defaults', () => {
+    const features = tableFeatures({
+      ...defaultFeatures,
+      paginatedRowModel: createPaginatedRowModel(),
+      rowPaginationFeature
+    });
+    const paginated = makeTable<Item, typeof features>(
+      data,
+      [createColumn<string, Item, typeof features>('name', 'Name')],
+      undefined,
+      features
+    );
+
+    paginated.table.setPageSize(1);
+    expect(paginated.table.getPageCount()).toBe(2);
+    expect(paginated.table.getPaginatedRowModel().rows).toHaveLength(1);
+    paginated.cleanup();
   });
 });

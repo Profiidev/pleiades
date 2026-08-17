@@ -501,10 +501,6 @@
       "types": "./dist/components/ui/context-menu/index.d.ts",
       "svelte": "./dist/components/ui/context-menu/index.js"
     },
-    "./components/ui/data-table": {
-      "types": "./dist/components/ui/data-table/index.d.ts",
-      "svelte": "./dist/components/ui/data-table/index.js"
-    },
     "./components/ui/dialog": {
       "types": "./dist/components/ui/dialog/index.d.ts",
       "svelte": "./dist/components/ui/dialog/index.js"
@@ -784,7 +780,7 @@
     "@shikijs/langs": "^4.0.0",
     "@shikijs/themes": "^4.0.0",
     "@tailwindcss/vite": "^4.0.0",
-    "@tanstack/table-core": "^9.0.0",
+    "@tanstack/svelte-table": "^9.0.0",
     "@types/luxon": "^3.0.0",
     "@zxcvbn-ts/core": "^4.0.0",
     "@zxcvbn-ts/language-common": "^4.0.0",
