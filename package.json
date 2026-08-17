@@ -765,7 +765,7 @@
     "dev": "vite dev",
     "format": "oxfmt",
     "lint": "oxfmt --check",
-    "prepack": "svelte-kit sync && svelte-package && publint",
+    "prepack": "svelte-kit sync && svelte-package --tsconfig ./tsconfig.package.json && publint",
     "prepare": "svelte-kit sync || echo ''",
     "preview": "vite preview",
     "sync": "svelte-kit sync",
