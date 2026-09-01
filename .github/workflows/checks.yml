@@ -30,7 +30,7 @@ jobs:
           private-key: ${{ secrets.COMMIT_BOT_PRIVATE_KEY }}
 
       - name: Run linters
-        uses: profiidev/rust-lint-action@790d64dd437b648791344cbb590636ae3a47c923 # v4
+        uses: profiidev/rust-lint-action@6592fe2b81f52c155bc416c51b6a860196a96f48 # v4
         with:
           auto_fix: true
           svelte: true
