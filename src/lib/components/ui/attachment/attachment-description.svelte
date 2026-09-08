@@ -7,14 +7,18 @@
     class: className,
     children,
     ...restProps
-  }: WithElementRef<HTMLAttributes<HTMLDivElement>> = $props();
+  }: WithElementRef<HTMLAttributes<HTMLSpanElement>> = $props();
 </script>
 
-<div
+<span
   bind:this={ref}
-  data-slot="drawer-header"
-  class={cn('flex flex-col gap-0.5 p-4 md:gap-0.5 md:text-left', className)}
+  data-slot="attachment-description"
+  class={cn(
+    'text-muted-foreground group-data-[state=error]/attachment:text-destructive/80 mt-0.5 block min-w-0 truncate text-xs',
+    'max-w-full',
+    className
+  )}
   {...restProps}
 >
   {@render children?.()}
-</div>
+</span>

@@ -12,8 +12,11 @@
 
 <div
   bind:this={ref}
-  data-slot="drawer-header"
-  class={cn('flex flex-col gap-0.5 p-4 md:gap-0.5 md:text-left', className)}
+  data-slot="attachment-content"
+  class={cn(
+    'max-w-full min-w-0 flex-1 leading-tight group-data-[orientation=vertical]/attachment:px-1',
+    className
+  )}
   {...restProps}
 >
   {@render children?.()}

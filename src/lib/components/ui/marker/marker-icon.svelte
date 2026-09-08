@@ -7,14 +7,15 @@
     class: className,
     children,
     ...restProps
-  }: WithElementRef<HTMLAttributes<HTMLDivElement>> = $props();
+  }: WithElementRef<HTMLAttributes<HTMLSpanElement>> = $props();
 </script>
 
-<div
+<span
   bind:this={ref}
-  data-slot="drawer-header"
-  class={cn('flex flex-col gap-0.5 p-4 md:gap-0.5 md:text-left', className)}
+  data-slot="marker-icon"
+  aria-hidden="true"
+  class={cn("size-4 shrink-0 [&_svg:not([class*='size-'])]:size-4", className)}
   {...restProps}
 >
   {@render children?.()}
-</div>
+</span>

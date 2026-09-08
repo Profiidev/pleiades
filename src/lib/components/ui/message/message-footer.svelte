@@ -12,8 +12,11 @@
 
 <div
   bind:this={ref}
-  data-slot="drawer-header"
-  class={cn('flex flex-col gap-0.5 p-4 md:gap-0.5 md:text-left', className)}
+  data-slot="message-footer"
+  class={cn(
+    'text-muted-foreground flex max-w-full min-w-0 items-center px-3 text-xs font-medium group-has-data-[variant=ghost]/message:px-0 group-data-[align=end]/message:justify-end',
+    className
+  )}
   {...restProps}
 >
   {@render children?.()}

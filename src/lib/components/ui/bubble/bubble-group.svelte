@@ -12,8 +12,8 @@
 
 <div
   bind:this={ref}
-  data-slot="drawer-header"
-  class={cn('flex flex-col gap-0.5 p-4 md:gap-0.5 md:text-left', className)}
+  data-slot="bubble-group"
+  class={cn('flex min-w-0 flex-col gap-2', className)}
   {...restProps}
 >
   {@render children?.()}
