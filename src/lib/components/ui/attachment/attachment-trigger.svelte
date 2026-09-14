@@ -14,10 +14,7 @@
   } = $props();
 
   const mergedProps = $derived({
-    class: cn(
-      'absolute inset-0 z-10 outline-none absolute inset-0 z-10 outline-none',
-      className
-    ),
+    class: cn('absolute inset-0 z-10 outline-none', className),
     'data-slot': 'attachment-trigger',
     ...restProps
   });

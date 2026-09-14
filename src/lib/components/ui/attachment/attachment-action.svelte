@@ -16,6 +16,6 @@
   data-slot="attachment-action"
   {variant}
   {size}
-  class={cn('cn-attachment-action', className)}
+  class={cn(className)}
   {...restProps}
 />

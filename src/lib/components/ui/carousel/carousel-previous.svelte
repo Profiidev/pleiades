@@ -34,6 +34,6 @@
   {...restProps}
   bind:ref
 >
-  <ChevronLeftIcon />
+  <ChevronLeftIcon class="cn-rtl-flip" />
   <span class="sr-only">Previous slide</span>
 </Button>
