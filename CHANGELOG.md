@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.13.0](https://github.com/Profiidev/pleiades/compare/pleiades-v1.12.1...pleiades-v1.13.0) (2026-09-21)
+
+
+### Features
+
+* new components ([27177ff](https://github.com/Profiidev/pleiades/commit/27177ffc1752a8420f25929b5dd0b7bb223037eb))
+* new components ([2f29c47](https://github.com/Profiidev/pleiades/commit/2f29c47490388756553a063fe194c7675385b1cd))
+
 ## [1.12.1](https://github.com/Profiidev/pleiades/compare/pleiades-v1.12.0...pleiades-v1.12.1) (2026-09-01)
 
 ### Miscellaneous Chores
