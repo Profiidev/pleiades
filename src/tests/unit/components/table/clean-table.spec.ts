@@ -33,6 +33,7 @@ describe('CleanTable', () => {
   });
 
   it('passes columnData through to the columns factory', () => {
+    // oxlint-disable-next-line consistent-function-scoping
     const columnsWithData = (prefix: string) => [
       createColumn<string, Item>('name', `${prefix} Name`)
     ];
