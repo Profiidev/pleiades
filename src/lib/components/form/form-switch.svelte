@@ -10,7 +10,8 @@
   interface Props {
     formData: SuperForm<S>;
     key: FormPath<S>;
-    label: string;
+    /** Visible label; omit it for an unlabelled field and pass `aria-label` instead. */
+    label?: string;
     disabled?: boolean;
   }
 
@@ -28,7 +29,9 @@
 <Form.Field {form} name={key} class="mt-2 flex w-full items-center">
   <Form.Control>
     {#snippet children({ props })}
-      <Form.Label>{label}</Form.Label>
+      {#if label}
+        <Form.Label>{label}</Form.Label>
+      {/if}
       <Switch
         {...props}
         {...restProps}

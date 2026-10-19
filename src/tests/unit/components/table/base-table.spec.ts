@@ -20,6 +20,39 @@ describe('BaseTable', () => {
     expect(getByText('Beta')).toBeInTheDocument();
   });
 
+  it('renders cell values as text, never as HTML', () => {
+    const payload = '<img src=x onerror="alert(1)"> & \'quoted\'';
+    const { container, getByText } = render(Harness, {
+      props: { columns: columns(), data: [{ name: payload }] }
+    });
+    expect(getByText(payload)).toBeInTheDocument();
+    expect(container.querySelector('img')).toBeNull();
+  });
+
+  it('renders non-string values without a formatter', () => {
+    const { getByText } = render(Harness, {
+      props: {
+        columns: [createColumn<number, { n: number }>('n', 'N')],
+        data: [{ n: 42 }],
+        filterColumn: 'n'
+      }
+    });
+    expect(getByText('42')).toBeInTheDocument();
+  });
+
+  it('escapes formatter output too', () => {
+    const { container, getByText } = render(Harness, {
+      props: {
+        columns: [
+          createColumn<string, Item>('name', 'Name', (v) => `<b>${v}</b>`)
+        ],
+        data: [{ name: 'x' }]
+      }
+    });
+    expect(getByText('<b>x</b>')).toBeInTheDocument();
+    expect(container.querySelector('b')).toBeNull();
+  });
+
   it('shows the empty placeholder when there are no rows', () => {
     const { getByText } = render(Harness, {
       props: { columns: columns(), data: [] }
