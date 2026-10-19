@@ -17,15 +17,13 @@
   import RotateCCW from '@lucide/svelte/icons/rotate-ccw';
   import type { ButtonVariant } from '../ui/button/index.js';
   import { cn } from '../../utils.js';
-  import type { Error, FormEnctype, FormValue } from './types.js';
+  import type { FormEnctype, FormValue, SubmitHandler } from './types.js';
   import { toast } from 'svelte-sonner';
 
   interface Props {
     schema: V;
     initialValue?: Partial<FormValue<V>>;
-    onsubmit: (
-      form: FormValue<V>
-    ) => Error<V> | undefined | void | Promise<Error<V> | undefined | void>;
+    onsubmit: SubmitHandler<V>;
     children?: Snippet<
       [{ props: { formData: SuperForm<FormValue<V>>; disabled: boolean } }]
     >;

@@ -7,6 +7,8 @@ import FormInput from '$lib/components/form/form-input.svelte';
 import Harness from './form-harness.svelte';
 
 const schema = z.object({ name: z.string() });
+const row = z.object({ name: z.string() });
+const rowsSchema = z.object({ rows: z.array(row) });
 
 describe('FormInput', () => {
   it('renders the label and an input bound to the field value', () => {
@@ -63,7 +65,7 @@ describe('FormInput', () => {
         component: FormInput,
         initial: { rows: [{ name: 'a' }, { name: 'b' }] },
         props: { key: 'rows[1].name', label: 'Name' },
-        schema: z.object({ rows: z.array(z.object({ name: z.string() })) })
+        schema: rowsSchema
       }
     });
     const input = container.querySelector('input')!;

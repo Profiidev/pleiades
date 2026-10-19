@@ -13,6 +13,8 @@ vi.mock('svelte-sonner', () => ({
 }));
 
 const schema = z.object({ name: z.string().min(1) });
+const row = z.object({ name: z.string() });
+const rowsSchema = z.object({ rows: z.array(row) });
 
 afterEach(() => {
   cleanup();
@@ -31,7 +33,7 @@ describe('BaseForm nested data', () => {
       props: {
         initialValue: { rows: [{ name: 'a' }] },
         onsubmit,
-        schema: z.object({ rows: z.array(z.object({ name: z.string() })) })
+        schema: rowsSchema
       }
     });
     submitForm(container);

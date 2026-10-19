@@ -64,4 +64,31 @@ describe('MultistepForm', () => {
     });
     expect(container.querySelectorAll('[data-slot="badge"]').length).toBe(0);
   });
+
+  it('merges a custom class over the default card width', () => {
+    const { container } = render(MultistepForm, {
+      props: { class: 'w-full', onsubmit: vi.fn(), stages: makeStages() }
+    });
+    const card = container.querySelector('[data-slot="card"]')!;
+    expect(card.classList).toContain('w-full');
+    expect(card.classList).not.toContain('w-120');
+  });
+
+  it('applies new stage data when the stages prop is replaced', async () => {
+    const onsubmit = vi.fn();
+    const { container, rerender } = render(MultistepForm, {
+      props: { onsubmit, stages: makeStages() }
+    });
+    const imported = [
+      { content: TestStage, data: { a: 10 }, title: 'Step One' },
+      { content: TestStage, data: { b: 20 }, title: 'Step Two' }
+    ];
+    await rerender({ onsubmit, stages: imported });
+    submitStage(container);
+    await waitFor(() => expect(container.textContent).toContain('Step Two'));
+    submitStage(container);
+    await waitFor(() =>
+      expect(onsubmit).toHaveBeenCalledWith({ a: 10, b: 20 })
+    );
+  });
 });
