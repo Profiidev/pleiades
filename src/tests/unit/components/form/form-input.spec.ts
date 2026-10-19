@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { render } from '@testing-library/svelte';
+import { fireEvent, render } from '@testing-library/svelte';
 import { z } from 'zod/v4';
 import { get } from 'svelte/store';
 import type { SuperForm } from 'sveltekit-superforms';
@@ -53,5 +53,22 @@ describe('FormInput', () => {
     const input = container.querySelector('input')!;
     expect(get(form.form).name).toBe('new');
     expect(input.value).toBe('new');
+  });
+
+  it('binds nested keys like rows[1].name', async () => {
+    let form!: SuperForm<Record<string, unknown>>;
+    const { container } = render(Harness, {
+      props: {
+        bindForm: (f: SuperForm<Record<string, unknown>>) => (form = f),
+        component: FormInput,
+        initial: { rows: [{ name: 'a' }, { name: 'b' }] },
+        props: { key: 'rows[1].name', label: 'Name' },
+        schema: z.object({ rows: z.array(z.object({ name: z.string() })) })
+      }
+    });
+    const input = container.querySelector('input')!;
+    expect(input.value).toBe('b');
+    await fireEvent.input(input, { target: { value: 'c' } });
+    expect(get(form.form).rows).toEqual([{ name: 'a' }, { name: 'c' }]);
   });
 });

@@ -1,4 +1,5 @@
 <script lang="ts" generics="S extends FormRecord = FormRecord">
+  import { fieldProxy } from 'sveltekit-superforms';
   import * as Form from '$lib/components/ui/form';
   import {
     type FormPath,
@@ -28,7 +29,7 @@
     children: child
   }: Props = $props();
 
-  let formData = $derived(form.form);
+  let field = $derived(fieldProxy(form, key));
 </script>
 
 <Form.Field {form} name={key} class="gap-1/2 grid">
@@ -46,7 +47,7 @@
           {placeholder}
           {readonly}
           {...props}
-          bind:value={$formData[key]}
+          bind:value={$field}
         >
           <Password.ToggleVisibility />
         </Password.Input>

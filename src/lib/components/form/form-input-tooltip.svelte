@@ -1,4 +1,5 @@
 <script lang="ts" generics="S extends FormRecord = FormRecord">
+  import { fieldProxy } from 'sveltekit-superforms';
   import * as Form from '$lib/components/ui/form';
   import {
     type FormPath,
@@ -41,7 +42,7 @@
     ...restProps
   }: InputProps & Props = $props();
 
-  let formData = $derived(form.form);
+  let field = $derived(fieldProxy(form, key));
 </script>
 
 <Form.Field {form} name={key} class="gap-1/2 grid">
@@ -62,7 +63,7 @@
           </Tooltip.Provider>
         {/if}
       </div>
-      <Input {disabled} {...props} {...restProps} bind:value={$formData[key]} />
+      <Input {disabled} {...props} {...restProps} bind:value={$field} />
     {/snippet}
   </Form.Control>
   <Form.FieldErrors />

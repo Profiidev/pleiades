@@ -24,6 +24,23 @@ const submitForm = (container: HTMLElement) => {
   fireEvent.submit(form);
 };
 
+describe('BaseForm nested data', () => {
+  it('accepts arrays of objects (dataType json) and submits them', async () => {
+    const onsubmit = vi.fn();
+    const { container } = render(BaseForm, {
+      props: {
+        initialValue: { rows: [{ name: 'a' }] },
+        onsubmit,
+        schema: z.object({ rows: z.array(z.object({ name: z.string() })) })
+      }
+    });
+    submitForm(container);
+    await waitFor(() =>
+      expect(onsubmit).toHaveBeenCalledWith({ rows: [{ name: 'a' }] })
+    );
+  });
+});
+
 describe('BaseForm rendering', () => {
   it('renders the default submit button', () => {
     const { getByText } = render(BaseForm, {

@@ -1,4 +1,5 @@
 <script lang="ts" generics="S extends FormRecord = FormRecord">
+  import { fieldProxy } from 'sveltekit-superforms';
   import type {
     FormRecord,
     SuperForm,
@@ -18,10 +19,10 @@
 
   const { formData: form, key, id, value, children }: Props = $props();
 
-  let formData = $derived(form.form);
+  let field = $derived(fieldProxy(form, key));
 </script>
 
-{#if $formData[key]}
+{#if $field}
   <Label for={id} class="flex">
     {@render children()}
   </Label>

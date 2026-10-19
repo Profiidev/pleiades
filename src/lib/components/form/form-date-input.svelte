@@ -1,4 +1,5 @@
 <script lang="ts" generics="S extends FormRecord = FormRecord">
+  import { fieldProxy } from 'sveltekit-superforms';
   import * as Calendar from '$lib/components/ui/calendar';
   import * as Popover from '$lib/components/ui/popover';
   import * as Form from '$lib/components/ui/form';
@@ -16,7 +17,6 @@
     FormRecord,
     SuperForm
   } from '$lib/components/form/types';
-  import { get } from 'svelte/store';
 
   interface Props {
     formData: SuperForm<S>;
@@ -39,9 +39,9 @@
   }: Props = $props();
 
   let open = $state(false);
-  let formData = $derived(form.form);
+  let field = $derived(fieldProxy(form, key));
   let date = $derived(
-    toCalendarDate(fromDate($formData[key] as Date, getLocalTimeZone()))
+    toCalendarDate(fromDate($field as Date, getLocalTimeZone()))
   );
 </script>
 
@@ -82,13 +82,11 @@
             weekStartsOn={new Intl.Locale(navigator.language).getWeekInfo()
               .firstDay}
             onValueChange={(val) => {
-              formData.set({
-                ...get(formData),
-                [key]:
-                  val instanceof CalendarDate
-                    ? val.toDate(getLocalTimeZone())
-                    : null
-              });
+              field.set(
+                (val instanceof CalendarDate
+                  ? val.toDate(getLocalTimeZone())
+                  : null) as typeof $field
+              );
               open = false;
             }}
             {minValue}

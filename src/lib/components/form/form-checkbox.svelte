@@ -1,4 +1,5 @@
 <script lang="ts" generics="S extends FormRecord = FormRecord">
+  import { fieldProxy } from 'sveltekit-superforms';
   import { Checkbox } from '$lib/components/ui/checkbox';
   import * as Form from '$lib/components/ui/form';
   import type {
@@ -26,7 +27,7 @@
     ...restProps
   }: Props & WithoutChildrenOrChild<CheckboxPrimitive.RootProps> = $props();
 
-  let formData: any = $derived(form.form);
+  let field: any = $derived(fieldProxy(form, key));
 </script>
 
 <Form.Field {form} name={key} class="mt-2 flex w-full flex-col">
@@ -38,7 +39,7 @@
             {...props}
             {...restProps}
             {disabled}
-            bind:checked={$formData[key]}
+            bind:checked={$field}
             class="mr-2"
           />
           <Form.Label>{label}</Form.Label>
@@ -50,7 +51,7 @@
             {...props}
             {...restProps}
             {disabled}
-            bind:checked={$formData[key]}
+            bind:checked={$field}
             class="ml-auto"
           />
         </div>

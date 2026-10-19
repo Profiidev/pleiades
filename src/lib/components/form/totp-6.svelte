@@ -1,4 +1,5 @@
 <script lang="ts" generics="S extends FormRecord = FormRecord">
+  import { fieldProxy } from 'sveltekit-superforms';
   import * as InputOtp from '../ui/input-otp/index.js';
   import * as Form from '../ui/form/index.js';
   import type { FormPath, SuperForm } from 'sveltekit-superforms';
@@ -20,7 +21,7 @@
     disabled
   }: Props = $props();
 
-  let formData = $derived(form.form);
+  let field = $derived(fieldProxy(form, key));
 </script>
 
 <Form.Field {form} name={key}>
@@ -30,7 +31,7 @@
       {/* @ts-ignore */ null}
       <InputOtp.Root
         maxlength={6}
-        bind:value={$formData[key]}
+        bind:value={$field}
         class={className}
         autofocus
         {disabled}

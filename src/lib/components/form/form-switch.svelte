@@ -1,4 +1,5 @@
 <script lang="ts" generics="S extends FormRecord = FormRecord">
+  import { fieldProxy } from 'sveltekit-superforms';
   import { Switch } from '../ui/switch/index.js';
   import * as Form from '../ui/form/index.js';
   import type { FormPath, SuperForm } from 'sveltekit-superforms';
@@ -21,7 +22,7 @@
     ...restProps
   }: Props & WithoutChildrenOrChild<SwitchPrimitive.RootProps> = $props();
 
-  let formData: any = $derived(form.form);
+  let field: any = $derived(fieldProxy(form, key));
 </script>
 
 <Form.Field {form} name={key} class="mt-2 flex w-full items-center">
@@ -31,7 +32,7 @@
       <Switch
         {...props}
         {...restProps}
-        bind:checked={$formData[key]}
+        bind:checked={$field}
         {disabled}
         class="ml-auto"
       />

@@ -51,6 +51,8 @@
     class?: string;
     enctype?: FormEnctype;
     noErrorToast?: boolean;
+    /** 'json' allows nested objects/arrays of objects in the form value. */
+    dataType?: 'form' | 'json';
     submitText?: string;
     retryText?: string;
     submitIcon?: Component;
@@ -66,6 +68,7 @@
     class: className,
     enctype,
     noErrorToast,
+    dataType = 'json',
     submitText = 'Submit',
     retryText = 'Retry',
     submitIcon
@@ -82,6 +85,7 @@
     {
       validators: zod4(schema),
       SPA: true,
+      dataType,
       invalidateAll: false,
       onUpdate: async ({ form, cancel }) => {
         if (!form.valid) return;
