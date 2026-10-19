@@ -30,6 +30,7 @@
     // svelte-ignore state_referenced_locally
     validators: zod4(schema),
     SPA: true,
+    dataType: 'json',
     invalidateAll: false
   });
 

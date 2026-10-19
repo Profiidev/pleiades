@@ -13,6 +13,8 @@ vi.mock('svelte-sonner', () => ({
 }));
 
 const schema = z.object({ name: z.string().min(1) });
+const row = z.object({ name: z.string() });
+const rowsSchema = z.object({ rows: z.array(row) });
 
 afterEach(() => {
   cleanup();
@@ -23,6 +25,23 @@ const submitForm = (container: HTMLElement) => {
   const form = container.querySelector('form')!;
   fireEvent.submit(form);
 };
+
+describe('BaseForm nested data', () => {
+  it('accepts arrays of objects (dataType json) and submits them', async () => {
+    const onsubmit = vi.fn();
+    const { container } = render(BaseForm, {
+      props: {
+        initialValue: { rows: [{ name: 'a' }] },
+        onsubmit,
+        schema: rowsSchema
+      }
+    });
+    submitForm(container);
+    await waitFor(() =>
+      expect(onsubmit).toHaveBeenCalledWith({ rows: [{ name: 'a' }] })
+    );
+  });
+});
 
 describe('BaseForm rendering', () => {
   it('renders the default submit button', () => {

@@ -1,4 +1,5 @@
 <script lang="ts" generics="S extends FormRecord = FormRecord">
+  import { fieldProxy } from 'sveltekit-superforms';
   import * as Form from '../ui/form/index.js';
   import { type FormPath, type SuperForm } from 'sveltekit-superforms';
   import { Input } from '../ui/input/index.js';
@@ -34,14 +35,14 @@
     ...restProps
   }: InputProps & Props = $props();
 
-  let formData = $derived(form.form);
+  let field = $derived(fieldProxy(form, key));
 </script>
 
 <Form.Field {form} name={key} class="gap-1/2 grid">
   <Form.Control>
     {#snippet children({ props })}
       <Form.Label>{label}</Form.Label>
-      <Input {disabled} {...props} {...restProps} bind:value={$formData[key]} />
+      <Input {disabled} {...props} {...restProps} bind:value={$field} />
     {/snippet}
   </Form.Control>
   <Form.FieldErrors />

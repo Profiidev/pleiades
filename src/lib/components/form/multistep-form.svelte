@@ -15,6 +15,7 @@
     type Stage
   } from '$lib/components/form/types';
   import type { Component, SvelteComponent } from 'svelte';
+  import { cn } from '$lib/utils';
 
   interface Props<T> {
     stages: Stage<T>[];
@@ -27,6 +28,8 @@
     submitIcon?: Component;
     cancelHref?: string;
     initStep?: number;
+    /** Classes for the card, merged over the default `w-120`. */
+    class?: string;
   }
 
   let {
@@ -37,7 +40,8 @@
     submitIcon: SubmitIcon = Plus,
     cancelHref,
     retryLabel = 'Retry',
-    initStep
+    initStep,
+    class: className
   }: Props<T> = $props();
 
   // svelte-ignore state_referenced_locally
@@ -55,10 +59,7 @@
     if (stage < stages.length - 1) {
       stage += 1;
     } else {
-      let rawData = stages
-        // last element is summary
-        .filter((_, i) => i < stages.length)
-        .reduce((acc, s) => ({ ...acc, ...s.data }), {});
+      let rawData = stages.reduce((acc, s) => ({ ...acc, ...s.data }), {});
 
       return onsubmit(rawData);
     }
@@ -67,7 +68,7 @@
 </script>
 
 <div class="flex h-full items-center justify-center p-4">
-  <Card.Root class="w-120">
+  <Card.Root class={cn('w-120', className)}>
     <Card.Header class="flex flex-col gap-4">
       {#if stages.length > 1}
         <div class="flex gap-2">
@@ -95,66 +96,69 @@
     </Card.Header>
     <Card.Content>
       {@const current = stages[stage]}
-      <current.content
-        bind:this={form}
-        initialValue={current.data}
-        onsubmit={submit}
-        bind:isLoading
-        {data}
-      >
-        {#snippet footer({ isLoading, isError })}
-          <Card.Footer
-            class="w-full gap-2 border-none bg-transparent px-0 pt-0"
-          >
-            {#if stages.length > 1}
+      <!-- remount per stage object so a swapped `stages` prop re-applies `data` as initialValue -->
+      {#key current}
+        <current.content
+          bind:this={form}
+          initialValue={current.data}
+          onsubmit={submit}
+          bind:isLoading
+          {data}
+        >
+          {#snippet footer({ isLoading, isError })}
+            <Card.Footer
+              class="w-full gap-2 border-none bg-transparent px-0 pt-0"
+            >
+              {#if stages.length > 1}
+                <Button
+                  class="cursor-pointer"
+                  variant="outline"
+                  disabled={stage === 0 || isLoading}
+                  onclick={() => {
+                    if (stage > 0) {
+                      gotoStep(stage - 1);
+                    }
+                  }}
+                >
+                  <ArrowLeft />
+                  Previous
+                </Button>
+              {/if}
+              {#if cancelHref}
+                <Button
+                  class="ml-auto cursor-pointer"
+                  variant="outline"
+                  disabled={isLoading}
+                  href={cancelHref}
+                >
+                  <Ban />
+                  Cancel
+                </Button>
+              {/if}
               <Button
                 class="cursor-pointer"
-                variant="outline"
-                disabled={stage === 0 || isLoading}
-                onclick={() => {
-                  if (stage > 0) {
-                    gotoStep(stage - 1);
-                  }
-                }}
-              >
-                <ArrowLeft />
-                Previous
-              </Button>
-            {/if}
-            {#if cancelHref}
-              <Button
-                class="ml-auto cursor-pointer"
-                variant="outline"
+                type="submit"
                 disabled={isLoading}
-                href={cancelHref}
+                variant={isError ? 'destructive' : undefined}
               >
-                <Ban />
-                Cancel
-              </Button>
-            {/if}
-            <Button
-              class="cursor-pointer"
-              type="submit"
-              disabled={isLoading}
-              variant={isError ? 'destructive' : undefined}
-            >
-              {#if stage === stages.length - 1}
-                {isError ? retryLabel : submitLabel}
-                {#if isLoading}
-                  <Spinner />
-                {:else if isError}
-                  <RotateCCW />
+                {#if stage === stages.length - 1}
+                  {isError ? retryLabel : submitLabel}
+                  {#if isLoading}
+                    <Spinner />
+                  {:else if isError}
+                    <RotateCCW />
+                  {:else}
+                    <SubmitIcon />
+                  {/if}
                 {:else}
-                  <SubmitIcon />
+                  Next
+                  <ArrowRight />
                 {/if}
-              {:else}
-                Next
-                <ArrowRight />
-              {/if}
-            </Button>
-          </Card.Footer>
-        {/snippet}
-      </current.content>
+              </Button>
+            </Card.Footer>
+          {/snippet}
+        </current.content>
+      {/key}
     </Card.Content>
   </Card.Root>
 </div>

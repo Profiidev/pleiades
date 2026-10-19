@@ -1,4 +1,5 @@
 <script lang="ts" generics="T, S extends FormRecord = FormRecord">
+  import { fieldProxy } from 'sveltekit-superforms';
   import * as Form from '$lib/components/ui/form';
   import { type FormPath, type SuperForm } from 'sveltekit-superforms';
   import type { FormRecord } from '$lib/components/form/types';
@@ -26,7 +27,7 @@
     placeholder
   }: Props = $props();
 
-  let formData = $derived(form.form);
+  let field = $derived(fieldProxy(form, key));
 </script>
 
 <Form.Field {form} name={key} class="gap-1/2 grid">
@@ -36,7 +37,7 @@
       {/* @ts-ignore */ null}
       <TagsInput
         {placeholder}
-        bind:value={$formData[key]}
+        bind:value={$field}
         {suggestions}
         {validate}
         {disabled}

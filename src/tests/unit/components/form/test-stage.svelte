@@ -19,7 +19,11 @@
     isLoading = $bindable(false)
   }: Props = $props();
 
-  export const getValue = () => initialValue ?? {};
+  // Snapshot like BaseForm: initialValue is only read on mount.
+  // svelte-ignore state_referenced_locally
+  const initial = initialValue;
+
+  export const getValue = () => initial ?? {};
 
   const handle = (e: SubmitEvent) => {
     e.preventDefault();
