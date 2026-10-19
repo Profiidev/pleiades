@@ -75,6 +75,11 @@ export const createColumnHeader = <
       })
   });
 
+// Cell values come from app data (user/egg names, ...) and are rendered via a raw snippet.
+// Escape them so they are never parsed as HTML.
+const escapeHtml = (value: string) =>
+  value.replaceAll(/[&<>"']/gu, (char) => `&#${char.codePointAt(0)};`);
+
 export const createColumnCell = <
   // oxlint-disable-next-line no-unnecessary-type-parameters
   T,
@@ -93,13 +98,13 @@ export const createColumnCell = <
         if (formatter) {
           value = formatter(value_raw);
         } else {
-          // oxlint-disable-next-line no-unsafe-type-assertion
-          value = value_raw as string;
+          // Raw values may be numbers etc.; stringify instead of asserting.
+          value = String(value_raw);
         }
 
         return {
           render: () =>
-            `<div class="ml-4 truncate h-full w-full text-wrap">${value}</div>`
+            `<div class="ml-4 truncate h-full w-full text-wrap">${escapeHtml(value)}</div>`
         };
       });
 
