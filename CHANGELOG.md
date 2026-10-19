@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.13.1](https://github.com/Profiidev/pleiades/compare/pleiades-v1.13.0...pleiades-v1.13.1) (2026-10-19)
+
+### Bug Fixes
+
+- **deps:** update all non-major dependencies ([#308](https://github.com/Profiidev/pleiades/issues/308)) ([106e6cf](https://github.com/Profiidev/pleiades/commit/106e6cf8f985b0fe3783cae1b66bd23a89fec072))
+- form bindings ([7cca161](https://github.com/Profiidev/pleiades/commit/7cca1612c59ff03e284e93eca2e3286d8068dd01))
+- form bindings ([79ac9cf](https://github.com/Profiidev/pleiades/commit/79ac9cf50ebad601661af1cdd7f351d57a5a2199))
+- some minor issues ([2ce6dba](https://github.com/Profiidev/pleiades/commit/2ce6dba5605b57419bc1c88d6cb128f3075533f4))
+
 ## [1.13.0](https://github.com/Profiidev/pleiades/compare/pleiades-v1.12.1...pleiades-v1.13.0) (2026-09-21)
 
 ### Features
