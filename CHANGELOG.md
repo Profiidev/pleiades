@@ -2,12 +2,11 @@
 
 ## [1.13.2](https://github.com/Profiidev/pleiades/compare/pleiades-v1.13.1...pleiades-v1.13.2) (2026-10-19)
 
-
 ### Bug Fixes
 
-* optional form label ([e2737e0](https://github.com/Profiidev/pleiades/commit/e2737e059f01bfb91faa533dfb4ce07c2b7f4abf))
-* **table:** escape cell values to prevent HTML injection ([3daf505](https://github.com/Profiidev/pleiades/commit/3daf505b6fe9cd0851e3c49bd21f21c093f61d22))
-* **table:** escape cell values to prevent HTML injection ([48ec16b](https://github.com/Profiidev/pleiades/commit/48ec16bfcb347545716aedadcbbdd745835293ec))
+- optional form label ([e2737e0](https://github.com/Profiidev/pleiades/commit/e2737e059f01bfb91faa533dfb4ce07c2b7f4abf))
+- **table:** escape cell values to prevent HTML injection ([3daf505](https://github.com/Profiidev/pleiades/commit/3daf505b6fe9cd0851e3c49bd21f21c093f61d22))
+- **table:** escape cell values to prevent HTML injection ([48ec16b](https://github.com/Profiidev/pleiades/commit/48ec16bfcb347545716aedadcbbdd745835293ec))
 
 ## [1.13.1](https://github.com/Profiidev/pleiades/compare/pleiades-v1.13.0...pleiades-v1.13.1) (2026-10-19)
 
