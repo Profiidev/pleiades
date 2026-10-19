@@ -15,7 +15,8 @@
   interface Props {
     formData: SuperForm<S>;
     key: FormPathLeaves<S, File>;
-    label: string;
+    /** Visible label; omit it for an unlabelled field and pass `aria-label` instead. */
+    label?: string;
     disabled?: boolean;
   }
 
@@ -34,7 +35,9 @@
 <Form.Field {form} name={key} class="gap-1/2 grid">
   <Form.Control>
     {#snippet children({ props })}
-      <Form.Label>{label}</Form.Label>
+      {#if label}
+        <Form.Label>{label}</Form.Label>
+      {/if}
       <Input
         {disabled}
         {...props}

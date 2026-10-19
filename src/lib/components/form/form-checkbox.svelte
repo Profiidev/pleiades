@@ -13,7 +13,8 @@
   interface Props {
     formData: SuperForm<S>;
     key: FormPath<S>;
-    label: string;
+    /** Visible label; omit it for an unlabelled field and pass `aria-label` instead. */
+    label?: string;
     disabled?: boolean;
     switchOrder?: boolean;
   }
@@ -42,11 +43,15 @@
             bind:checked={$field}
             class="mr-2"
           />
-          <Form.Label>{label}</Form.Label>
+          {#if label}
+            <Form.Label>{label}</Form.Label>
+          {/if}
         </div>
       {:else}
         <div class="flex">
-          <Form.Label>{label}</Form.Label>
+          {#if label}
+            <Form.Label>{label}</Form.Label>
+          {/if}
           <Checkbox
             {...props}
             {...restProps}

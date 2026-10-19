@@ -54,4 +54,17 @@ describe('FormTextarea', () => {
     await fireEvent.input(textarea, { target: { value: 'b' } });
     expect(get(form.form).rows).toEqual([{ bio: 'b' }]);
   });
+
+  it('renders no label element when label is omitted', () => {
+    const { container, getByLabelText } = render(Harness, {
+      props: {
+        component: FormTextarea,
+        initial: { bio: 'x' },
+        props: { 'aria-label': 'Unlabelled', key: 'bio' },
+        schema
+      }
+    });
+    expect(container.querySelector('label')).toBeNull();
+    expect(getByLabelText('Unlabelled').tagName).toBe('TEXTAREA');
+  });
 });

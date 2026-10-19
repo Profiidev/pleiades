@@ -73,4 +73,17 @@ describe('FormInput', () => {
     await fireEvent.input(input, { target: { value: 'c' } });
     expect(get(form.form).rows).toEqual([{ name: 'a' }, { name: 'c' }]);
   });
+
+  it('renders no label element when label is omitted', () => {
+    const { container, getByLabelText } = render(Harness, {
+      props: {
+        component: FormInput,
+        initial: { name: 'x' },
+        props: { 'aria-label': 'Unlabelled', key: 'name' },
+        schema
+      }
+    });
+    expect(container.querySelector('label')).toBeNull();
+    expect(getByLabelText('Unlabelled').tagName).toBe('INPUT');
+  });
 });

@@ -28,7 +28,8 @@
   interface Props {
     formData: SuperForm<S>;
     key: FormPath<S>;
-    label: string;
+    /** Visible label; omit it for an unlabelled field and pass `aria-label` instead. */
+    label?: string;
     disabled?: boolean;
     tooltip?: string;
   }
@@ -49,7 +50,9 @@
   <Form.Control>
     {#snippet children({ props })}
       <div class="flex gap-2">
-        <Form.Label>{label}</Form.Label>
+        {#if label}
+          <Form.Label>{label}</Form.Label>
+        {/if}
         {#if tooltip}
           <Tooltip.Provider>
             <Tooltip.Root>
