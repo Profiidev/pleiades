@@ -501,6 +501,10 @@
       "types": "./dist/components/ui/checkbox/index.d.ts",
       "svelte": "./dist/components/ui/checkbox/index.js"
     },
+    "./components/ui/code-block": {
+      "types": "./dist/components/ui/code-block/index.d.ts",
+      "svelte": "./dist/components/ui/code-block/index.js"
+    },
     "./components/ui/collapsible": {
       "types": "./dist/components/ui/collapsible/index.d.ts",
       "svelte": "./dist/components/ui/collapsible/index.js"
@@ -577,6 +581,10 @@
       "types": "./dist/components/ui/message/index.d.ts",
       "svelte": "./dist/components/ui/message/index.js"
     },
+    "./components/ui/message-scroller": {
+      "types": "./dist/components/ui/message-scroller/index.d.ts",
+      "svelte": "./dist/components/ui/message-scroller/index.js"
+    },
     "./components/ui/native-select": {
       "types": "./dist/components/ui/native-select/index.d.ts",
       "svelte": "./dist/components/ui/native-select/index.js"
@@ -596,6 +604,10 @@
     "./components/ui/progress": {
       "types": "./dist/components/ui/progress/index.d.ts",
       "svelte": "./dist/components/ui/progress/index.js"
+    },
+    "./components/ui/questionnaire": {
+      "types": "./dist/components/ui/questionnaire/index.d.ts",
+      "svelte": "./dist/components/ui/questionnaire/index.js"
     },
     "./components/ui/radio-group": {
       "types": "./dist/components/ui/radio-group/index.d.ts",
@@ -673,6 +685,10 @@
       "types": "./dist/components/ui/tooltip/index.d.ts",
       "svelte": "./dist/components/ui/tooltip/index.js"
     },
+    "./components/ui/trace": {
+      "types": "./dist/components/ui/trace/index.d.ts",
+      "svelte": "./dist/components/ui/trace/index.js"
+    },
     "./components/util/datepicker.svelte": {
       "types": "./dist/components/util/datepicker.svelte.d.ts",
       "svelte": "./dist/components/util/datepicker.svelte"
@@ -688,6 +704,10 @@
     "./components/util/user-avatar.svelte": {
       "types": "./dist/components/util/user-avatar.svelte.d.ts",
       "svelte": "./dist/components/util/user-avatar.svelte"
+    },
+    "./highlighter": {
+      "types": "./dist/highlighter.d.ts",
+      "svelte": "./dist/highlighter.js"
     },
     "./hooks/is-mac.svelte": {
       "types": "./dist/hooks/is-mac.svelte.d.ts",
@@ -712,6 +732,10 @@
     "./hooks/use-frecency.svelte": {
       "types": "./dist/hooks/use-frecency.svelte.d.ts",
       "svelte": "./dist/hooks/use-frecency.svelte.js"
+    },
+    "./hooks/use-highlighted-code.svelte": {
+      "types": "./dist/hooks/use-highlighted-code.svelte.d.ts",
+      "svelte": "./dist/hooks/use-highlighted-code.svelte.js"
     },
     "./hooks/use-media.svelte": {
       "types": "./dist/hooks/use-media.svelte.d.ts",
