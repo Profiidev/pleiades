@@ -10,7 +10,8 @@
     "src/lib/components/ui-extra/**",
     "src/lib/hooks/**",
     "src/lib/util/**",
-    "src/lib/utils.ts"
+    "src/lib/utils.ts",
+    "src/lib/highlighter.ts"
   ],
   "overrides": [
     {
