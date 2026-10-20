@@ -33,6 +33,7 @@ export const createWebsocket = <T>() => {
       connectWebsocket(handleMessage);
     };
 
+    // oxlint-disable-next-line no-unsafe-type-assertion
     interval = setInterval(() => {
       if (
         !updater ||
@@ -44,7 +45,6 @@ export const createWebsocket = <T>() => {
       }
 
       updater.send('heartbeat');
-      // oxlint-disable-next-line no-unsafe-type-assertion
     }, 10_000) as unknown as number;
   };
 
