@@ -12,9 +12,5 @@
     "module": "esnext",
     "moduleResolution": "bundler"
   },
-  "exclude": [
-    "node_modules/**",
-    "src/lib/components/ui/**",
-    "src/lib/components/ui-extra/**"
-  ]
+  "exclude": ["node_modules/**", "src/lib/components/ui-extra/**"]
 }
