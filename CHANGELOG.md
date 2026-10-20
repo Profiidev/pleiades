@@ -2,11 +2,10 @@
 
 ## [1.14.0](https://github.com/Profiidev/pleiades/compare/pleiades-v1.13.2...pleiades-v1.14.0) (2026-10-20)
 
-
 ### Features
 
-* new components ([e1c81b8](https://github.com/Profiidev/pleiades/commit/e1c81b8abf2ab48e9a6c57fabd245f5316ecc00e))
-* new components ([e5d9aa8](https://github.com/Profiidev/pleiades/commit/e5d9aa86ae44594f4b91803517df79b78daa88b5))
+- new components ([e1c81b8](https://github.com/Profiidev/pleiades/commit/e1c81b8abf2ab48e9a6c57fabd245f5316ecc00e))
+- new components ([e5d9aa8](https://github.com/Profiidev/pleiades/commit/e5d9aa86ae44594f4b91803517df79b78daa88b5))
 
 ## [1.13.2](https://github.com/Profiidev/pleiades/compare/pleiades-v1.13.1...pleiades-v1.13.2) (2026-10-19)
 
