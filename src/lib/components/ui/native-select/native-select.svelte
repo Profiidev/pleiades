@@ -4,7 +4,7 @@
   import type { HTMLSelectAttributes } from 'svelte/elements';
 
   type NativeSelectProps = Omit<
-    WithElementRef<HTMLSelectAttributes>,
+    WithElementRef<HTMLSelectAttributes, HTMLSelectElement>,
     'size'
   > & {
     size?: 'sm' | 'default';
