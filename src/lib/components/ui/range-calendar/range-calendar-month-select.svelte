@@ -30,7 +30,7 @@
             value={monthItem.value}
             selected={value !== undefined
               ? monthItem.value === value
-              : monthItem.value === selectedMonthItem.value}
+              : monthItem.value === selectedMonthItem?.value}
           >
             {monthItem.label}
           </option>
@@ -41,7 +41,7 @@
         aria-hidden="true"
       >
         {monthItems.find((item) => item.value === value)?.label ||
-          selectedMonthItem.label}
+          selectedMonthItem?.label}
         <ChevronDownIcon class={cn('size-4', className)} />
       </span>
     {/snippet}
