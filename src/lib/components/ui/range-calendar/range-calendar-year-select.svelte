@@ -29,7 +29,7 @@
             value={yearItem.value}
             selected={value !== undefined
               ? yearItem.value === value
-              : yearItem.value === selectedYearItem.value}
+              : yearItem.value === selectedYearItem?.value}
           >
             {yearItem.label}
           </option>
@@ -40,7 +40,8 @@
         aria-hidden="true"
       >
         {yearItems.find((item) => item.value === value)?.label ||
-          selectedYearItem.label}
+          selectedYearItem?.label ||
+          value}
         <ChevronDownIcon class={cn('size-4', className)} />
       </span>
     {/snippet}
