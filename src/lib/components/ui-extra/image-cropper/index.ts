@@ -30,5 +30,6 @@ export type {
   ImageCropperPreviewPropsWithoutHTML,
   ImageCropperPreviewProps,
   ImageCropperUploadTriggerPropsWithoutHTML,
-  ImageCropperUploadTriggerProps
+  ImageCropperUploadTriggerProps,
+  ImageCropperOutputType
 } from '$lib/components/ui-extra/image-cropper/types';
