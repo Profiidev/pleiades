@@ -26,6 +26,10 @@
       "types": "./dist/actions/active.svelte.d.ts",
       "svelte": "./dist/actions/active.svelte.js"
     },
+    "./actions/shortcut.svelte": {
+      "types": "./dist/actions/shortcut.svelte.d.ts",
+      "svelte": "./dist/actions/shortcut.svelte.js"
+    },
     "./actions/typewriter.svelte": {
       "types": "./dist/actions/typewriter.svelte.d.ts",
       "svelte": "./dist/actions/typewriter.svelte.js"
