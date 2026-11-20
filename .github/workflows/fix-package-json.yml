@@ -16,6 +16,8 @@ jobs:
           client-id: ${{ secrets.COMMIT_BOT_CLIENT_ID }}
           private-key: ${{ secrets.COMMIT_BOT_PRIVATE_KEY }}
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          ref: ${{ github.head_ref }}
       - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7
         with:
           node-version: 26
@@ -29,10 +31,7 @@ jobs:
           npx oxlint --fix
           npx oxfmt package.json
 
-      - uses: planetscale/ghcommit-action@a6b150b81dca5dd027baa898604418eec9e11465 # v0.2.22
+      - uses: profiidev/commit-action@63224804083710db4aa5286dc201bca8e71b0858 # v1.0.0
         with:
           commit_message: "chore: fix package.json exports"
-          repo: ${{ github.repository }}
-          branch: ${{ github.head_ref || github.ref_name }}
-        env:
-          GITHUB_TOKEN: ${{ steps.app-token.outputs.token }}
+          github_token: ${{ steps.app-token.outputs.token }}
