@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.14.0](https://github.com/Profiidev/pleiades/compare/pleiades-v1.13.2...pleiades-v1.14.0) (2026-11-26)
+
+### Features
+
+- new components ([e1c81b8](https://github.com/Profiidev/pleiades/commit/e1c81b8abf2ab48e9a6c57fabd245f5316ecc00e))
+- new components ([e5d9aa8](https://github.com/Profiidev/pleiades/commit/e5d9aa86ae44594f4b91803517df79b78daa88b5))
+
+### Bug Fixes
+
+- **ci:** find junit.xml when only one test artifact is downloaded ([3a48def](https://github.com/Profiidev/pleiades/commit/3a48defcbae2283fd95a12f9866ebb302bfb1303))
+- declare every package imported from src/lib as a dependency ([e8b452b](https://github.com/Profiidev/pleiades/commit/e8b452b848c08621f0e24f511f529f74992c7912))
+- declare every package imported from src/lib as a dependency ([ee413c8](https://github.com/Profiidev/pleiades/commit/ee413c869ad54d2b7a14c74a1ccf198b21ff01a2))
+
 ## [1.13.2](https://github.com/Profiidev/pleiades/compare/pleiades-v1.13.1...pleiades-v1.13.2) (2026-10-19)
 
 ### Bug Fixes
