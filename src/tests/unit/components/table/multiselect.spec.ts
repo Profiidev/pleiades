@@ -1,7 +1,7 @@
 import { describe, expect, it, vi } from 'vitest';
 import { render } from '@testing-library/svelte';
 import { fireEvent, waitFor } from '@testing-library/dom';
-import Multiselect from '$lib/components/table/multiselect.svelte';
+import Multiselect from '#lib/components/table/multiselect.svelte';
 
 const items = [
   { label: 'Admin', value: 'admin' },

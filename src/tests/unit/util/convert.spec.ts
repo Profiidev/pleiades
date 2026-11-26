@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest';
 import {
   arrayBufferToBase64,
   base64ToArrayBuffer
-} from '$lib/util/convert.svelte';
+} from '#lib/util/convert.svelte.js';
 
 describe('arrayBufferToBase64', () => {
   it('encodes an empty buffer to an empty string', () => {

@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { render } from '@testing-library/svelte';
-import SimpleAvatar from '$lib/components/util/simple-avatar.svelte';
+import SimpleAvatar from '#lib/components/util/simple-avatar.svelte';
 
 describe('SimpleAvatar', () => {
   it('renders the avatar fallback and applies the class', () => {

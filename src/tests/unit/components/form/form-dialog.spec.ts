@@ -2,7 +2,7 @@ import { afterEach, describe, expect, it, vi } from 'vitest';
 import { cleanup, render } from '@testing-library/svelte';
 import { fireEvent, waitFor, within } from '@testing-library/dom';
 import { z } from 'zod/v4';
-import FormDialog from '$lib/components/form/form-dialog.svelte';
+import FormDialog from '#lib/components/form/form-dialog.svelte';
 
 const schema = z.object({});
 

@@ -1,8 +1,8 @@
 <script lang="ts">
   import { cn } from '../../../blocks/utils.js';
   import { onDestroy } from 'svelte';
-  import { useAnimation } from '$lib/components/ui-extra/terminal/terminal.svelte.js';
-  import type { TerminalAnimationProps } from '$lib/components/ui-extra/terminal/types';
+  import { useAnimation } from '#lib/components/ui-extra/terminal/terminal.svelte.js';
+  import type { TerminalAnimationProps } from '#lib/components/ui-extra/terminal/types.js';
   import { typewriter } from '../../../blocks/typewriter.svelte';
   import { box } from 'svelte-toolbelt';
 

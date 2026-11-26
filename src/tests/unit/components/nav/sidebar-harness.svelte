@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { Component } from 'svelte';
-  import * as Sidebar from '$lib/components/ui/sidebar';
+  import * as Sidebar from '#lib/components/ui/sidebar/index.js';
 
   // The sidebar sub-components call `Sidebar.useSidebar()`, which requires a
   // `Sidebar.Provider` ancestor. This harness supplies it.

@@ -1,4 +1,4 @@
-import { browser } from '$app/environment';
+import { browser } from '$app/env';
 import type { DateTime as DateTimeType } from 'luxon';
 
 export let DateTime: { DateTime: typeof DateTimeType | undefined } = $state({

@@ -1,4 +1,4 @@
-import { getSessionMeta } from '$lib/util/info.svelte';
+import { getSessionMeta } from '#lib/util/info.svelte.js';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 
 describe('getSessionMeta (User-Agent fallback)', () => {

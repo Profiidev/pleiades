@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { render } from '@testing-library/svelte';
 import { z } from 'zod/v4';
-import FormCheckbox from '$lib/components/form/form-checkbox.svelte';
+import FormCheckbox from '#lib/components/form/form-checkbox.svelte';
 import Harness from './form-harness.svelte';
 
 const schema = z.object({ agree: z.boolean() });

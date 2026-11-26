@@ -1,9 +1,9 @@
 <script lang="ts">
-  import { Toggle } from '$lib/components/ui-extra/toggle';
+  import { Toggle } from '#lib/components/ui-extra/toggle/index.js';
   import EyeIcon from '@lucide/svelte/icons/eye';
   import EyeOffIcon from '@lucide/svelte/icons/eye-off';
-  import { usePasswordToggleVisibility } from '$lib/components/ui-extra/password/password.svelte.js';
-  import type { PasswordToggleVisibilityProps } from '$lib/components/ui-extra/password/types.js';
+  import { usePasswordToggleVisibility } from '#lib/components/ui-extra/password/password.svelte.js';
+  import type { PasswordToggleVisibilityProps } from '#lib/components/ui-extra/password/types.js';
   import { cn } from '../../../blocks/utils.js';
 
   let {

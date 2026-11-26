@@ -1,12 +1,12 @@
 <script lang="ts">
   import { MessageScroller as MessageScrollerPrimitive } from '@shadcn-svelte/primitives/message-scroller';
   import ArrowDownIcon from '@lucide/svelte/icons/arrow-down';
-  import { Button } from '$lib/components/ui/button/index.js';
+  import { Button } from '#lib/components/ui/button/index.js';
   import type {
     ButtonSize,
     ButtonVariant
-  } from '$lib/components/ui/button/index.js';
-  import { cn } from '$lib/utils.js';
+  } from '#lib/components/ui/button/index.js';
+  import { cn } from '#lib/utils.js';
 
   let {
     ref = $bindable(null),

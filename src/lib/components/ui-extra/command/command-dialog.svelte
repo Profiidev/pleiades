@@ -4,8 +4,8 @@
     Dialog as DialogPrimitive
   } from 'bits-ui';
   import type { Snippet } from 'svelte';
-  import Command from '$lib/components/ui-extra/command/command.svelte';
-  import * as Dialog from '$lib/components/ui-extra/dialog/index.js';
+  import Command from '#lib/components/ui-extra/command/command.svelte';
+  import * as Dialog from '#lib/components/ui-extra/dialog/index.js';
   import { cn, type WithoutChildrenOrChild } from '../../../blocks/utils.js';
 
   let {

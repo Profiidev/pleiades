@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { render } from '@testing-library/svelte';
-import SidebarHeader from '$lib/components/nav/sidebar/sidebar-header.svelte';
+import SidebarHeader from '#lib/components/nav/sidebar/sidebar-header.svelte';
 import Harness from './sidebar-harness.svelte';
 
 const base = { app_name: 'Pleiades', version: 'v1.2.3' };

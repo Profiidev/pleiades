@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { SelectContent } from '$lib/components/ui-extra/select';
+  import { SelectContent } from '#lib/components/ui-extra/select/index.js';
   import type { ComponentProps } from 'svelte';
 
   let {

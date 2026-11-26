@@ -4,7 +4,7 @@ import { fireEvent, waitFor } from '@testing-library/dom';
 import { z } from 'zod/v4';
 import type { SuperForm } from 'sveltekit-superforms';
 import { get } from 'svelte/store';
-import FormTags from '$lib/components/form/form-tags.svelte';
+import FormTags from '#lib/components/form/form-tags.svelte';
 import Harness from './form-harness.svelte';
 
 const schema = z.object({ tags: z.array(z.string()) });

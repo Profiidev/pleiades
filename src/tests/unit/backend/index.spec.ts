@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import * as backend from '$lib/backend/index';
+import * as backend from '#lib/backend/index.js';
 
 describe('backend barrel', () => {
   it('re-exports the type enums', () => {

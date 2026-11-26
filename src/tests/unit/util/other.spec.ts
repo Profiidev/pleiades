@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { deepCopy, isUrl } from '$lib/util/other.svelte';
+import { deepCopy, isUrl } from '#lib/util/other.svelte.js';
 
 describe('isUrl', () => {
   it('returns true for a valid absolute url', () => {

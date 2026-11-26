@@ -1,9 +1,9 @@
 <script lang="ts">
   import { cn } from '../../../blocks/utils.js';
   import { box, mergeProps } from 'svelte-toolbelt';
-  import { usePasswordInput } from '$lib/components/ui-extra/password/password.svelte.js';
-  import type { PasswordInputProps } from '$lib/components/ui-extra/password/types.js';
-  import { Input } from '$lib/components/ui-extra/input';
+  import { usePasswordInput } from '#lib/components/ui-extra/password/password.svelte.js';
+  import type { PasswordInputProps } from '#lib/components/ui-extra/password/types.js';
+  import { Input } from '#lib/components/ui-extra/input/index.js';
 
   let {
     ref = $bindable(null),

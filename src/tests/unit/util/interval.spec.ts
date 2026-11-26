@@ -1,6 +1,6 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { flushSync } from 'svelte';
-import { interval, sleep, wait_for } from '$lib/util/interval.svelte';
+import { interval, sleep, wait_for } from '#lib/util/interval.svelte.js';
 import { readInitial, trackInterval } from './interval-harness.svelte';
 
 describe('sleep', () => {

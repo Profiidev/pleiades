@@ -1,18 +1,18 @@
 <script lang="ts" generics="S extends FormRecord = FormRecord">
   import { fieldProxy } from 'sveltekit-superforms';
-  import * as Form from '$lib/components/ui/form';
+  import * as Form from '#lib/components/ui/form/index.js';
   import {
     type FormPath,
     type SuperForm,
     type FormRecord
-  } from '$lib/components/form/types';
-  import { Input } from '$lib/components/ui/input';
+  } from '#lib/components/form/types.js';
+  import { Input } from '#lib/components/ui/input/index.js';
   import type {
     HTMLInputAttributes,
     HTMLInputTypeAttribute
   } from 'svelte/elements';
   import type { WithElementRef } from 'bits-ui';
-  import * as Tooltip from '$lib/components/ui/tooltip';
+  import * as Tooltip from '#lib/components/ui/tooltip/index.js';
   import Info from '@lucide/svelte/icons/info';
 
   type InputType = Exclude<HTMLInputTypeAttribute, 'file'>;

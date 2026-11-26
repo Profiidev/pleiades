@@ -4,9 +4,9 @@
     FormRecord,
     SuperForm,
     FormPath
-  } from '$lib/components/form/types';
-  import { Input } from '$lib/components/ui/input';
-  import { Label } from '$lib/components/ui/label';
+  } from '#lib/components/form/types.js';
+  import { Input } from '#lib/components/ui/input/index.js';
+  import { Label } from '#lib/components/ui/label/index.js';
   import type { Snippet } from 'svelte';
 
   interface Props {

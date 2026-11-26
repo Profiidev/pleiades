@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { render } from '@testing-library/svelte';
 import { CalendarDate } from '@internationalized/date';
-import Datepicker from '$lib/components/util/datepicker.svelte';
+import Datepicker from '#lib/components/util/datepicker.svelte';
 
 describe('Datepicker', () => {
   it('shows the placeholder when no value is set', () => {

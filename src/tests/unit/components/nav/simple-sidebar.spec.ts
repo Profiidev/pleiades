@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { render } from '@testing-library/svelte';
-import SimpleSidebar from '$lib/components/nav/simple-sidebar.svelte';
+import SimpleSidebar from '#lib/components/nav/simple-sidebar.svelte';
 
 const items = [
   { href: '/', title: 'Home' },

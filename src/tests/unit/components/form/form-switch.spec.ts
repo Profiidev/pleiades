@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { render } from '@testing-library/svelte';
 import { z } from 'zod/v4';
-import FormSwitch from '$lib/components/form/form-switch.svelte';
+import FormSwitch from '#lib/components/form/form-switch.svelte';
 import Harness from './form-harness.svelte';
 
 const schema = z.object({ enabled: z.boolean() });

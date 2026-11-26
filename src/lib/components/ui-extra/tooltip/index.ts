@@ -1,8 +1,8 @@
-import Root from '$lib/components/ui-extra/tooltip/tooltip.svelte';
-import Trigger from '$lib/components/ui-extra/tooltip/tooltip-trigger.svelte';
-import Content from '$lib/components/ui-extra/tooltip/tooltip-content.svelte';
-import Provider from '$lib/components/ui-extra/tooltip/tooltip-provider.svelte';
-import Portal from '$lib/components/ui-extra/tooltip/tooltip-portal.svelte';
+import Root from '#lib/components/ui-extra/tooltip/tooltip.svelte';
+import Trigger from '#lib/components/ui-extra/tooltip/tooltip-trigger.svelte';
+import Content from '#lib/components/ui-extra/tooltip/tooltip-content.svelte';
+import Provider from '#lib/components/ui-extra/tooltip/tooltip-provider.svelte';
+import Portal from '#lib/components/ui-extra/tooltip/tooltip-portal.svelte';
 
 export {
   Root,

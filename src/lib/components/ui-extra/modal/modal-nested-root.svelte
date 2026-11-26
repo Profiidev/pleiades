@@ -1,8 +1,8 @@
 <script lang="ts">
-  import * as Dialog from '$lib/components/ui-extra/dialog/index.js';
-  import * as Drawer from '$lib/components/ui-extra/drawer/index.js';
+  import * as Dialog from '#lib/components/ui-extra/dialog/index.js';
+  import * as Drawer from '#lib/components/ui-extra/drawer/index.js';
   import type { DialogRootProps } from 'bits-ui';
-  import { useModal } from '$lib/components/ui-extra/modal/modal.svelte.js';
+  import { useModal } from '#lib/components/ui-extra/modal/modal.svelte.js';
 
   let {
     open = $bindable(false),

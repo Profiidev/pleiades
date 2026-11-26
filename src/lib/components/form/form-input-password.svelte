@@ -1,12 +1,12 @@
 <script lang="ts" generics="S extends FormRecord = FormRecord">
   import { fieldProxy } from 'sveltekit-superforms';
-  import * as Form from '$lib/components/ui/form';
+  import * as Form from '#lib/components/ui/form/index.js';
   import {
     type FormPath,
     type SuperForm,
     type FormRecord
-  } from '$lib/components/form/types';
-  import * as Password from '$lib/components/ui-extra/password';
+  } from '#lib/components/form/types.js';
+  import * as Password from '#lib/components/ui-extra/password/index.js';
   import type { Snippet } from 'svelte';
 
   interface Props {

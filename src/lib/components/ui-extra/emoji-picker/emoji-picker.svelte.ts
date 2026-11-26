@@ -3,7 +3,7 @@ import type { ReadableBoxedValues, WritableBoxedValues } from 'svelte-toolbelt';
 import type {
   EmojiPickerSkin,
   SelectedEmoji
-} from '$lib/components/ui-extra/emoji-picker/types';
+} from '#lib/components/ui-extra/emoji-picker/types.js';
 import data, { type EmojiMartData } from '@emoji-mart/data';
 import { UseFrecency } from '../../../blocks/use-frecency.svelte';
 

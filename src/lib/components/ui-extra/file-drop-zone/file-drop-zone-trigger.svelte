@@ -1,8 +1,8 @@
 <script lang="ts">
   import { cn } from '../../../blocks/utils.js';
-  import { useFileDropZoneTrigger } from '$lib/components/ui-extra/file-drop-zone/file-drop-zone.svelte.js';
-  import { displaySize } from '$lib/components/ui-extra/file-drop-zone/index.js';
-  import type { FileDropZoneTriggerProps } from '$lib/components/ui-extra/file-drop-zone/types.js';
+  import { useFileDropZoneTrigger } from '#lib/components/ui-extra/file-drop-zone/file-drop-zone.svelte.js';
+  import { displaySize } from '#lib/components/ui-extra/file-drop-zone/index.js';
+  import type { FileDropZoneTriggerProps } from '#lib/components/ui-extra/file-drop-zone/types.js';
   import UploadIcon from '@lucide/svelte/icons/upload';
 
   let {

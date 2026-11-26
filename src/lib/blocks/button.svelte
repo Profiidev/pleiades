@@ -37,15 +37,15 @@
   export {
     type ButtonSize,
     type ButtonVariant
-  } from '$lib/components/ui-extra/button';
+  } from '#lib/components/ui-extra/button/index.js';
 </script>
 
 <script lang="ts">
   import {
     Button,
     type ButtonProps as ButtonPrimitiveProps
-  } from '$lib/components/ui-extra/button';
-  import { Spinner } from '$lib/components/ui-extra/spinner';
+  } from '#lib/components/ui-extra/button/index.js';
+  import { Spinner } from '#lib/components/ui-extra/spinner/index.js';
   import { cn } from './utils.js';
 
   let {

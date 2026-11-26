@@ -1,7 +1,7 @@
 import {
   generateCodeChallenge,
   generateCodeVerifier
-} from '$lib/util/crypto.svelte';
+} from '#lib/util/crypto.svelte.js';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 
 const URL_SAFE = /^[A-Za-z0-9\-._~]+$/;

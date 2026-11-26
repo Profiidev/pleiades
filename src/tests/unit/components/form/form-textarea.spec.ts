@@ -3,7 +3,7 @@ import { fireEvent, render } from '@testing-library/svelte';
 import { z } from 'zod/v4';
 import { get } from 'svelte/store';
 import type { SuperForm } from 'sveltekit-superforms';
-import FormTextarea from '$lib/components/form/form-textarea.svelte';
+import FormTextarea from '#lib/components/form/form-textarea.svelte';
 import Harness from './form-harness.svelte';
 
 const schema = z.object({ bio: z.string() });

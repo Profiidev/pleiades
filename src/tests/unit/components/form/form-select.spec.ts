@@ -4,7 +4,7 @@ import { fireEvent, waitFor } from '@testing-library/dom';
 import { z } from 'zod/v4';
 import type { SuperForm } from 'sveltekit-superforms';
 import { get } from 'svelte/store';
-import FormSelect from '$lib/components/form/form-select.svelte';
+import FormSelect from '#lib/components/form/form-select.svelte';
 import Harness from './form-harness.svelte';
 
 const schema = z.object({ roles: z.array(z.string()) });

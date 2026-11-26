@@ -11,7 +11,7 @@ import {
   createColumnCell,
   createColumnHeader,
   defaultFeatures
-} from '$lib/components/table/helpers.svelte';
+} from '#lib/components/table/helpers.svelte.js';
 import { type TableHarness, makeTable } from './helpers-harness.svelte';
 
 interface Item {

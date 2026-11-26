@@ -1,6 +1,6 @@
 <script lang="ts" module>
   import type { Snippet } from 'svelte';
-  import type { ButtonProps } from '$lib/components/ui-extra/button';
+  import type { ButtonProps } from '#lib/components/ui-extra/button/index.js';
   import type { HTMLAttributes } from 'svelte/elements';
   import type { WithChildren, WithoutChildren } from 'bits-ui';
 

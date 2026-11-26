@@ -3,7 +3,7 @@ import { cleanup, render } from '@testing-library/svelte';
 import { fireEvent, waitFor } from '@testing-library/dom';
 import { createRawSnippet } from 'svelte';
 import { z } from 'zod/v4';
-import BaseForm from '$lib/components/form/base-form.svelte';
+import BaseForm from '#lib/components/form/base-form.svelte';
 
 const toastError = vi.fn();
 vi.mock('svelte-sonner', () => ({

@@ -1,7 +1,7 @@
 <script lang="ts">
   import { onDestroy } from 'svelte';
-  import { useTerminalLoop } from '$lib/components/ui-extra/terminal/terminal.svelte.js';
-  import type { TerminalLoopProps } from '$lib/components/ui-extra/terminal/types';
+  import { useTerminalLoop } from '#lib/components/ui-extra/terminal/terminal.svelte.js';
+  import type { TerminalLoopProps } from '#lib/components/ui-extra/terminal/types.js';
 
   let { delay = 500, children }: TerminalLoopProps = $props();
 

@@ -3,7 +3,7 @@ import Root, {
   type ButtonSize,
   type ButtonVariant,
   buttonVariants
-} from '$lib/components/ui-extra/button/button.svelte';
+} from '#lib/components/ui-extra/button/button.svelte';
 
 export {
   Root,

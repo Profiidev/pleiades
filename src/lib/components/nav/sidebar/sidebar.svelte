@@ -1,5 +1,5 @@
 <script lang="ts">
-  import * as Sidebar from '$lib/components/ui/sidebar';
+  import * as Sidebar from '#lib/components/ui/sidebar/index.js';
   import SidebarHeader from './sidebar-header.svelte';
   import SidebarContent from './sidebar-content.svelte';
   import SidebarUser from './sidebar-user.svelte';

@@ -1,7 +1,7 @@
 import { describe, expect, it, vi } from 'vitest';
 import { render } from '@testing-library/svelte';
 import { fireEvent, waitFor } from '@testing-library/dom';
-import MultistepForm from '$lib/components/form/multistep-form.svelte';
+import MultistepForm from '#lib/components/form/multistep-form.svelte';
 import TestStage from './test-stage.svelte';
 
 const makeStages = () => [

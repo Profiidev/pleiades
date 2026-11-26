@@ -1,10 +1,10 @@
 <script lang="ts">
-  import * as Sidebar from '$lib/components/ui/sidebar';
+  import * as Sidebar from '#lib/components/ui/sidebar/index.js';
   import Snowflake from '@lucide/svelte/icons/snowflake';
   import PanelLeftOpen from '@lucide/svelte/icons/panel-left-open';
   import PanelLeftClose from '@lucide/svelte/icons/panel-left-close';
   import type { Component } from 'svelte';
-  import { cn } from '$lib/utils';
+  import { cn } from '#lib/utils.js';
 
   interface Props {
     version: string;

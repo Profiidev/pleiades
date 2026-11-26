@@ -10,7 +10,7 @@
   import { type SuperForm } from 'sveltekit-superforms';
   import type { Error, FormEnctype, FormValue } from './types.js';
   import Form from './base-form.svelte';
-  import { wait_for } from '$lib/util/interval.svelte';
+  import { wait_for } from '#lib/util/interval.svelte.js';
   import { type ZodValidationSchema } from 'sveltekit-superforms/adapters';
   import BaseForm from './base-form.svelte';
 

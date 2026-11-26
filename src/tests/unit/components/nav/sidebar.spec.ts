@@ -1,7 +1,7 @@
 import { describe, expect, it, vi } from 'vitest';
 import { render } from '@testing-library/svelte';
 import { createRawSnippet } from 'svelte';
-import Sidebar from '$lib/components/nav/sidebar/sidebar.svelte';
+import Sidebar from '#lib/components/nav/sidebar/sidebar.svelte';
 
 const children = createRawSnippet(() => ({
   render: () => `<main data-testid="page">content</main>`

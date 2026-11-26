@@ -7,10 +7,10 @@ import { renderComponent } from '@tanstack/svelte-table';
 import {
   type TableColumnDef,
   createColumn
-} from '$lib/components/table/helpers.svelte';
-import Actions from '$lib/components/table/actions.svelte';
-import SimpleTable from '$lib/components/table/simple-table.svelte';
-import { RequestError } from '$lib/backend/types.svelte';
+} from '#lib/components/table/helpers.svelte.js';
+import Actions from '#lib/components/table/actions.svelte';
+import SimpleTable from '#lib/components/table/simple-table.svelte';
+import { RequestError } from '#lib/backend/types.svelte.js';
 
 const toastSuccess = vi.fn();
 const toastError = vi.fn();

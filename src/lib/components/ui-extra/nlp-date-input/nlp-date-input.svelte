@@ -8,7 +8,7 @@
 </script>
 
 <script lang="ts">
-  import * as Command from '$lib/components/ui-extra/command';
+  import * as Command from '#lib/components/ui-extra/command/index.js';
   import { parseDate } from 'yeezy-dates';
 
   let {

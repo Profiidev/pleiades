@@ -1,13 +1,13 @@
 <script lang="ts" generics="S extends FormRecord = FormRecord">
   import { fieldProxy } from 'sveltekit-superforms';
-  import { Checkbox } from '$lib/components/ui/checkbox';
-  import * as Form from '$lib/components/ui/form';
+  import { Checkbox } from '#lib/components/ui/checkbox/index.js';
+  import * as Form from '#lib/components/ui/form/index.js';
   import type {
     FormPath,
     SuperForm,
     FormRecord
-  } from '$lib/components/form/types';
-  import type { WithoutChildrenOrChild } from '$lib/utils';
+  } from '#lib/components/form/types.js';
+  import type { WithoutChildrenOrChild } from '#lib/utils.js';
   import { Checkbox as CheckboxPrimitive } from 'bits-ui';
 
   interface Props {

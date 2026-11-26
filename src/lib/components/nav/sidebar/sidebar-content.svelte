@@ -1,10 +1,10 @@
 <script lang="ts">
   import { page } from '$app/state';
-  import * as Sidebar from '$lib/components/ui/sidebar';
+  import * as Sidebar from '#lib/components/ui/sidebar/index.js';
   import type {
     NavGroup,
     SidebarUserInfo
-  } from '$lib/components/nav/sidebar/types';
+  } from '#lib/components/nav/sidebar/types.js';
 
   interface Props {
     items: NavGroup[];

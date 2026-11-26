@@ -1,14 +1,14 @@
 <script lang="ts">
-  import * as Command from '$lib/components/ui-extra/command';
+  import * as Command from '#lib/components/ui-extra/command/index.js';
   import { Command as CommandPrimitive } from 'bits-ui';
   import data, { type EmojiMartData } from '@emoji-mart/data';
   import * as casing from '../../../blocks/casing';
-  import type { EmojiPickerListProps } from '$lib/components/ui-extra/emoji-picker/types';
+  import type { EmojiPickerListProps } from '#lib/components/ui-extra/emoji-picker/types.js';
   import {
     makeValue,
     parseValue,
     useEmojiPickerList
-  } from '$lib/components/ui-extra/emoji-picker/emoji-picker.svelte.js';
+  } from '#lib/components/ui-extra/emoji-picker/emoji-picker.svelte.js';
   import { cn } from '../../../blocks/utils.js';
 
   let {

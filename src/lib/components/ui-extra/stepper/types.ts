@@ -2,7 +2,7 @@ import type { WithChild } from 'svelte-toolbelt';
 import type {
   ButtonSize,
   ButtonVariant
-} from '$lib/components/ui-extra/button';
+} from '#lib/components/ui-extra/button/index.js';
 import type { HTMLAttributes } from 'svelte/elements';
 import type { Snippet } from 'svelte';
 

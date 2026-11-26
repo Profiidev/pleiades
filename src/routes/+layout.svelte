@@ -1,8 +1,8 @@
 <script lang="ts">
   import { ModeWatcher } from 'mode-watcher';
   import '../app.css';
-  import { Toaster } from '$lib/components/ui/sonner';
-  import Sidebar from '$lib/components/nav/sidebar/sidebar.svelte';
+  import { Toaster } from '#lib/components/ui/sonner/index.js';
+  import Sidebar from '#lib/components/nav/sidebar/sidebar.svelte';
   let { children } = $props();
 </script>
 

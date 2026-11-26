@@ -1,8 +1,8 @@
 <script lang="ts" module>
-  import type { ButtonGroupOrientation } from '$lib/components/ui-extra/button-group';
+  import type { ButtonGroupOrientation } from '#lib/components/ui-extra/button-group/index.js';
   import type { HTMLAttributes } from 'svelte/elements';
   import type { WithChildren, WithoutChildren } from 'bits-ui';
-  import type { SplitButtonClickEvent } from '$lib/components/ui-extra/split-button/split-button.svelte.js';
+  import type { SplitButtonClickEvent } from '#lib/components/ui-extra/split-button/split-button.svelte.js';
 
   export type SplitButtonPropsWithoutHTML = WithChildren<{
     ref?: HTMLDivElement | null;
@@ -19,8 +19,8 @@
 </script>
 
 <script lang="ts">
-  import ButtonGroup from '$lib/components/ui-extra/button-group/button-group.svelte';
-  import { useSplitButtonRoot } from '$lib/components/ui-extra/split-button/split-button.svelte.js';
+  import ButtonGroup from '#lib/components/ui-extra/button-group/button-group.svelte';
+  import { useSplitButtonRoot } from '#lib/components/ui-extra/split-button/split-button.svelte.js';
   import { box } from 'svelte-toolbelt';
 
   let {

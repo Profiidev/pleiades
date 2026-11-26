@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { render } from '@testing-library/svelte';
-import SidebarContent from '$lib/components/nav/sidebar/sidebar-content.svelte';
+import SidebarContent from '#lib/components/nav/sidebar/sidebar-content.svelte';
 import Harness from './sidebar-harness.svelte';
 
 const items = [

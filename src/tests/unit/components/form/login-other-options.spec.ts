@@ -1,7 +1,7 @@
 import { describe, expect, it, vi } from 'vitest';
 import { render } from '@testing-library/svelte';
 import { fireEvent } from '@testing-library/dom';
-import LoginOtherOptions from '$lib/components/form/login-other-options.svelte';
+import LoginOtherOptions from '#lib/components/form/login-other-options.svelte';
 
 describe('LoginOtherOptions', () => {
   it('shows the Passkey label in the idle state', () => {

@@ -1,7 +1,7 @@
-import Root from '$lib/components/ui-extra/underline-tabs/underline-tabs.svelte';
-import Content from '$lib/components/ui-extra/underline-tabs/underline-tabs-content.svelte';
-import List from '$lib/components/ui-extra/underline-tabs/underline-tabs-list.svelte';
-import Trigger from '$lib/components/ui-extra/underline-tabs/underline-tabs-trigger.svelte';
+import Root from '#lib/components/ui-extra/underline-tabs/underline-tabs.svelte';
+import Content from '#lib/components/ui-extra/underline-tabs/underline-tabs-content.svelte';
+import List from '#lib/components/ui-extra/underline-tabs/underline-tabs-list.svelte';
+import Trigger from '#lib/components/ui-extra/underline-tabs/underline-tabs-trigger.svelte';
 
 export {
   Root,

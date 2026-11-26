@@ -1,10 +1,10 @@
-import Root from '$lib/components/ui-extra/tabs/tabs.svelte';
-import Content from '$lib/components/ui-extra/tabs/tabs-content.svelte';
+import Root from '#lib/components/ui-extra/tabs/tabs.svelte';
+import Content from '#lib/components/ui-extra/tabs/tabs-content.svelte';
 import List, {
   tabsListVariants,
   type TabsListVariant
-} from '$lib/components/ui-extra/tabs/tabs-list.svelte';
-import Trigger from '$lib/components/ui-extra/tabs/tabs-trigger.svelte';
+} from '#lib/components/ui-extra/tabs/tabs-list.svelte';
+import Trigger from '#lib/components/ui-extra/tabs/tabs-trigger.svelte';
 
 export {
   Root,

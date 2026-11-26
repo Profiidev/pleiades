@@ -2,8 +2,8 @@
   import {
     type TableColumnDef,
     createTable
-  } from '$lib/components/table/helpers.svelte';
-  import BaseTable from '$lib/components/table/base-table.svelte';
+  } from '#lib/components/table/helpers.svelte.js';
+  import BaseTable from '#lib/components/table/base-table.svelte';
 
   // Builds a real tanstack table (createTable uses $effect.pre, so it must run
   // inside a component) and renders BaseTable with it. Types are intentionally

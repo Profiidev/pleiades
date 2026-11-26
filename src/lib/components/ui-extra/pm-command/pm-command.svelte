@@ -27,11 +27,11 @@
   import { cn } from '../../../blocks/utils.js';
   import type { Command, Agent } from 'package-manager-detector';
   import { resolveCommand } from 'package-manager-detector/commands';
-  import CopyButton from '$lib/components/ui-extra/copy-button/copy-button.svelte';
+  import CopyButton from '#lib/components/ui-extra/copy-button/copy-button.svelte';
   import ClipboardIcon from '@lucide/svelte/icons/clipboard';
   import TerminalIcon from '@lucide/svelte/icons/terminal';
-  import * as Tooltip from '$lib/components/ui-extra/tooltip';
-  import * as Tabs from '$lib/components/ui-extra/tabs';
+  import * as Tooltip from '#lib/components/ui-extra/tooltip/index.js';
+  import * as Tabs from '#lib/components/ui-extra/tabs/index.js';
 
   let {
     variant = 'default',

@@ -1,4 +1,4 @@
-import { interval } from '$lib/util/interval.svelte';
+import { interval } from '#lib/util/interval.svelte.js';
 
 // Rune-using helpers must live in a `.svelte.ts` module. These are imported by
 // The plain `.spec.ts` (where `$effect` is unavailable) to drive the reactive

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { ChatBubbleProps } from '$lib/components/ui-extra/chat/types';
+  import type { ChatBubbleProps } from '#lib/components/ui-extra/chat/types.js';
   import { cn } from '../../../blocks/utils.js';
 
   let {
