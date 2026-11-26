@@ -9,7 +9,7 @@
 
 <script lang="ts">
   import { Select as SelectPrimitive } from 'bits-ui';
-  import { useSplitButtonRootCtx } from '$lib/components/ui-extra/split-button/split-button.svelte.js';
+  import { useSplitButtonRootCtx } from '#lib/components/ui-extra/split-button/split-button.svelte.js';
 
   let {
     open = $bindable(false),

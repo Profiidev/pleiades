@@ -1,7 +1,7 @@
 import { describe, expect, it, vi } from 'vitest';
 import { render } from '@testing-library/svelte';
 import { fireEvent } from '@testing-library/dom';
-import TableHead from '$lib/components/table/table-head.svelte';
+import TableHead from '#lib/components/table/table-head.svelte';
 
 describe('TableHead', () => {
   it('renders the title text', () => {

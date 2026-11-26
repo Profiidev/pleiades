@@ -1,6 +1,6 @@
 <script lang="ts">
   import { getChartContext, Tooltip as TooltipPrimitive } from 'layerchart';
-  import { cn, type WithElementRef, type WithoutChildren } from '$lib/utils.js';
+  import { cn, type WithElementRef, type WithoutChildren } from '#lib/utils.js';
   import {
     getPayloadConfigFromPayload,
     useChart,

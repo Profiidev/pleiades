@@ -5,17 +5,17 @@
   import CheckIcon from '@lucide/svelte/icons/check';
   import Plus from '@lucide/svelte/icons/plus';
   import RotateCCW from '@lucide/svelte/icons/rotate-ccw';
-  import { Badge } from '$lib/components/ui/badge';
-  import { Button } from '$lib/components/ui/button';
-  import * as Card from '$lib/components/ui/card';
-  import { Spinner } from '$lib/components/ui/spinner';
+  import { Badge } from '#lib/components/ui/badge/index.js';
+  import { Button } from '#lib/components/ui/button/index.js';
+  import * as Card from '#lib/components/ui/card/index.js';
+  import { Spinner } from '#lib/components/ui/spinner/index.js';
   import {
     type Error,
     type FormRecord,
     type Stage
-  } from '$lib/components/form/types';
+  } from '#lib/components/form/types.js';
   import type { Component, SvelteComponent } from 'svelte';
-  import { cn } from '$lib/utils';
+  import { cn } from '#lib/utils.js';
 
   interface Props<T> {
     stages: Stage<T>[];

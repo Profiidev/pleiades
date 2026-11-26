@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { RequestError, ResponseType } from '$lib/backend/types.svelte';
+import { RequestError, ResponseType } from '#lib/backend/types.svelte.js';
 
 describe('RequestError enum', () => {
   it('maps each member to its own name', () => {

@@ -1,7 +1,7 @@
 <script lang="ts" module>
   import { cn } from '../../../blocks/utils.js';
   import { tv, type VariantProps } from 'tailwind-variants';
-  import { CopyButton } from '$lib/components/ui-extra/copy-button';
+  import { CopyButton } from '#lib/components/ui-extra/copy-button/index.js';
   import type { UseClipboard } from '../../../blocks/use-clipboard.svelte';
 
   const style = tv({

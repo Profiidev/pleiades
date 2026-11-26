@@ -2,7 +2,7 @@
   import {
     type TableColumnDef,
     createTable
-  } from '$lib/components/table/helpers.svelte';
+  } from '#lib/components/table/helpers.svelte.js';
   import BaseTable from './base-table.svelte';
   import type { RowData } from '@tanstack/svelte-table';
   import Input from '../ui/input/input.svelte';

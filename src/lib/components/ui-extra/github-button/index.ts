@@ -1,4 +1,4 @@
-import Root from '$lib/components/ui-extra/github-button/github-button.svelte';
+import Root from '#lib/components/ui-extra/github-button/github-button.svelte';
 
 /**
  * Get the stars for a GitHub repository using the ungh.cc API.

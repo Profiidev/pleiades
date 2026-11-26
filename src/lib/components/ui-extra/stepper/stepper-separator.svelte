@@ -1,7 +1,7 @@
 <script lang="ts">
   import { cn } from '../../../blocks/utils';
   import type { HTMLAttributes } from 'svelte/elements';
-  import { useStepperSeparator } from '$lib/components/ui-extra/stepper/stepper.svelte.js';
+  import { useStepperSeparator } from '#lib/components/ui-extra/stepper/stepper.svelte.js';
 
   let {
     class: className,

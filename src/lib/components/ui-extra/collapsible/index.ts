@@ -1,6 +1,6 @@
-import Root from '$lib/components/ui-extra/collapsible/collapsible.svelte';
-import Trigger from '$lib/components/ui-extra/collapsible/collapsible-trigger.svelte';
-import Content from '$lib/components/ui-extra/collapsible/collapsible-content.svelte';
+import Root from '#lib/components/ui-extra/collapsible/collapsible.svelte';
+import Trigger from '#lib/components/ui-extra/collapsible/collapsible-trigger.svelte';
+import Content from '#lib/components/ui-extra/collapsible/collapsible-content.svelte';
 
 export {
   Root,

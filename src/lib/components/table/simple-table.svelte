@@ -11,7 +11,7 @@
   import Table from '../table/base-table.svelte';
   import type { RowData } from '@tanstack/svelte-table';
   import { toast } from 'svelte-sonner';
-  import { RequestError } from '$lib/backend/types.svelte';
+  import { RequestError } from '#lib/backend/types.svelte.js';
   import type { Snippet, SvelteComponent } from 'svelte';
   import type { SuperForm } from 'sveltekit-superforms';
   import FormDialog from '../form/form-dialog.svelte';

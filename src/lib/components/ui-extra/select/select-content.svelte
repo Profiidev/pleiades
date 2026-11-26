@@ -1,8 +1,8 @@
 <script lang="ts">
   import { Select as SelectPrimitive } from 'bits-ui';
-  import SelectPortal from '$lib/components/ui-extra/select/select-portal.svelte';
-  import SelectScrollUpButton from '$lib/components/ui-extra/select/select-scroll-up-button.svelte';
-  import SelectScrollDownButton from '$lib/components/ui-extra/select/select-scroll-down-button.svelte';
+  import SelectPortal from '#lib/components/ui-extra/select/select-portal.svelte';
+  import SelectScrollUpButton from '#lib/components/ui-extra/select/select-scroll-up-button.svelte';
+  import SelectScrollDownButton from '#lib/components/ui-extra/select/select-scroll-down-button.svelte';
   import { cn, type WithoutChild } from '../../../blocks/utils.js';
   import type { ComponentProps } from 'svelte';
   import type { WithoutChildrenOrChild } from '../../../blocks/utils.js';

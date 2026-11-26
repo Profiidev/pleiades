@@ -1,13 +1,13 @@
 <script lang="ts">
-  import * as Sidebar from '$lib/components/ui/sidebar';
-  import * as DropdownMenu from '$lib/components/ui/dropdown-menu';
-  import * as Avatar from '$lib/components/ui/avatar';
+  import * as Sidebar from '#lib/components/ui/sidebar/index.js';
+  import * as DropdownMenu from '#lib/components/ui/dropdown-menu/index.js';
+  import * as Avatar from '#lib/components/ui/avatar/index.js';
   import ChevronsUpDownIcon from '@lucide/svelte/icons/chevrons-up-down';
   import LogOutIcon from '@lucide/svelte/icons/log-out';
   import SettingsIcon from '@lucide/svelte/icons/settings';
   import { goto } from '$app/navigation';
   import type { SidebarUserInfo } from './types';
-  import { Skeleton } from '$lib/components/ui/skeleton';
+  import { Skeleton } from '#lib/components/ui/skeleton/index.js';
 
   interface Props {
     user?: SidebarUserInfo;

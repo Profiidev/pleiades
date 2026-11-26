@@ -1,9 +1,9 @@
 <script lang="ts" generics="T, S extends FormRecord = FormRecord">
   import { fieldProxy } from 'sveltekit-superforms';
-  import * as Form from '$lib/components/ui/form';
+  import * as Form from '#lib/components/ui/form/index.js';
   import { type FormPath, type SuperForm } from 'sveltekit-superforms';
-  import type { FormRecord } from '$lib/components/form/types';
-  import { TagsInput } from '$lib/components/ui-extra/tags-input';
+  import type { FormRecord } from '#lib/components/form/types.js';
+  import { TagsInput } from '#lib/components/ui-extra/tags-input/index.js';
 
   interface Props {
     formData: SuperForm<S>;

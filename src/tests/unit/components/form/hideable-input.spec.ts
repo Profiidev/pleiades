@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest';
 import { render } from '@testing-library/svelte';
 import { createRawSnippet } from 'svelte';
 import { z } from 'zod/v4';
-import HideableInput from '$lib/components/form/hideable-input.svelte';
+import HideableInput from '#lib/components/form/hideable-input.svelte';
 import Harness from './form-harness.svelte';
 
 const schema = z.object({ shown: z.boolean() });

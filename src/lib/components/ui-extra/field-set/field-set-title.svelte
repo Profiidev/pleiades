@@ -1,6 +1,6 @@
 <script lang="ts">
   import { cn } from '../../../blocks/utils.js';
-  import type { FieldSetTitleProps } from '$lib/components/ui-extra/field-set/types';
+  import type { FieldSetTitleProps } from '#lib/components/ui-extra/field-set/types.js';
 
   let {
     ref = $bindable(null),

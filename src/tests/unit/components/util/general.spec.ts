@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { ModeWatcher, toast } from '$lib/components/util/general';
+import { ModeWatcher, toast } from '#lib/components/util/general.js';
 
 describe('components/util/general', () => {
   it('re-exports the ModeWatcher component', () => {

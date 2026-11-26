@@ -76,8 +76,8 @@
 </script>
 
 <script lang="ts">
-  import * as AlertDialog from '$lib/components/ui-extra/alert-dialog';
-  import { Input } from '$lib/components/ui-extra/input';
+  import * as AlertDialog from '#lib/components/ui-extra/alert-dialog/index.js';
+  import { Input } from '#lib/components/ui-extra/input/index.js';
 </script>
 
 <AlertDialog.Root bind:open={dialogState.open}>

@@ -1,20 +1,20 @@
-import Root from '$lib/components/ui-extra/dropdown-menu/dropdown-menu.svelte';
-import Sub from '$lib/components/ui-extra/dropdown-menu/dropdown-menu-sub.svelte';
-import CheckboxGroup from '$lib/components/ui-extra/dropdown-menu/dropdown-menu-checkbox-group.svelte';
-import CheckboxItem from '$lib/components/ui-extra/dropdown-menu/dropdown-menu-checkbox-item.svelte';
-import Content from '$lib/components/ui-extra/dropdown-menu/dropdown-menu-content.svelte';
-import Group from '$lib/components/ui-extra/dropdown-menu/dropdown-menu-group.svelte';
-import Item from '$lib/components/ui-extra/dropdown-menu/dropdown-menu-item.svelte';
-import Label from '$lib/components/ui-extra/dropdown-menu/dropdown-menu-label.svelte';
-import RadioGroup from '$lib/components/ui-extra/dropdown-menu/dropdown-menu-radio-group.svelte';
-import RadioItem from '$lib/components/ui-extra/dropdown-menu/dropdown-menu-radio-item.svelte';
-import Separator from '$lib/components/ui-extra/dropdown-menu/dropdown-menu-separator.svelte';
-import Shortcut from '$lib/components/ui-extra/dropdown-menu/dropdown-menu-shortcut.svelte';
-import Trigger from '$lib/components/ui-extra/dropdown-menu/dropdown-menu-trigger.svelte';
-import SubContent from '$lib/components/ui-extra/dropdown-menu/dropdown-menu-sub-content.svelte';
-import SubTrigger from '$lib/components/ui-extra/dropdown-menu/dropdown-menu-sub-trigger.svelte';
-import GroupHeading from '$lib/components/ui-extra/dropdown-menu/dropdown-menu-group-heading.svelte';
-import Portal from '$lib/components/ui-extra/dropdown-menu/dropdown-menu-portal.svelte';
+import Root from '#lib/components/ui-extra/dropdown-menu/dropdown-menu.svelte';
+import Sub from '#lib/components/ui-extra/dropdown-menu/dropdown-menu-sub.svelte';
+import CheckboxGroup from '#lib/components/ui-extra/dropdown-menu/dropdown-menu-checkbox-group.svelte';
+import CheckboxItem from '#lib/components/ui-extra/dropdown-menu/dropdown-menu-checkbox-item.svelte';
+import Content from '#lib/components/ui-extra/dropdown-menu/dropdown-menu-content.svelte';
+import Group from '#lib/components/ui-extra/dropdown-menu/dropdown-menu-group.svelte';
+import Item from '#lib/components/ui-extra/dropdown-menu/dropdown-menu-item.svelte';
+import Label from '#lib/components/ui-extra/dropdown-menu/dropdown-menu-label.svelte';
+import RadioGroup from '#lib/components/ui-extra/dropdown-menu/dropdown-menu-radio-group.svelte';
+import RadioItem from '#lib/components/ui-extra/dropdown-menu/dropdown-menu-radio-item.svelte';
+import Separator from '#lib/components/ui-extra/dropdown-menu/dropdown-menu-separator.svelte';
+import Shortcut from '#lib/components/ui-extra/dropdown-menu/dropdown-menu-shortcut.svelte';
+import Trigger from '#lib/components/ui-extra/dropdown-menu/dropdown-menu-trigger.svelte';
+import SubContent from '#lib/components/ui-extra/dropdown-menu/dropdown-menu-sub-content.svelte';
+import SubTrigger from '#lib/components/ui-extra/dropdown-menu/dropdown-menu-sub-trigger.svelte';
+import GroupHeading from '#lib/components/ui-extra/dropdown-menu/dropdown-menu-group-heading.svelte';
+import Portal from '#lib/components/ui-extra/dropdown-menu/dropdown-menu-portal.svelte';
 
 export {
   CheckboxGroup,

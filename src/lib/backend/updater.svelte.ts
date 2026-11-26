@@ -1,5 +1,5 @@
-import { browser } from '$app/environment';
-import { sleep } from '$lib/util/interval.svelte';
+import { browser } from '$app/env';
+import { sleep } from '#lib/util/interval.svelte.js';
 
 // oxlint-disable-next-line no-unnecessary-type-parameters
 export const createWebsocket = <T>() => {

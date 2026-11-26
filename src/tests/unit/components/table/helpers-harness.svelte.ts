@@ -5,7 +5,7 @@ import {
   type TableInstance,
   type TableRow,
   createTable
-} from '$lib/components/table/helpers.svelte';
+} from '#lib/components/table/helpers.svelte.js';
 
 // `createTable` -> `createSvelteTable` uses `$effect.pre`, so it must be
 // Constructed inside an effect context. This `.svelte.ts` harness wraps it in

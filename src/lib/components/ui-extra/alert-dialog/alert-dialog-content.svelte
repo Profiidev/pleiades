@@ -1,7 +1,7 @@
 <script lang="ts">
   import { AlertDialog as AlertDialogPrimitive } from 'bits-ui';
-  import AlertDialogPortal from '$lib/components/ui-extra/alert-dialog/alert-dialog-portal.svelte';
-  import AlertDialogOverlay from '$lib/components/ui-extra/alert-dialog/alert-dialog-overlay.svelte';
+  import AlertDialogPortal from '#lib/components/ui-extra/alert-dialog/alert-dialog-portal.svelte';
+  import AlertDialogOverlay from '#lib/components/ui-extra/alert-dialog/alert-dialog-overlay.svelte';
   import {
     cn,
     type WithoutChild,

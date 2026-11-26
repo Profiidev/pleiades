@@ -1,7 +1,7 @@
 import { describe, expect, it, vi } from 'vitest';
 import { render } from '@testing-library/svelte';
 import { fireEvent } from '@testing-library/dom';
-import Actions from '$lib/components/table/actions.svelte';
+import Actions from '#lib/components/table/actions.svelte';
 
 describe('Actions', () => {
   it('calls edit when edit is a function', () => {

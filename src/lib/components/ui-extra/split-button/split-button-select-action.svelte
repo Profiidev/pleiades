@@ -9,7 +9,7 @@
 <script lang="ts">
   import { Select as SelectPrimitive } from 'bits-ui';
   import { cn } from '../../../blocks/utils.js';
-  import { useSplitButtonSelectAction } from '$lib/components/ui-extra/split-button/split-button.svelte.js';
+  import { useSplitButtonSelectAction } from '#lib/components/ui-extra/split-button/split-button.svelte.js';
   import { box } from 'svelte-toolbelt';
   import CheckIcon from '@lucide/svelte/icons/check';
 

@@ -1,13 +1,13 @@
-import Root from '$lib/components/ui-extra/field-set/field-set.svelte';
-import Content from '$lib/components/ui-extra/field-set/field-set-content.svelte';
-import Footer from '$lib/components/ui-extra/field-set/field-set-footer.svelte';
-import Title from '$lib/components/ui-extra/field-set/field-set-title.svelte';
+import Root from '#lib/components/ui-extra/field-set/field-set.svelte';
+import Content from '#lib/components/ui-extra/field-set/field-set-content.svelte';
+import Footer from '#lib/components/ui-extra/field-set/field-set-footer.svelte';
+import Title from '#lib/components/ui-extra/field-set/field-set-title.svelte';
 import type {
   FieldSetRootProps,
   FieldSetTitleProps,
   FieldSetContentProps,
   FieldSetFooterProps
-} from '$lib/components/ui-extra/field-set/types';
+} from '#lib/components/ui-extra/field-set/types.js';
 import { tv, type VariantProps } from 'tailwind-variants';
 
 export const fieldSetVariants = tv({

@@ -1,14 +1,14 @@
-import Root from '$lib/components/ui-extra/rename/rename.svelte';
-import Provider from '$lib/components/ui-extra/rename/rename-provider.svelte';
-import Cancel from '$lib/components/ui-extra/rename/rename-cancel.svelte';
-import Save from '$lib/components/ui-extra/rename/rename-save.svelte';
-import Edit from '$lib/components/ui-extra/rename/rename-edit.svelte';
+import Root from '#lib/components/ui-extra/rename/rename.svelte';
+import Provider from '#lib/components/ui-extra/rename/rename-provider.svelte';
+import Cancel from '#lib/components/ui-extra/rename/rename-cancel.svelte';
+import Save from '#lib/components/ui-extra/rename/rename-save.svelte';
+import Edit from '#lib/components/ui-extra/rename/rename-edit.svelte';
 
 /**
  * This can be consumed one of two ways:
  * ```svelte
  * <script lang="ts">
- *  import { Rename } from '$lib/components/ui/rename';
+ *  import { Rename } from '#lib/components/ui/rename';
  * </script>
  *
  * <Rename ... />
@@ -18,7 +18,7 @@ import Edit from '$lib/components/ui-extra/rename/rename-edit.svelte';
  *
  * ```svelte
  * <script lang="ts">
- *  import * as Rename from '$lib/components/ui/rename';
+ *  import * as Rename from '#lib/components/ui/rename';
  * </script>
  *
  * <Rename.Provider>

@@ -1,7 +1,7 @@
 <script lang="ts">
   import { box } from 'svelte-toolbelt';
-  import type { NumberFieldRootProps } from '$lib/components/ui-extra/number-field/types';
-  import { useNumberField } from '$lib/components/ui-extra/number-field/number-field.svelte.js';
+  import type { NumberFieldRootProps } from '#lib/components/ui-extra/number-field/types.js';
+  import { useNumberField } from '#lib/components/ui-extra/number-field/number-field.svelte.js';
 
   let {
     value = $bindable(0),

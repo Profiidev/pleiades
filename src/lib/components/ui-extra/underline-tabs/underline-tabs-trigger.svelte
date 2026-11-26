@@ -5,7 +5,7 @@
     receive,
     send,
     useUnderlineTabsTrigger
-  } from '$lib/components/ui-extra/underline-tabs/underline-tabs.svelte.js';
+  } from '#lib/components/ui-extra/underline-tabs/underline-tabs.svelte.js';
   import { box } from 'svelte-toolbelt';
 
   let {

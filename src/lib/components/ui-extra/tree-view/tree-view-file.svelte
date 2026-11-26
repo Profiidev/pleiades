@@ -1,7 +1,7 @@
 <script lang="ts">
   import FileIcon from '@lucide/svelte/icons/file';
   import { cn } from '../../../blocks/utils.js';
-  import type { TreeViewFileProps } from '$lib/components/ui-extra/tree-view/types';
+  import type { TreeViewFileProps } from '#lib/components/ui-extra/tree-view/types.js';
 
   let {
     name,

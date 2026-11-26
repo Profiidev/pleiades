@@ -1,5 +1,5 @@
 <script lang="ts">
-  import AvatarRoot from '$lib/components/ui-extra/avatar/avatar.svelte';
+  import AvatarRoot from '#lib/components/ui-extra/avatar/avatar.svelte';
   import { Avatar as AvatarPrimitive } from 'bits-ui';
   import { cn } from '../../../blocks/utils.js';
 

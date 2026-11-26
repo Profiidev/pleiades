@@ -2,8 +2,8 @@
   import { onDestroy } from 'svelte';
   import CheckIcon from '@lucide/svelte/icons/check';
   import CopyIcon from '@lucide/svelte/icons/copy';
-  import { Button, type ButtonProps } from '$lib/components/ui/button/index.js';
-  import { cn } from '$lib/utils.js';
+  import { Button, type ButtonProps } from '#lib/components/ui/button/index.js';
+  import { cn } from '#lib/utils.js';
 
   let {
     ref = $bindable(null),

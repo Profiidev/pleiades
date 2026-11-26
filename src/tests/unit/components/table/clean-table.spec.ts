@@ -2,8 +2,8 @@ import { describe, expect, it } from 'vitest';
 import { render } from '@testing-library/svelte';
 import { fireEvent, waitFor } from '@testing-library/dom';
 import type { ComponentProps } from 'svelte';
-import { createColumn } from '$lib/components/table/helpers.svelte';
-import CleanTable from '$lib/components/table/clean-table.svelte';
+import { createColumn } from '#lib/components/table/helpers.svelte.js';
+import CleanTable from '#lib/components/table/clean-table.svelte';
 
 interface Item {
   name: string;

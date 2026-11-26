@@ -19,7 +19,9 @@ export type Options = {
    *  @default false
    */
   isSearch?: boolean;
-  url: URL;
+  url: Pick<URL, 'pathname' | 'hash'> & {
+    searchParams: Pick<URLSearchParams, 'get'>;
+  };
 };
 
 /** Sets the `data-active` attribute on an `<a/>` tag based on its 'active' state.

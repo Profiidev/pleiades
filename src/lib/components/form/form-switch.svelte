@@ -4,7 +4,7 @@
   import * as Form from '../ui/form/index.js';
   import type { FormPath, SuperForm } from 'sveltekit-superforms';
   import type { FormRecord } from './types.js';
-  import type { WithoutChildrenOrChild } from '$lib/utils.js';
+  import type { WithoutChildrenOrChild } from '#lib/utils.js';
   import { Switch as SwitchPrimitive } from 'bits-ui';
 
   interface Props {

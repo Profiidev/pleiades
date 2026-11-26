@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { useImageCropperTrigger } from '$lib/components/ui-extra/image-cropper/image-cropper.svelte.js';
-  import type { ImageCropperUploadTriggerProps } from '$lib/components/ui-extra/image-cropper/types';
+  import { useImageCropperTrigger } from '#lib/components/ui-extra/image-cropper/image-cropper.svelte.js';
+  import type { ImageCropperUploadTriggerProps } from '#lib/components/ui-extra/image-cropper/types.js';
 
   let {
     ref = $bindable(null),

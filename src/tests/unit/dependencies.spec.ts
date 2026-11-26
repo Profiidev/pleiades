@@ -35,7 +35,7 @@ describe('published dependencies', () => {
       const source = fs.readFileSync(file, 'utf8');
       for (const match of source.matchAll(specifier)) {
         const spec = match.groups!.spec;
-        if (/^[.$/]/.test(spec) || spec.startsWith('node:')) {
+        if (/^[.$/#]/.test(spec) || spec.startsWith('node:')) {
           continue;
         }
         const name = packageName(spec);

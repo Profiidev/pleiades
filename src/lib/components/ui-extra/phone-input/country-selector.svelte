@@ -1,12 +1,12 @@
 <script lang="ts">
-  import * as Popover from '$lib/components/ui-extra/popover';
+  import * as Popover from '#lib/components/ui-extra/popover/index.js';
   import Button from '../../../blocks/button.svelte';
-  import * as Command from '$lib/components/ui-extra/command';
-  import { ScrollArea } from '$lib/components/ui-extra/scroll-area';
+  import * as Command from '#lib/components/ui-extra/command/index.js';
+  import { ScrollArea } from '#lib/components/ui-extra/scroll-area/index.js';
   import CheckIcon from '@lucide/svelte/icons/check';
   import ChevronsUpDownIcon from '@lucide/svelte/icons/chevrons-up-down';
   import { cn } from '../../../blocks/utils.js';
-  import Flag from '$lib/components/ui-extra/phone-input/flag.svelte';
+  import Flag from '#lib/components/ui-extra/phone-input/flag.svelte';
   import type { Country, CountryCode } from 'svelte-tel-input/types';
 
   interface Props {

@@ -1,6 +1,6 @@
 <script lang="ts">
-  import BaseForm from '$lib/components/form/base-form.svelte';
-  import FormSwitch from '$lib/components/form/form-switch.svelte';
+  import BaseForm from '#lib/components/form/base-form.svelte';
+  import FormSwitch from '#lib/components/form/form-switch.svelte';
   import { z } from 'zod/v4';
 </script>
 

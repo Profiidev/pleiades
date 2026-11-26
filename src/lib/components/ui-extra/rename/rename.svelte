@@ -23,8 +23,8 @@
 <script lang="ts" generics="TagName extends TextElementTagNames">
   import { cn } from '../../../blocks/utils.js';
   import { box } from 'svelte-toolbelt';
-  import { useRenameInput } from '$lib/components/ui-extra/rename/rename.svelte.js';
-  import type { TextElementTagNames } from '$lib/components/ui-extra/rename/types.js';
+  import { useRenameInput } from '#lib/components/ui-extra/rename/rename.svelte.js';
+  import type { TextElementTagNames } from '#lib/components/ui-extra/rename/types.js';
 
   const uid = $props.id();
 

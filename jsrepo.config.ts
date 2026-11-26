@@ -3,16 +3,16 @@ import oxfmt from '@jsrepo/transform-oxfmt';
 
 export default defineConfig({
   paths: {
-    '*': '$lib/blocks',
+    '*': 'src/lib/blocks',
     action: 'src/lib/blocks',
-    actions: '$lib/actions',
+    actions: 'src/lib/actions',
     component: 'src/lib/blocks',
     hook: 'src/lib/blocks',
-    hooks: '$lib/hooks',
+    hooks: 'src/lib/hooks',
     lib: 'src/lib/blocks',
-    ui: '$lib/components/ui-extra',
+    ui: 'src/lib/components/ui-extra',
     util: 'src/lib/blocks',
-    utils: '$lib/util'
+    utils: 'src/lib/util'
   },
   registries: ['@ieedan/shadcn-svelte-extras'],
   transforms: [oxfmt()]

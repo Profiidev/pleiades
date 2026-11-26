@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest';
 import { render } from '@testing-library/svelte';
 import { createRawSnippet } from 'svelte';
 import { z } from 'zod/v4';
-import FormInputPassword from '$lib/components/form/form-input-password.svelte';
+import FormInputPassword from '#lib/components/form/form-input-password.svelte';
 import Harness from './form-harness.svelte';
 
 const schema = z.object({ pw: z.string() });

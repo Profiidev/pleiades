@@ -6,8 +6,8 @@ import {
   post,
   put,
   request
-} from '$lib/backend/util.svelte';
-import { RequestError, ResponseType } from '$lib/backend/types.svelte';
+} from '#lib/backend/util.svelte.js';
+import { RequestError, ResponseType } from '#lib/backend/types.svelte.js';
 
 const okResponse = (body?: unknown, status = 200) =>
   ({

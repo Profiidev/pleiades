@@ -10,7 +10,7 @@
 <script lang="ts">
   import type { Heading } from '../../../blocks/use-toc.svelte';
   import { cn } from '../../../blocks/utils.js';
-  import Self from '$lib/components/ui-extra/toc/toc.svelte';
+  import Self from '#lib/components/ui-extra/toc/toc.svelte';
 
   let { toc, isChild = false, class: className }: TocProps = $props();
 </script>

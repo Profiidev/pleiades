@@ -1,6 +1,6 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
-vi.mock('$app/environment', () => ({ browser: true }));
+vi.mock('$app/env', () => ({ browser: true }));
 
 class FakeWebSocket {
   static instances: FakeWebSocket[] = [];
@@ -26,7 +26,7 @@ class FakeWebSocket {
   }
 }
 
-const load = async () => await import('$lib/backend/updater.svelte');
+const load = async () => await import('#lib/backend/updater.svelte.js');
 
 beforeEach(() => {
   FakeWebSocket.instances = [];

@@ -1,4 +1,4 @@
-import Root from '$lib/components/ui-extra/separator/separator.svelte';
+import Root from '#lib/components/ui-extra/separator/separator.svelte';
 
 export {
   Root,

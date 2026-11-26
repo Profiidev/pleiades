@@ -1,14 +1,14 @@
-import Root from '$lib/components/ui-extra/select/select.svelte';
-import Group from '$lib/components/ui-extra/select/select-group.svelte';
-import Label from '$lib/components/ui-extra/select/select-label.svelte';
-import Item from '$lib/components/ui-extra/select/select-item.svelte';
-import Content from '$lib/components/ui-extra/select/select-content.svelte';
-import Trigger from '$lib/components/ui-extra/select/select-trigger.svelte';
-import Separator from '$lib/components/ui-extra/select/select-separator.svelte';
-import ScrollDownButton from '$lib/components/ui-extra/select/select-scroll-down-button.svelte';
-import ScrollUpButton from '$lib/components/ui-extra/select/select-scroll-up-button.svelte';
-import GroupHeading from '$lib/components/ui-extra/select/select-group-heading.svelte';
-import Portal from '$lib/components/ui-extra/select/select-portal.svelte';
+import Root from '#lib/components/ui-extra/select/select.svelte';
+import Group from '#lib/components/ui-extra/select/select-group.svelte';
+import Label from '#lib/components/ui-extra/select/select-label.svelte';
+import Item from '#lib/components/ui-extra/select/select-item.svelte';
+import Content from '#lib/components/ui-extra/select/select-content.svelte';
+import Trigger from '#lib/components/ui-extra/select/select-trigger.svelte';
+import Separator from '#lib/components/ui-extra/select/select-separator.svelte';
+import ScrollDownButton from '#lib/components/ui-extra/select/select-scroll-down-button.svelte';
+import ScrollUpButton from '#lib/components/ui-extra/select/select-scroll-up-button.svelte';
+import GroupHeading from '#lib/components/ui-extra/select/select-group-heading.svelte';
+import Portal from '#lib/components/ui-extra/select/select-portal.svelte';
 
 export {
   Root,

@@ -4,7 +4,7 @@ import type {
   Error,
   StageProps,
   SubmitHandler
-} from '$lib/components/form/types';
+} from '#lib/components/form/types.js';
 
 const schema = z.object({ name: z.string() });
 type Handler = SubmitHandler<typeof schema>;

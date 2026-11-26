@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { render } from '@testing-library/svelte';
 import { fireEvent } from '@testing-library/dom';
-import { createColumn } from '$lib/components/table/helpers.svelte';
+import { createColumn } from '#lib/components/table/helpers.svelte.js';
 import Harness from './base-table-harness.svelte';
 
 interface Item {

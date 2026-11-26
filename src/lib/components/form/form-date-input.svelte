@@ -1,9 +1,9 @@
 <script lang="ts" generics="S extends FormRecord = FormRecord">
   import { fieldProxy } from 'sveltekit-superforms';
-  import * as Calendar from '$lib/components/ui/calendar';
-  import * as Popover from '$lib/components/ui/popover';
-  import * as Form from '$lib/components/ui/form';
-  import { Button } from '$lib/components/ui/button';
+  import * as Calendar from '#lib/components/ui/calendar/index.js';
+  import * as Popover from '#lib/components/ui/popover/index.js';
+  import * as Form from '#lib/components/ui/form/index.js';
+  import { Button } from '#lib/components/ui/button/index.js';
   import CalendarIcon from '@lucide/svelte/icons/calendar';
   import {
     CalendarDate,
@@ -16,7 +16,7 @@
     FormPath,
     FormRecord,
     SuperForm
-  } from '$lib/components/form/types';
+  } from '#lib/components/form/types.js';
 
   interface Props {
     formData: SuperForm<S>;

@@ -1,6 +1,6 @@
 import { describe, expect, it, vi } from 'vitest';
 import { render } from '@testing-library/svelte';
-import SidebarUser from '$lib/components/nav/sidebar/sidebar-user.svelte';
+import SidebarUser from '#lib/components/nav/sidebar/sidebar-user.svelte';
 import Harness from './sidebar-harness.svelte';
 
 describe('SidebarUser', () => {
