@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.14.1](https://github.com/Profiidev/pleiades/compare/pleiades-v1.14.0...pleiades-v1.14.1) (2026-11-26)
+
+
+### Bug Fixes
+
+* resolve $lib imports in the published package again ([ba05815](https://github.com/Profiidev/pleiades/commit/ba05815f5e7a952752ed6a0658a8471de8905224))
+* resolve $lib imports in the published package again ([ab3acc0](https://github.com/Profiidev/pleiades/commit/ab3acc0b36359fdd6c2e86c7f30035fb5b6d9755))
+
 ## [1.14.0](https://github.com/Profiidev/pleiades/compare/pleiades-v1.13.2...pleiades-v1.14.0) (2026-11-26)
 
 ### Features
