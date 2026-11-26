@@ -2,11 +2,10 @@
 
 ## [1.15.0](https://github.com/Profiidev/pleiades/compare/pleiades-v1.14.1...pleiades-v1.15.0) (2026-11-26)
 
-
 ### Features
 
-* migrate to SvelteKit 3 ([6c71498](https://github.com/Profiidev/pleiades/commit/6c71498cb0428e9c1ec478f076fcd76d9a3ea34f))
-* migrate to SvelteKit 3 ([a0396dd](https://github.com/Profiidev/pleiades/commit/a0396dda3907c68ded9725a4041bd2ca434ecc19))
+- migrate to SvelteKit 3 ([6c71498](https://github.com/Profiidev/pleiades/commit/6c71498cb0428e9c1ec478f076fcd76d9a3ea34f))
+- migrate to SvelteKit 3 ([a0396dd](https://github.com/Profiidev/pleiades/commit/a0396dda3907c68ded9725a4041bd2ca434ecc19))
 
 ## [1.14.1](https://github.com/Profiidev/pleiades/compare/pleiades-v1.14.0...pleiades-v1.14.1) (2026-11-26)
 
